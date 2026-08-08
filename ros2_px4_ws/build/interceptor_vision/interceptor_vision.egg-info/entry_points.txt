@@ -1,0 +1,2 @@
+[console_scripts]
+vision_node = interceptor_vision.cv_first:main

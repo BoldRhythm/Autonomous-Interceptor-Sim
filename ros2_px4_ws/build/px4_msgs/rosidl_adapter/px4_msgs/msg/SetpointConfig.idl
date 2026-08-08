@@ -1,0 +1,88 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from px4_msgs/msg/SetpointConfig.msg
+// generated code does not contain a copyright notice
+
+
+module px4_msgs {
+  module msg {
+    module SetpointConfig_Constants {
+      const uint32 MESSAGE_VERSION = 0;
+      const uint16 TYPE_INVALID = 0;
+      @verbatim (language="comment", text=
+        "ActuatorMotors and ActuatorServos")
+      const uint16 TYPE_DIRECT_ACTUATORS = 1;
+      @verbatim (language="comment", text=
+        "GotoSetpoint")
+      const uint16 TYPE_MULTICOPTER_GOTO = 2;
+      @verbatim (language="comment", text=
+        "FixedWingLateralSetpoint and FixedWingLongitudinalSetpoint")
+      const uint16 TYPE_FIXEDWING_LATERAL_LONGITUDINAL = 3;
+      @verbatim (language="comment", text=
+        "TrajectorySetpoint")
+      const uint16 TYPE_TRAJECTORY = 4;
+      @verbatim (language="comment", text=
+        "VehicleRatesSetpoint")
+      const uint16 TYPE_RATES = 5;
+      @verbatim (language="comment", text=
+        "VehicleAttitudeSetpoint")
+      const uint16 TYPE_ATTITUDE = 6;
+      @verbatim (language="comment", text=
+        "RoverPositionSetpoint")
+      const uint16 TYPE_ROVER_POSITION = 7;
+      @verbatim (language="comment", text=
+        "RoverSpeedSetpoint and RoverAttitudeSetpoint")
+      const uint16 TYPE_ROVER_SPEED_ATTITUDE = 8;
+      @verbatim (language="comment", text=
+        "RoverSpeedSetpoint and RoverRateSetpoint")
+      const uint16 TYPE_ROVER_SPEED_RATE = 9;
+      @verbatim (language="comment", text=
+        "RoverSpeedSetpoint and RoverSteeringSetpoint")
+      const uint16 TYPE_ROVER_SPEED_STEERING = 10;
+      @verbatim (language="comment", text=
+        "RoverThrottleSetpoint and RoverAttitudeSetpoint")
+      const uint16 TYPE_ROVER_THROTTLE_ATTITUDE = 11;
+      @verbatim (language="comment", text=
+        "RoverThrottleSetpoint and RoverRateSetpoint")
+      const uint16 TYPE_ROVER_THROTTLE_RATE = 12;
+      @verbatim (language="comment", text=
+        "RoverThrottleSetpoint and RoverSteeringSetpoint")
+      const uint16 TYPE_ROVER_THROTTLE_STEERING = 13;
+      @verbatim (language="comment", text=
+        "TrajectorySetpoint6dof")
+      const uint16 TYPE_TRAJECTORY_6DOF = 14;
+      @verbatim (language="comment", text=
+        "VehicleThrustSetpoint and VehicleTorqueSetpoint")
+      const uint16 TYPE_THRUST_AND_TORQUE = 15;
+      @verbatim (language="comment", text=
+        "PositionSetpointTriplet")
+      const uint16 TYPE_POSITION_TRIPLET = 16;
+    };
+    @verbatim (language="comment", text=
+      "Setpoint configuration message" "\n"
+      "" "\n"
+      "Published by external modes and PX4 will respond with SetpointConfigReply.")
+    struct SetpointConfig {
+      @verbatim (language="comment", text=
+        "Time since system start")
+      @unit (value="us")
+      uint64 timestamp;
+
+      @verbatim (language="comment", text=
+        "setpoint type (corresponding to one or more setpoint messages)")
+      @unit (value="@enum TYPE")
+      uint16 type;
+
+      @verbatim (language="comment", text=
+        "nav_state of the mode")
+      uint8 source_id;
+
+      @verbatim (language="comment", text=
+        "if true: apply as current setpoint configuration (mode should be active). If false: setpoint configuration is not changed (can be used to check if a setpoint can be used with the current vehicle configuration).")
+      boolean should_apply;
+
+      @verbatim (language="comment", text=
+        "Configure setpoint timeout. If no setpoint received for this time, PX4 triggers a failsafe. 0 disables the timeout (unresponsive modes still trigger a timeout through arming checks).")
+      uint16 timeout_ms;
+    };
+  };
+};

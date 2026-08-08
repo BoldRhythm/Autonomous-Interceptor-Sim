@@ -1,0 +1,3 @@
+[console_scripts]
+main_velocity_offboard.py = px4_offboard.main_velocity_offboard:main
+position_offboard_control.py = px4_offboard.position_offboard_control:main

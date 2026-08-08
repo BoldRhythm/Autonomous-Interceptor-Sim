@@ -1,0 +1,6 @@
+source;share/interceptor_vision/hook/pythonpath.ps1
+source;share/interceptor_vision/hook/pythonpath.dsv
+source;share/interceptor_vision/hook/pythonpath.sh
+source;share/interceptor_vision/hook/ament_prefix_path.ps1
+source;share/interceptor_vision/hook/ament_prefix_path.dsv
+source;share/interceptor_vision/hook/ament_prefix_path.sh

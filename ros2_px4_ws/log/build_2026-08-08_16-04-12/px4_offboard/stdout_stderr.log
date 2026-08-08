@@ -1,0 +1,44 @@
+running egg_info
+creating ../../build/px4_offboard/px4_offboard.egg-info
+writing ../../build/px4_offboard/px4_offboard.egg-info/PKG-INFO
+writing dependency_links to ../../build/px4_offboard/px4_offboard.egg-info/dependency_links.txt
+writing entry points to ../../build/px4_offboard/px4_offboard.egg-info/entry_points.txt
+writing requirements to ../../build/px4_offboard/px4_offboard.egg-info/requires.txt
+writing top-level names to ../../build/px4_offboard/px4_offboard.egg-info/top_level.txt
+writing manifest file '../../build/px4_offboard/px4_offboard.egg-info/SOURCES.txt'
+reading manifest file '../../build/px4_offboard/px4_offboard.egg-info/SOURCES.txt'
+writing manifest file '../../build/px4_offboard/px4_offboard.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/px4_offboard/build
+creating /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/px4_offboard/build/lib
+creating /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/px4_offboard/build/lib/px4_offboard
+copying px4_offboard/__init__.py -> /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/px4_offboard/build/lib/px4_offboard
+copying px4_offboard/position_offboard_control.py -> /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/px4_offboard/build/lib/px4_offboard
+copying px4_offboard/main_velocity_offboard.py -> /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/px4_offboard/build/lib/px4_offboard
+running install
+running install_lib
+creating /home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard/lib/python3.12/site-packages/px4_offboard
+copying /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/px4_offboard/build/lib/px4_offboard/__init__.py -> /home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard/lib/python3.12/site-packages/px4_offboard
+copying /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/px4_offboard/build/lib/px4_offboard/position_offboard_control.py -> /home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard/lib/python3.12/site-packages/px4_offboard
+copying /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/px4_offboard/build/lib/px4_offboard/main_velocity_offboard.py -> /home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard/lib/python3.12/site-packages/px4_offboard
+byte-compiling /home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard/lib/python3.12/site-packages/px4_offboard/__init__.py to __init__.cpython-312.pyc
+byte-compiling /home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard/lib/python3.12/site-packages/px4_offboard/position_offboard_control.py to position_offboard_control.cpython-312.pyc
+byte-compiling /home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard/lib/python3.12/site-packages/px4_offboard/main_velocity_offboard.py to main_velocity_offboard.cpython-312.pyc
+running install_data
+creating /home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard/share/ament_index
+creating /home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard/share/ament_index/resource_index
+creating /home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard/share/ament_index/resource_index/packages
+copying resource/px4_offboard -> /home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard/share/ament_index/resource_index/packages
+copying package.xml -> /home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard/share/px4_offboard
+creating /home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard/share/px4_offboard/launch
+copying launch/keyboard_teleop.launch.py -> /home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard/share/px4_offboard/launch
+copying launch/joystick_teleop.launch.py -> /home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard/share/px4_offboard/launch
+creating /home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard/share/px4_offboard/config
+copying config/joy_config.yaml -> /home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard/share/px4_offboard/config
+running install_egg_info
+Copying ../../build/px4_offboard/px4_offboard.egg-info to /home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard/lib/python3.12/site-packages/px4_offboard-0.0.1-py3.12.egg-info
+running install_scripts
+Installing main_velocity_offboard.py script to /home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard/lib/px4_offboard
+Installing position_offboard_control.py script to /home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard/lib/px4_offboard
+writing list of installed files to '/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/px4_offboard/install.log'

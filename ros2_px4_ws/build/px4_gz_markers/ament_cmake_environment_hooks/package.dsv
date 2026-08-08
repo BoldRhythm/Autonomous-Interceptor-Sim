@@ -1,0 +1,4 @@
+source;share/px4_gz_markers/local_setup.bash
+source;share/px4_gz_markers/local_setup.dsv
+source;share/px4_gz_markers/local_setup.sh
+source;share/px4_gz_markers/local_setup.zsh
