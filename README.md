@@ -10,7 +10,7 @@ The project combines mathematical modeling, guidance algorithms, autonomous cont
 
 # Current Progress: 
 
-the ROS2 node for velocity control, ros_gz_bridge for the image topic to handle camera feed - viewed using a ROS2 node (openCV) and multi-drone capability without RAM leaks in ruby are up. Also, a singular bash file can also be used to launch PX4 and gazebo for simulation, along with htop for resource monitoring. Needs PX4 to be installed in ~/PX4-Autopilot (i.e. the default directory structure), and bash as the shell.
+So far, the ROS2 node for velocity control, ros_gz_bridge for the image topic to handle camera feed - viewed using a ROS2 node (openCV) and multi-drone capability without RAM leaks in ruby are up. Also, a singular bash file can also be used to launch PX4 and gazebo for simulation, along with htop for resource monitoring. Needs PX4 to be installed in ~/PX4-Autopilot (i.e. the default directory structure), and bash as the shell.
 
 For the guidance algorithm development (Proportion Navigation (PN)), work at this stage has been done using python. The guidance law is achieving an intercept under specific ideal assumptions and conditions. Kindly check [Standalone UAV Navigation and Guidance Simulator](https://github.com/BoldRhythm/Simplified-UAV-Navigation-and-Guidance-Sim)
 
