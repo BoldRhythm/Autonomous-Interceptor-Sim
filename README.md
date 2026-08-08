@@ -5,7 +5,7 @@ The project combines mathematical modeling, guidance algorithms, autonomous cont
 
 ![Project Structure and Scope](assets/structure.png)
 
-![System Architecure](assets/flow.png)
+![Proposed System Architecure](assets/flow.png)
 
 
 # Current Progress: 
