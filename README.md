@@ -20,7 +20,8 @@ The project currently requires:
 * Ubuntu Linux - 22.04
 * ROS 2 Jazzy
 * Gazebo Harmonic
-* PX4 Autopilot  - 
+* PX4 Autopilot
+* Tmux
 * Python 3
 * Git
 
@@ -38,6 +39,10 @@ Or using https:
 git clone https://github.com/BoldRhythm/Autonomous-Interceptor-Sim.git
 cd Autonomous-Interceptor-Sim
 ```
+
+## Shell-scripts
+
+This directory has two bash scripts, which can be used to launch tmux with a designated pane layout, containting - microXRCE DDS agent, htop, two gazebo+px4 windows for two custom quadcopters (kindly modify to launch any prepared quadcopter you have (e.g. 4001 x_500, this one contains our custom one, not included yet due to lack of refinement.)
 
 ### ROS 2 Workspace
 
@@ -72,4 +77,4 @@ echo "source ~/Projects/interceptor-sim/ros2_px4_ws/install/setup.bash" >> ~/.ba
 source ~/.bashrc
 ```
 
-> **Note:** The exact PX4 and Gazebo installation procedure is maintained separately because these are external dependencies of the project. Do check out their official documentation for installation procedure.
+> **Note:** The exact PX4, Gazebo and Tmux installation procedure is maintained separately because these are external dependencies of the project. Do check out their official documentation for installation procedure.
