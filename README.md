@@ -29,6 +29,12 @@ The project currently requires:
 * Python 3
 * Git
 
+The project is currently being developed on :
+* GPU : RTX 3060Ti
+* Processor : Ryzen 7 3700x
+* RAM : 16GB DDR4
+> **Note:** Though these are the specs, it can run on slower computers as well. Will update the minimum requirements as we figure them out.
+
 ### Clone the Repository
 
 Clone the repository using SSH:
