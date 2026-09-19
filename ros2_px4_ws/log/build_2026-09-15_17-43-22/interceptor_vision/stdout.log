@@ -1,0 +1,26 @@
+running egg_info
+writing ../../build/interceptor_vision/interceptor_vision.egg-info/PKG-INFO
+writing dependency_links to ../../build/interceptor_vision/interceptor_vision.egg-info/dependency_links.txt
+writing entry points to ../../build/interceptor_vision/interceptor_vision.egg-info/entry_points.txt
+writing requirements to ../../build/interceptor_vision/interceptor_vision.egg-info/requires.txt
+writing top-level names to ../../build/interceptor_vision/interceptor_vision.egg-info/top_level.txt
+reading manifest file '../../build/interceptor_vision/interceptor_vision.egg-info/SOURCES.txt'
+writing manifest file '../../build/interceptor_vision/interceptor_vision.egg-info/SOURCES.txt'
+running build
+running build_py
+copying interceptor_vision/cv_first.py -> /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/interceptor_vision/build/lib/interceptor_vision
+copying interceptor_vision/tracking.py -> /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/interceptor_vision/build/lib/interceptor_vision
+running install
+running install_lib
+copying /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/interceptor_vision/build/lib/interceptor_vision/cv_first.py -> /home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision/lib/python3.12/site-packages/interceptor_vision
+copying /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/interceptor_vision/build/lib/interceptor_vision/tracking.py -> /home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision/lib/python3.12/site-packages/interceptor_vision
+byte-compiling /home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision/lib/python3.12/site-packages/interceptor_vision/cv_first.py to cv_first.cpython-312.pyc
+byte-compiling /home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision/lib/python3.12/site-packages/interceptor_vision/tracking.py to tracking.cpython-312.pyc
+running install_data
+running install_egg_info
+removing '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision/lib/python3.12/site-packages/interceptor_vision-0.0.0-py3.12.egg-info' (and everything under it)
+Copying ../../build/interceptor_vision/interceptor_vision.egg-info to /home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision/lib/python3.12/site-packages/interceptor_vision-0.0.0-py3.12.egg-info
+running install_scripts
+Installing YOLO_node script to /home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision/lib/interceptor_vision
+Installing vision_node script to /home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision/lib/interceptor_vision
+writing list of installed files to '/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/interceptor_vision/install.log'

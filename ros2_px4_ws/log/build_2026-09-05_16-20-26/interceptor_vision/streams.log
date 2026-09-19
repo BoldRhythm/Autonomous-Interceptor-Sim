@@ -1,0 +1,23 @@
+[1.010s] Invoking command in '/home/gp/Projects/interceptor-sim/ros2_px4_ws/src/interceptor_vision': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/interceptor_vision/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/interceptor_vision build --build-base /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/interceptor_vision/build install --record /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/interceptor_vision/install.log --install-scripts $base/lib/interceptor_vision --single-version-externally-managed install_data
+[1.221s] running egg_info
+[1.236s] writing ../../build/interceptor_vision/interceptor_vision.egg-info/PKG-INFO
+[1.236s] writing dependency_links to ../../build/interceptor_vision/interceptor_vision.egg-info/dependency_links.txt
+[1.236s] writing entry points to ../../build/interceptor_vision/interceptor_vision.egg-info/entry_points.txt
+[1.236s] writing requirements to ../../build/interceptor_vision/interceptor_vision.egg-info/requires.txt
+[1.236s] writing top-level names to ../../build/interceptor_vision/interceptor_vision.egg-info/top_level.txt
+[1.266s] reading manifest file '../../build/interceptor_vision/interceptor_vision.egg-info/SOURCES.txt'
+[1.268s] writing manifest file '../../build/interceptor_vision/interceptor_vision.egg-info/SOURCES.txt'
+[1.268s] running build
+[1.268s] running build_py
+[1.268s] copying interceptor_vision/cv_first.py -> /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/interceptor_vision/build/lib/interceptor_vision
+[1.269s] running install
+[1.274s] running install_lib
+[1.289s] copying /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/interceptor_vision/build/lib/interceptor_vision/cv_first.py -> /home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision/lib/python3.12/site-packages/interceptor_vision
+[1.290s] byte-compiling /home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision/lib/python3.12/site-packages/interceptor_vision/cv_first.py to cv_first.cpython-312.pyc
+[1.291s] running install_data
+[1.291s] running install_egg_info
+[1.307s] removing '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision/lib/python3.12/site-packages/interceptor_vision-0.0.0-py3.12.egg-info' (and everything under it)
+[1.307s] Copying ../../build/interceptor_vision/interceptor_vision.egg-info to /home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision/lib/python3.12/site-packages/interceptor_vision-0.0.0-py3.12.egg-info
+[1.308s] running install_scripts
+[1.410s] Installing vision_node script to /home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision/lib/interceptor_vision
+[1.410s] writing list of installed files to '/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/interceptor_vision/install.log'

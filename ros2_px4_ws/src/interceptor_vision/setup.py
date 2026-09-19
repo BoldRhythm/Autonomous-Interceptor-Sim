@@ -24,7 +24,8 @@ setup(
     },
     entry_points={
         'console_scripts': [
-            'vision_node = interceptor_vision.cv_first:main',
+            'YOLO_node = interceptor_vision.cv_first:main',
+            'vision_node = interceptor_vision.basic_cv:main',
         ],
     },
 )

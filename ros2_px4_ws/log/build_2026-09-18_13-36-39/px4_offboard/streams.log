@@ -1,0 +1,22 @@
+[1.993s] Invoking command in '/home/gp/Projects/interceptor-sim/ros2_px4_ws/src/px4_offboard': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/px4_offboard/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/px4_offboard build --build-base /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/px4_offboard/build install --record /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/px4_offboard/install.log --install-scripts $base/lib/px4_offboard --single-version-externally-managed install_data
+[2.304s] running egg_info
+[2.325s] writing ../../build/px4_offboard/px4_offboard.egg-info/PKG-INFO
+[2.325s] writing dependency_links to ../../build/px4_offboard/px4_offboard.egg-info/dependency_links.txt
+[2.326s] writing entry points to ../../build/px4_offboard/px4_offboard.egg-info/entry_points.txt
+[2.326s] writing requirements to ../../build/px4_offboard/px4_offboard.egg-info/requires.txt
+[2.326s] writing top-level names to ../../build/px4_offboard/px4_offboard.egg-info/top_level.txt
+[2.378s] reading manifest file '../../build/px4_offboard/px4_offboard.egg-info/SOURCES.txt'
+[2.378s] writing manifest file '../../build/px4_offboard/px4_offboard.egg-info/SOURCES.txt'
+[2.379s] running build
+[2.379s] running build_py
+[2.379s] running install
+[2.388s] running install_lib
+[2.412s] running install_data
+[2.412s] running install_egg_info
+[2.437s] removing '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard/lib/python3.12/site-packages/px4_offboard-0.0.1-py3.12.egg-info' (and everything under it)
+[2.438s] Copying ../../build/px4_offboard/px4_offboard.egg-info to /home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard/lib/python3.12/site-packages/px4_offboard-0.0.1-py3.12.egg-info
+[2.439s] running install_scripts
+[2.597s] Installing main_velocity_offboard.py script to /home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard/lib/px4_offboard
+[2.597s] Installing position_offboard_control.py script to /home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard/lib/px4_offboard
+[2.599s] writing list of installed files to '/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/px4_offboard/install.log'
+[2.733s] Invoked command in '/home/gp/Projects/interceptor-sim/ros2_px4_ws/src/px4_offboard' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/px4_offboard/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/px4_offboard build --build-base /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/px4_offboard/build install --record /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/px4_offboard/install.log --install-scripts $base/lib/px4_offboard --single-version-externally-managed install_data

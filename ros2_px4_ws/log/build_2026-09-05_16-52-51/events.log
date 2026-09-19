@@ -1,0 +1,7 @@
+[0.000000] (-) TimerEvent: {}
+[0.000227] (-) JobUnselected: {'identifier': 'interceptor_bringup'}
+[0.000267] (-) JobUnselected: {'identifier': 'interceptor_vision'}
+[0.000482] (-) JobUnselected: {'identifier': 'px4_gz_markers'}
+[0.000621] (-) JobUnselected: {'identifier': 'px4_msgs'}
+[0.000639] (-) JobUnselected: {'identifier': 'px4_offboard'}
+[0.000833] (-) EventReactorShutdown: {}

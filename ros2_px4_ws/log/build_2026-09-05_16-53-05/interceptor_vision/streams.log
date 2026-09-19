@@ -1,0 +1,25 @@
+[0.767s] Invoking command in '/home/gp/Projects/interceptor-sim/ros2_px4_ws/src/interceptor_vision': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/interceptor_vision/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/interceptor_vision build --build-base /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/interceptor_vision/build install --record /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/interceptor_vision/install.log --install-scripts $base/lib/interceptor_vision --single-version-externally-managed install_data
+[1.016s] running egg_info
+[1.034s] writing ../../build/interceptor_vision/interceptor_vision.egg-info/PKG-INFO
+[1.034s] writing dependency_links to ../../build/interceptor_vision/interceptor_vision.egg-info/dependency_links.txt
+[1.034s] writing entry points to ../../build/interceptor_vision/interceptor_vision.egg-info/entry_points.txt
+[1.035s] writing requirements to ../../build/interceptor_vision/interceptor_vision.egg-info/requires.txt
+[1.035s] writing top-level names to ../../build/interceptor_vision/interceptor_vision.egg-info/top_level.txt
+[1.071s] reading manifest file '../../build/interceptor_vision/interceptor_vision.egg-info/SOURCES.txt'
+[1.072s] writing manifest file '../../build/interceptor_vision/interceptor_vision.egg-info/SOURCES.txt'
+[1.072s] running build
+[1.072s] running build_py
+[1.072s] copying interceptor_vision/basic_cv.py -> /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/interceptor_vision/build/lib/interceptor_vision
+[1.072s] running install
+[1.078s] running install_lib
+[1.097s] copying /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/interceptor_vision/build/lib/interceptor_vision/basic_cv.py -> /home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision/lib/python3.12/site-packages/interceptor_vision
+[1.097s] byte-compiling /home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision/lib/python3.12/site-packages/interceptor_vision/basic_cv.py to basic_cv.cpython-312.pyc
+[1.098s] running install_data
+[1.098s] running install_egg_info
+[1.117s] removing '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision/lib/python3.12/site-packages/interceptor_vision-0.0.0-py3.12.egg-info' (and everything under it)
+[1.118s] Copying ../../build/interceptor_vision/interceptor_vision.egg-info to /home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision/lib/python3.12/site-packages/interceptor_vision-0.0.0-py3.12.egg-info
+[1.118s] running install_scripts
+[1.241s] Installing YOLO_node script to /home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision/lib/interceptor_vision
+[1.241s] Installing vision_node script to /home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision/lib/interceptor_vision
+[1.241s] writing list of installed files to '/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/interceptor_vision/install.log'
+[1.276s] Invoked command in '/home/gp/Projects/interceptor-sim/ros2_px4_ws/src/interceptor_vision' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/interceptor_vision/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/interceptor_vision build --build-base /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/interceptor_vision/build install --record /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/interceptor_vision/install.log --install-scripts $base/lib/interceptor_vision --single-version-externally-managed install_data

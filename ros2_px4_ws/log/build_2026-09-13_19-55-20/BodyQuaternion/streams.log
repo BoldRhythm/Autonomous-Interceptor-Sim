@@ -1,0 +1,24 @@
+[1.461s] Invoking command in '/home/gp/Projects/interceptor-sim/ros2_px4_ws/src/BodyQuaternion': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PS1=(.venv) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ PYTHONPATH=/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/BodyQuaternion/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/BodyQuaternion/lib/python3.12/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(.venv) /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/BodyQuaternion build --build-base /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/BodyQuaternion/build install --record /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/BodyQuaternion/install.log --install-scripts $base/lib/BodyQuaternion --single-version-externally-managed install_data
+[1.707s] running egg_info
+[1.723s] writing ../../build/BodyQuaternion/BodyQuaternion.egg-info/PKG-INFO
+[1.724s] writing dependency_links to ../../build/BodyQuaternion/BodyQuaternion.egg-info/dependency_links.txt
+[1.724s] writing entry points to ../../build/BodyQuaternion/BodyQuaternion.egg-info/entry_points.txt
+[1.725s] writing requirements to ../../build/BodyQuaternion/BodyQuaternion.egg-info/requires.txt
+[1.725s] writing top-level names to ../../build/BodyQuaternion/BodyQuaternion.egg-info/top_level.txt
+[1.762s] reading manifest file '../../build/BodyQuaternion/BodyQuaternion.egg-info/SOURCES.txt'
+[1.762s] writing manifest file '../../build/BodyQuaternion/BodyQuaternion.egg-info/SOURCES.txt'
+[1.763s] running build
+[1.763s] running build_py
+[1.763s] copying BodyQuaternion/Attitude.py -> /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/BodyQuaternion/build/lib/BodyQuaternion
+[1.763s] running install
+[1.770s] running install_lib
+[1.787s] copying /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/BodyQuaternion/build/lib/BodyQuaternion/Attitude.py -> /home/gp/Projects/interceptor-sim/ros2_px4_ws/install/BodyQuaternion/lib/python3.12/site-packages/BodyQuaternion
+[1.787s] byte-compiling /home/gp/Projects/interceptor-sim/ros2_px4_ws/install/BodyQuaternion/lib/python3.12/site-packages/BodyQuaternion/Attitude.py to Attitude.cpython-312.pyc
+[1.788s] running install_data
+[1.788s] running install_egg_info
+[1.835s] removing '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/BodyQuaternion/lib/python3.12/site-packages/BodyQuaternion-0.0.0-py3.12.egg-info' (and everything under it)
+[1.836s] Copying ../../build/BodyQuaternion/BodyQuaternion.egg-info to /home/gp/Projects/interceptor-sim/ros2_px4_ws/install/BodyQuaternion/lib/python3.12/site-packages/BodyQuaternion-0.0.0-py3.12.egg-info
+[1.839s] running install_scripts
+[2.100s] Installing Attitude script to /home/gp/Projects/interceptor-sim/ros2_px4_ws/install/BodyQuaternion/lib/BodyQuaternion
+[2.100s] writing list of installed files to '/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/BodyQuaternion/install.log'
+[2.201s] Invoked command in '/home/gp/Projects/interceptor-sim/ros2_px4_ws/src/BodyQuaternion' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PS1=(.venv) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ PYTHONPATH=/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/BodyQuaternion/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/BodyQuaternion/lib/python3.12/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(.venv) /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/BodyQuaternion build --build-base /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/BodyQuaternion/build install --record /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/BodyQuaternion/install.log --install-scripts $base/lib/BodyQuaternion --single-version-externally-managed install_data

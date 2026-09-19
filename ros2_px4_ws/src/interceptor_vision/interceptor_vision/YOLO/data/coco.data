@@ -1,0 +1,2 @@
+classes = 80
+names = /home/gp/Projects/interceptor-sim/ros2_px4_ws/src/interceptor_vision/interceptor_vision/YOLO/data/coco.names

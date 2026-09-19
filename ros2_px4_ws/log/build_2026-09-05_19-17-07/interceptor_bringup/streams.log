@@ -1,0 +1,20 @@
+[1.289s] Invoking command in '/home/gp/Projects/interceptor-sim/ros2_px4_ws/src/interceptor_bringup': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/interceptor_bringup/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_bringup/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/interceptor_bringup build --build-base /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/interceptor_bringup/build install --record /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/interceptor_bringup/install.log --install-scripts $base/lib/interceptor_bringup --single-version-externally-managed install_data
+[1.575s] running egg_info
+[1.596s] writing ../../build/interceptor_bringup/interceptor_bringup.egg-info/PKG-INFO
+[1.596s] writing dependency_links to ../../build/interceptor_bringup/interceptor_bringup.egg-info/dependency_links.txt
+[1.596s] writing requirements to ../../build/interceptor_bringup/interceptor_bringup.egg-info/requires.txt
+[1.597s] writing top-level names to ../../build/interceptor_bringup/interceptor_bringup.egg-info/top_level.txt
+[1.637s] reading manifest file '../../build/interceptor_bringup/interceptor_bringup.egg-info/SOURCES.txt'
+[1.638s] adding license file 'LICENSE'
+[1.639s] writing manifest file '../../build/interceptor_bringup/interceptor_bringup.egg-info/SOURCES.txt'
+[1.639s] running build
+[1.639s] running build_py
+[1.639s] running install
+[1.645s] running install_lib
+[1.666s] running install_data
+[1.666s] running install_egg_info
+[1.687s] removing '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_bringup/lib/python3.12/site-packages/interceptor_bringup-0.0.0-py3.12.egg-info' (and everything under it)
+[1.688s] Copying ../../build/interceptor_bringup/interceptor_bringup.egg-info to /home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_bringup/lib/python3.12/site-packages/interceptor_bringup-0.0.0-py3.12.egg-info
+[1.689s] running install_scripts
+[1.827s] writing list of installed files to '/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/interceptor_bringup/install.log'
+[1.889s] Invoked command in '/home/gp/Projects/interceptor-sim/ros2_px4_ws/src/interceptor_bringup' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/interceptor_bringup/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_bringup/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/interceptor_bringup build --build-base /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/interceptor_bringup/build install --record /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/interceptor_bringup/install.log --install-scripts $base/lib/interceptor_bringup --single-version-externally-managed install_data

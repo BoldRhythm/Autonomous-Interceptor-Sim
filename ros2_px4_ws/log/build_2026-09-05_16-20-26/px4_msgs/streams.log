@@ -1,0 +1,22 @@
+[0.018s] Invoking command in '/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/px4_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_bringup:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/px4_msgs -- -j16 -l16
+[1.001s] -- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[1.137s] [31mCMake Error at CMakeLists.txt:20 (find_package):
+[1.137s]   By not providing "Findrosidl_default_generators.cmake" in CMAKE_MODULE_PATH
+[1.137s]   this project has asked CMake to find a package configuration file provided
+[1.137s]   by "rosidl_default_generators", but CMake did not find one.
+[1.137s] 
+[1.137s]   Could not find a package configuration file provided by
+[1.137s]   "rosidl_default_generators" with any of the following names:
+[1.137s] 
+[1.138s]     rosidl_default_generatorsConfig.cmake
+[1.138s]     rosidl_default_generators-config.cmake
+[1.138s] 
+[1.138s]   Add the installation prefix of "rosidl_default_generators" to
+[1.138s]   CMAKE_PREFIX_PATH or set "rosidl_default_generators_DIR" to a directory
+[1.138s]   containing one of the above files.  If "rosidl_default_generators" provides
+[1.138s]   a separate development package or SDK, be sure it has been installed.
+[1.138s] 
+[1.138s] [0m
+[1.139s] -- Configuring incomplete, errors occurred!
+[1.142s] gmake: *** [Makefile:71299: cmake_check_build_system] Error 1
+[1.145s] Invoked command in '/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/px4_msgs' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_bringup:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/px4_msgs -- -j16 -l16

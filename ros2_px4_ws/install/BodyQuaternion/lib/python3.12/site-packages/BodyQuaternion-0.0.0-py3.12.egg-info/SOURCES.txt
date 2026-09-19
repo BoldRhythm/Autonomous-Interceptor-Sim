@@ -1,0 +1,16 @@
+package.xml
+setup.cfg
+setup.py
+../../build/BodyQuaternion/BodyQuaternion.egg-info/PKG-INFO
+../../build/BodyQuaternion/BodyQuaternion.egg-info/SOURCES.txt
+../../build/BodyQuaternion/BodyQuaternion.egg-info/dependency_links.txt
+../../build/BodyQuaternion/BodyQuaternion.egg-info/entry_points.txt
+../../build/BodyQuaternion/BodyQuaternion.egg-info/requires.txt
+../../build/BodyQuaternion/BodyQuaternion.egg-info/top_level.txt
+../../build/BodyQuaternion/BodyQuaternion.egg-info/zip-safe
+BodyQuaternion/Attitude.py
+BodyQuaternion/__init__.py
+resource/BodyQuaternion
+test/test_copyright.py
+test/test_flake8.py
+test/test_pep257.py

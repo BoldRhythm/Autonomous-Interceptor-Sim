@@ -1,0 +1,2 @@
+[console_scripts]
+Attitude = BodyQuaternion.Attitude:main
