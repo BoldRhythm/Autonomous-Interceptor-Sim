@@ -9,6 +9,8 @@ setup.py
 ../../../build/BodyQuaternion/BodyQuaternion.egg-info/top_level.txt
 ../../../build/BodyQuaternion/BodyQuaternion.egg-info/zip-safe
 BodyQuaternion/Attitude.py
+BodyQuaternion/Attitude_working.py
+BodyQuaternion/Test.py
 BodyQuaternion/__init__.py
 resource/BodyQuaternion
 test/test_copyright.py

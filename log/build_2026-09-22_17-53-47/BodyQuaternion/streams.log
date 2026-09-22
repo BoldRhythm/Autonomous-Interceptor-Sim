@@ -1,0 +1,32 @@
+[1.319s] Invoking command in '/home/gp/Projects/interceptor-sim/ros2_px4_ws/src/BodyQuaternion': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/gp/Projects/interceptor-sim/build/BodyQuaternion/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/gp/Projects/interceptor-sim/install/BodyQuaternion/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../build/BodyQuaternion build --build-base /home/gp/Projects/interceptor-sim/build/BodyQuaternion/build install --record /home/gp/Projects/interceptor-sim/build/BodyQuaternion/install.log --install-scripts $base/lib/BodyQuaternion --single-version-externally-managed install_data
+[1.595s] running egg_info
+[1.614s] writing ../../../build/BodyQuaternion/BodyQuaternion.egg-info/PKG-INFO
+[1.614s] writing dependency_links to ../../../build/BodyQuaternion/BodyQuaternion.egg-info/dependency_links.txt
+[1.614s] writing entry points to ../../../build/BodyQuaternion/BodyQuaternion.egg-info/entry_points.txt
+[1.615s] writing requirements to ../../../build/BodyQuaternion/BodyQuaternion.egg-info/requires.txt
+[1.615s] writing top-level names to ../../../build/BodyQuaternion/BodyQuaternion.egg-info/top_level.txt
+[1.651s] reading manifest file '../../../build/BodyQuaternion/BodyQuaternion.egg-info/SOURCES.txt'
+[1.652s] writing manifest file '../../../build/BodyQuaternion/BodyQuaternion.egg-info/SOURCES.txt'
+[1.652s] running build
+[1.652s] running build_py
+[1.652s] copying BodyQuaternion/Attitude.py -> /home/gp/Projects/interceptor-sim/build/BodyQuaternion/build/lib/BodyQuaternion
+[1.652s] copying BodyQuaternion/Attitude_working.py -> /home/gp/Projects/interceptor-sim/build/BodyQuaternion/build/lib/BodyQuaternion
+[1.653s] copying BodyQuaternion/Test.py -> /home/gp/Projects/interceptor-sim/build/BodyQuaternion/build/lib/BodyQuaternion
+[1.653s] running install
+[1.659s] running install_lib
+[1.677s] copying /home/gp/Projects/interceptor-sim/build/BodyQuaternion/build/lib/BodyQuaternion/Attitude.py -> /home/gp/Projects/interceptor-sim/install/BodyQuaternion/lib/python3.12/site-packages/BodyQuaternion
+[1.678s] copying /home/gp/Projects/interceptor-sim/build/BodyQuaternion/build/lib/BodyQuaternion/Attitude_working.py -> /home/gp/Projects/interceptor-sim/install/BodyQuaternion/lib/python3.12/site-packages/BodyQuaternion
+[1.678s] copying /home/gp/Projects/interceptor-sim/build/BodyQuaternion/build/lib/BodyQuaternion/Test.py -> /home/gp/Projects/interceptor-sim/install/BodyQuaternion/lib/python3.12/site-packages/BodyQuaternion
+[1.678s] byte-compiling /home/gp/Projects/interceptor-sim/install/BodyQuaternion/lib/python3.12/site-packages/BodyQuaternion/Attitude.py to Attitude.cpython-312.pyc
+[1.680s] byte-compiling /home/gp/Projects/interceptor-sim/install/BodyQuaternion/lib/python3.12/site-packages/BodyQuaternion/Attitude_working.py to Attitude_working.cpython-312.pyc
+[1.682s] byte-compiling /home/gp/Projects/interceptor-sim/install/BodyQuaternion/lib/python3.12/site-packages/BodyQuaternion/Test.py to Test.cpython-312.pyc
+[1.684s] running install_data
+[1.684s] running install_egg_info
+[1.702s] removing '/home/gp/Projects/interceptor-sim/install/BodyQuaternion/lib/python3.12/site-packages/BodyQuaternion-0.0.0-py3.12.egg-info' (and everything under it)
+[1.702s] Copying ../../../build/BodyQuaternion/BodyQuaternion.egg-info to /home/gp/Projects/interceptor-sim/install/BodyQuaternion/lib/python3.12/site-packages/BodyQuaternion-0.0.0-py3.12.egg-info
+[1.703s] running install_scripts
+[1.814s] Installing Attitude script to /home/gp/Projects/interceptor-sim/install/BodyQuaternion/lib/BodyQuaternion
+[1.815s] Installing Test script to /home/gp/Projects/interceptor-sim/install/BodyQuaternion/lib/BodyQuaternion
+[1.815s] Installing Working script to /home/gp/Projects/interceptor-sim/install/BodyQuaternion/lib/BodyQuaternion
+[1.815s] writing list of installed files to '/home/gp/Projects/interceptor-sim/build/BodyQuaternion/install.log'
+[1.849s] Invoked command in '/home/gp/Projects/interceptor-sim/ros2_px4_ws/src/BodyQuaternion' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/gp/Projects/interceptor-sim/build/BodyQuaternion/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/gp/Projects/interceptor-sim/install/BodyQuaternion/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../build/BodyQuaternion build --build-base /home/gp/Projects/interceptor-sim/build/BodyQuaternion/build install --record /home/gp/Projects/interceptor-sim/build/BodyQuaternion/install.log --install-scripts $base/lib/BodyQuaternion --single-version-externally-managed install_data
