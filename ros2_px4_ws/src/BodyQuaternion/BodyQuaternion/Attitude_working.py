@@ -193,6 +193,29 @@ class Attitude(Node):
             "Attitude initialized."
         )
 
+        # DKF init
+
+        self.x = np.zeros(18)
+
+        # State layout to populate state vector x
+        self.Q_SLICE = slice(0, 4)
+        self.PR_SLICE = slice(4, 7)
+        self.VR_SLICE = slice(7, 10)
+        self.IMG_SLICE = slice(10, 12)
+        self.BG_SLICE = slice(12, 15)
+        self.BA_SLICE = slice(15, 18)
+
+        # Measurement matrix
+        self.H = np.zeros((2, 18))
+        self.H[:, 10:12] = np.eye(2)
+
+        # State-estimate covariance matrix
+        self.P = np.eye(18)
+
+        # Process-noise covariance matrix
+        self.Q = np.eye(6)
+
+
     # CALLBACKS
 
     def status_cb(self, msg):
@@ -314,6 +337,198 @@ class Attitude(Node):
 
         return omega_1
 
+    def build_F(self, dt, omega, accel, p_img, pzc):
+
+        F = np.zeros((18, 18))
+
+        q = self.x[self.Q_SLICE]
+        q_filter = UnitQuaternion(q)
+        R_eb = q_filter.R
+
+        # Quaternion block
+        wx, wy, wz = omega
+
+        theta = np.linalg.norm(omega) * dt
+
+        if theta < 1e-12:
+            dq = np.array([1.0, 0.0, 0.0, 0.0])
+        else:
+            axis = omega / np.linalg.norm(omega)
+
+            dq = np.array([
+                math.cos(theta / 2.0),
+                axis[0] * math.sin(theta / 2.0),
+                axis[1] * math.sin(theta / 2.0),
+                axis[2] * math.sin(theta / 2.0)
+            ])
+
+        dq0, dq1, dq2, dq3 = dq
+
+        M = np.array([
+            [ dq0, -dq1, -dq2, -dq3],
+            [ dq1,  dq0, -dq3,  dq2],
+            [ dq2,  dq3,  dq0, -dq1],
+            [ dq3, -dq2,  dq1,  dq0]
+        ])
+
+        F[0:4, 0:4] = M
+
+        # Quaternion to gyro bias block
+
+        q0, q1, q2, q3 = q
+
+        F_q_bg = np.array([
+            [ q1/2,  q2/2,  q3/2],
+            [-q0/2,  q3/2, -q2/2],
+            [-q3/2, -q0/2,  q1/2],
+            [ q2/2, -q1/2, -q0/2]
+        ]) * dt
+
+        F[0:4, 12:15] = F_q_bg
+
+        # Position block
+
+        F[4:7, 4:7] = np.eye(3)
+        F[4:7, 7:10] = np.eye(3) * dt
+
+        # Velocity - quaternion block
+
+        bacc = self.x[self.BA_SLICE]
+        a_b = accel - bacc
+
+        M1 = np.array([
+            [q0, -q3,  q2],
+            [q1,  q2,  q3],
+            [-q2, q1,  q0],
+            [-q3, -q0, q1]
+        ])
+
+        M2 = np.array([
+            [q3,  q0, -q1],
+            [q2, -q1, -q0],
+            [q1, q2, q3],
+            [q0, -q3, q2]
+        ])
+
+        M3 = np.array([
+            [-q2, q1, q0],
+            [q3, q0, -q1],
+            [-q0, q3, -q2],
+            [q1, q2, q3]
+        ])
+
+        F_v_q = 2.0 * np.vstack([
+            M1 @ a_b,
+            M2 @ a_b,
+            M3 @ a_b
+        ]) * dt
+
+        F[7:10, 0:4] = F_v_q
+
+        # Velocity - accelerometer bias
+
+        F_v_ba = -R_eb * dt
+
+        F[7:10, 15:18] = F_v_ba
+
+        # Image - velocity
+
+        px, py = p_img
+
+        L_v = np.array([
+            [-1.0/pzc, 0.0, px/pzc],
+            [0.0, -1.0/pzc, py/pzc]
+        ])
+
+        F_img_v = (
+            L_v
+            @ self.R_BC
+            @ R_eb.T
+            * dt
+        )
+
+        F[10:12, 7:10] = F_img_v
+
+        # Image - quaternion
+
+        vr = self.x[self.VR_SLICE]
+        px, py = p_img
+
+        M4 = np.array([
+            [2*px*q0 + 2*q3, 2*px*q3 - 2*q0, -2*px*q2 - 2*q1],
+            [2*px*q1 - 2*q2, 2*px*q2 + 2*q1,  2*px*q3 - 2*q0],
+            [2*px*q2 - 2*q1, 2*px*q1 - 2*q2, -2*px*q0 - 2*q3],
+            [2*px*q3 + 2*q0, 2*px*q0 + 2*q3,  2*px*q1 - 2*q2]
+        ])
+
+        M5 = np.array([
+            [2*py*q0 - 2*q2, 2*py*q3 + 2*q1, -2*py*q2 - 2*q0],
+            [2*py*q1 - 2*q3, 2*py*q2 + 2*q0,  2*py*q3 + 2*q1],
+            [2*py*q2 - 2*q0, 2*py*q1 - 2*q3, -2*py*q0 + 2*q2],
+            [2*py*q3 - 2*q1, 2*py*q0 - 2*q2,  2*py*q1 - 2*q3]
+        ])
+
+        F_img_q = (
+            np.column_stack((
+                M4 @ vr,
+                M5 @ vr
+            )).T
+            / pzc
+            * dt
+        )
+
+        F[10:12, 0:4] = F_img_q
+
+        # Image - image
+
+        v_camera = self.R_BC.T @ R_eb.T @ vr
+        vzc = v_camera[2]
+
+        omega_camera = self.R_BC.T @ np.asarray(omega)
+        wxc, wyc, wzc = omega_camera
+
+        F_img_img = np.array([
+            [
+                vzc/pzc + py*wxc - 2*px*wyc,
+                px*wxc + wzc
+            ],
+            [
+                -py*wyc - wzc,
+                vzc/pzc + 2*py*wxc - px*wyc
+            ]
+        ])
+
+        F_img_img = np.eye(2) + F_img_img * dt
+
+        F[10:12, 10:12] = F_img_img
+
+        # Image - gyro bias
+
+        F_img_bg = -np.array([
+            [
+                px*py,
+                -(1.0 + px**2),
+                py
+            ],
+            [
+                1.0 + py**2,
+                -px*py,
+                -px
+            ]
+        ]) @ self.R_BC.T
+
+        F[10:12, 12:15] = F_img_bg
+
+        # Gyroscope bias
+
+        F[12:15, 12:15] = np.eye(3)
+
+        # Accelerometer bias
+
+        F[15:18, 15:18] = np.eye(3)
+
+        return F
+
     # TIMESTAMP
 
     def micros(self):
@@ -329,17 +544,6 @@ class Attitude(Node):
         msg = OffboardControlMode()
 
         msg.timestamp = self.micros()
-
-        # IMPORTANT:
-        #
-        # We stay in velocity mode for the entire test.
-        #
-        # This allows TrajectorySetpoint to contain:
-        #
-        #     vx
-        #     vy
-        #     vz
-        #     yawspeed
 
         msg.position = False
         msg.velocity = self.control_mode == "velocity"
