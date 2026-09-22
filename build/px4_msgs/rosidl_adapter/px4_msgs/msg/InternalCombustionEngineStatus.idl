@@ -1,0 +1,220 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from px4_msgs/msg/InternalCombustionEngineStatus.msg
+// generated code does not contain a copyright notice
+
+
+module px4_msgs {
+  module msg {
+    module InternalCombustionEngineStatus_Constants {
+      @verbatim (language="comment", text=
+        "The engine is not running. This is the default state.")
+      const uint8 STATE_STOPPED = 0;
+      @verbatim (language="comment", text=
+        "The engine is starting. This is a transient state.")
+      const uint8 STATE_STARTING = 1;
+      @verbatim (language="comment", text=
+        "The engine is running normally.")
+      const uint8 STATE_RUNNING = 2;
+      @verbatim (language="comment", text=
+        "The engine can no longer function.")
+      const uint8 STATE_FAULT = 3;
+      @verbatim (language="comment", text=
+        "The engine is running. This is the default state.")
+      const uint8 SUBSTATE_RUN = 0;
+      @verbatim (language="comment", text=
+        "The engine idle rpm controller is running.")
+      const uint8 SUBSTATE_IDLE = 1;
+      @verbatim (language="comment", text=
+        "The engine is at rest.")
+      const uint8 SUBSTATE_REST = 2;
+      @verbatim (language="comment", text=
+        "General error.")
+      const uint32 FLAG_GENERAL_ERROR = 1;
+      @verbatim (language="comment", text=
+        "Error of the crankshaft sensor. This flag is optional.")
+      const uint32 FLAG_CRANKSHAFT_SENSOR_ERROR_SUPPORTED = 2;
+      const uint32 FLAG_CRANKSHAFT_SENSOR_ERROR = 4;
+      @verbatim (language="comment", text=
+        "Temperature levels. These flags are optional")
+      const uint32 FLAG_TEMPERATURE_SUPPORTED = 8;
+      @verbatim (language="comment", text=
+        "Under-temperature warning")
+      const uint32 FLAG_TEMPERATURE_BELOW_NOMINAL = 16;
+      @verbatim (language="comment", text=
+        "Over-temperature warning")
+      const uint32 FLAG_TEMPERATURE_ABOVE_NOMINAL = 32;
+      @verbatim (language="comment", text=
+        "Critical overheating")
+      const uint32 FLAG_TEMPERATURE_OVERHEATING = 64;
+      @verbatim (language="comment", text=
+        "Exhaust gas over-temperature warning")
+      const uint32 FLAG_TEMPERATURE_EGT_ABOVE_NOMINAL = 128;
+      @verbatim (language="comment", text=
+        "Fuel pressure. These flags are optional")
+      const uint32 FLAG_FUEL_PRESSURE_SUPPORTED = 256;
+      @verbatim (language="comment", text=
+        "Under-pressure warning")
+      const uint32 FLAG_FUEL_PRESSURE_BELOW_NOMINAL = 512;
+      @verbatim (language="comment", text=
+        "Over-pressure warning")
+      const uint32 FLAG_FUEL_PRESSURE_ABOVE_NOMINAL = 1024;
+      @verbatim (language="comment", text=
+        "Detonation warning. This flag is optional.")
+      const uint32 FLAG_DETONATION_SUPPORTED = 2048;
+      @verbatim (language="comment", text=
+        "Detonation condition observed warning")
+      const uint32 FLAG_DETONATION_OBSERVED = 4096;
+      @verbatim (language="comment", text=
+        "Misfire warning. This flag is optional.")
+      const uint32 FLAG_MISFIRE_SUPPORTED = 8192;
+      @verbatim (language="comment", text=
+        "Misfire condition observed warning")
+      const uint32 FLAG_MISFIRE_OBSERVED = 16384;
+      @verbatim (language="comment", text=
+        "Oil pressure. These flags are optional")
+      const uint32 FLAG_OIL_PRESSURE_SUPPORTED = 32768;
+      @verbatim (language="comment", text=
+        "Under-pressure warning")
+      const uint32 FLAG_OIL_PRESSURE_BELOW_NOMINAL = 65536;
+      @verbatim (language="comment", text=
+        "Over-pressure warning")
+      const uint32 FLAG_OIL_PRESSURE_ABOVE_NOMINAL = 131072;
+      @verbatim (language="comment", text=
+        "Debris warning. This flag is optional")
+      const uint32 FLAG_DEBRIS_SUPPORTED = 262144;
+      @verbatim (language="comment", text=
+        "Detection of debris warning")
+      const uint32 FLAG_DEBRIS_DETECTED = 524288;
+      const uint8 SPARK_PLUG_SINGLE = 0;
+      const uint8 SPARK_PLUG_FIRST_ACTIVE = 1;
+      const uint8 SPARK_PLUG_SECOND_ACTIVE = 2;
+      const uint8 SPARK_PLUG_BOTH_ACTIVE = 3;
+    };
+    struct InternalCombustionEngineStatus {
+      @verbatim (language="comment", text=
+        "Time since system start")
+      @unit (value="us")
+      uint64 timestamp;
+
+      @verbatim (language="comment", text=
+        "Engine state")
+      @unit (value="@enum STATE")
+      uint8 state;
+
+      @verbatim (language="comment", text=
+        "Engine substate")
+      @unit (value="@enum SUBSTATE")
+      uint8 substate;
+
+      @verbatim (language="comment", text=
+        "Engine status flags bitmap")
+      @unit (value="@enum FLAG")
+      uint32 flags;
+
+      @verbatim (language="comment", text=
+        "[@range 0, 127] Engine load estimate")
+      @unit (value="%")
+      uint8 engine_load_percent;
+
+      @verbatim (language="comment", text=
+        "[@range 0, inf] Engine speed")
+      @unit (value="rpm")
+      uint32 engine_speed_rpm;
+
+      @verbatim (language="comment", text=
+        "[@range 0, inf] Spark dwell time")
+      @unit (value="ms")
+      float spark_dwell_time_ms;
+
+      @verbatim (language="comment", text=
+        "[@range 0, inf] Atmospheric (barometric) pressure")
+      @unit (value="kPa")
+      float atmospheric_pressure_kpa;
+
+      @verbatim (language="comment", text=
+        "[@range 0, inf] Engine intake manifold pressure")
+      @unit (value="kPa")
+      float intake_manifold_pressure_kpa;
+
+      @verbatim (language="comment", text=
+        "[@range 0, inf] Engine intake manifold temperature")
+      @unit (value="K")
+      float intake_manifold_temperature;
+
+      @verbatim (language="comment", text=
+        "[@range 0, inf] Engine coolant temperature")
+      @unit (value="K")
+      float coolant_temperature;
+
+      @verbatim (language="comment", text=
+        "[@range 0, inf] Oil pressure")
+      @unit (value="kPa")
+      float oil_pressure;
+
+      @verbatim (language="comment", text=
+        "[@range 0, inf] Oil temperature")
+      @unit (value="K")
+      float oil_temperature;
+
+      @verbatim (language="comment", text=
+        "[@range 0, inf] Fuel pressure")
+      @unit (value="kPa")
+      float fuel_pressure;
+
+      @verbatim (language="comment", text=
+        "[@range 0, inf] Instant fuel consumption estimate")
+      @unit (value="cm^3/min")
+      float fuel_consumption_rate_cm3pm;
+
+      @verbatim (language="comment", text=
+        "[@range 0, inf] Estimate of the consumed fuel since the start of the engine")
+      @unit (value="cm^3")
+      float estimated_consumed_fuel_volume_cm3;
+
+      @verbatim (language="comment", text=
+        "[@range 0, 100] Throttle position")
+      @unit (value="%")
+      uint8 throttle_position_percent;
+
+      @verbatim (language="comment", text=
+        "[@range 0, 255] The index of the publishing ECU")
+      @unit (value="-")
+      uint8 ecu_index;
+
+      @verbatim (language="comment", text=
+        "Spark plug activity report")
+      @unit (value="@enum SPARK_PLUG")
+      uint8 spark_plug_usage;
+
+      @verbatim (language="comment", text=
+        "[@range -inf, inf] Cylinder ignition timing, angular degrees of the crankshaft")
+      @unit (value="deg")
+      float ignition_timing_deg;
+
+      @verbatim (language="comment", text=
+        "[@range 0, inf] Fuel injection time")
+      @unit (value="ms")
+      float injection_time_ms;
+
+      @verbatim (language="comment", text=
+        "[@range 0, inf] Cylinder head temperature (CHT)")
+      @unit (value="K")
+      float cylinder_head_temperature;
+
+      @verbatim (language="comment", text=
+        "[@range 0, inf] Exhaust gas temperature (EGT)")
+      @unit (value="K")
+      float exhaust_gas_temperature;
+
+      @verbatim (language="comment", text=
+        "[@range 0, inf] Estimated lambda coefficient, dimensionless ratio")
+      @unit (value="-")
+      float lambda_coefficient;
+
+      @verbatim (language="comment", text=
+        "[@range -1, 1] Integral of the PID for the closed loop idle RPM controller")
+      @unit (value="-")
+      float pid_idle_rpm_integral;
+    };
+  };
+};

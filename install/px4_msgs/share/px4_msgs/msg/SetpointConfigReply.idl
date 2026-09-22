@@ -1,0 +1,50 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from px4_msgs/msg/SetpointConfigReply.msg
+// generated code does not contain a copyright notice
+
+
+module px4_msgs {
+  module msg {
+    module SetpointConfigReply_Constants {
+      const uint32 MESSAGE_VERSION = 0;
+      const uint8 RESULT_SUCCESS = 0;
+      const uint8 RESULT_FAILURE_OTHER = 1;
+      @verbatim (language="comment", text=
+        "Setpoint type is unsupported for the current vehicle")
+      const uint8 RESULT_UNSUPPORTED = 2;
+      @verbatim (language="comment", text=
+        "The setpoint type is not known")
+      const uint8 RESULT_UNKNOWN_SETPOINT_TYPE = 3;
+    };
+    @verbatim (language="comment", text=
+      "Reply to SetpointConfig")
+    struct SetpointConfigReply {
+      @verbatim (language="comment", text=
+        "Time since system start")
+      @unit (value="us")
+      uint64 timestamp;
+
+      @verbatim (language="comment", text=
+        "See SetpointConfig::TYPE_*")
+      uint16 type;
+
+      @verbatim (language="comment", text=
+        "nav_state of the mode that sent the SetpointConfig")
+      uint8 source_id;
+
+      @unit (value="@enum RESULT")
+      uint8 result;
+
+      @verbatim (language="comment", text=
+        "Mode requirements for using the given setpoint type. A mode will use these and apply them to the arming check reply (PX4 does not do that itself)." "\n"
+        "Certain setpoint types can be used in a reduced way, for example a TrajectorySetpoint without position control. In that case PX4 still sets all requirement flags, and the mode will then ignore mode_req_local_position.")
+      boolean mode_req_angular_velocity;
+
+      boolean mode_req_attitude;
+
+      boolean mode_req_local_alt;
+
+      boolean mode_req_local_position;
+    };
+  };
+};

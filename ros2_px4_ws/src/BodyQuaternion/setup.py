@@ -25,6 +25,8 @@ setup(
     entry_points={
         'console_scripts': [
             'Attitude = BodyQuaternion.Attitude:main',
+            'Test = BodyQuaternion.Test:main',
+            'Working = BodyQuaternion.Attitude_working:main',
         ],
     },
 )

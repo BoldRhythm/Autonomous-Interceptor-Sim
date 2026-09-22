@@ -1,0 +1,22 @@
+[2.089s] Invoking command in '/home/gp/Projects/interceptor-sim/ros2_px4_ws/src/interceptor_vision': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/interceptor_vision/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/interceptor_vision build --build-base /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/interceptor_vision/build install --record /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/interceptor_vision/install.log --install-scripts $base/lib/interceptor_vision --single-version-externally-managed install_data
+[2.401s] running egg_info
+[2.426s] writing ../../build/interceptor_vision/interceptor_vision.egg-info/PKG-INFO
+[2.427s] writing dependency_links to ../../build/interceptor_vision/interceptor_vision.egg-info/dependency_links.txt
+[2.427s] writing entry points to ../../build/interceptor_vision/interceptor_vision.egg-info/entry_points.txt
+[2.427s] writing requirements to ../../build/interceptor_vision/interceptor_vision.egg-info/requires.txt
+[2.428s] writing top-level names to ../../build/interceptor_vision/interceptor_vision.egg-info/top_level.txt
+[2.478s] reading manifest file '../../build/interceptor_vision/interceptor_vision.egg-info/SOURCES.txt'
+[2.481s] writing manifest file '../../build/interceptor_vision/interceptor_vision.egg-info/SOURCES.txt'
+[2.481s] running build
+[2.481s] running build_py
+[2.481s] running install
+[2.489s] running install_lib
+[2.516s] running install_data
+[2.516s] running install_egg_info
+[2.545s] removing '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision/lib/python3.12/site-packages/interceptor_vision-0.0.0-py3.12.egg-info' (and everything under it)
+[2.545s] Copying ../../build/interceptor_vision/interceptor_vision.egg-info to /home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision/lib/python3.12/site-packages/interceptor_vision-0.0.0-py3.12.egg-info
+[2.546s] running install_scripts
+[2.721s] Installing YOLO_node script to /home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision/lib/interceptor_vision
+[2.722s] Installing vision_node script to /home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision/lib/interceptor_vision
+[2.722s] writing list of installed files to '/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/interceptor_vision/install.log'
+[2.836s] Invoked command in '/home/gp/Projects/interceptor-sim/ros2_px4_ws/src/interceptor_vision' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/interceptor_vision/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/interceptor_vision build --build-base /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/interceptor_vision/build install --record /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/interceptor_vision/install.log --install-scripts $base/lib/interceptor_vision --single-version-externally-managed install_data

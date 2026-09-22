@@ -1,0 +1,8 @@
+source;share/px4_gz_markers/hook/cmake_prefix_path.ps1
+source;share/px4_gz_markers/hook/cmake_prefix_path.dsv
+source;share/px4_gz_markers/hook/cmake_prefix_path.sh
+source;share/px4_gz_markers/local_setup.bash
+source;share/px4_gz_markers/local_setup.dsv
+source;share/px4_gz_markers/local_setup.ps1
+source;share/px4_gz_markers/local_setup.sh
+source;share/px4_gz_markers/local_setup.zsh

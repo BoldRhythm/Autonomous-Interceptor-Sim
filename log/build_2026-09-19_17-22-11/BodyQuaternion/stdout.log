@@ -1,0 +1,35 @@
+running egg_info
+creating ../../../build/BodyQuaternion/BodyQuaternion.egg-info
+writing ../../../build/BodyQuaternion/BodyQuaternion.egg-info/PKG-INFO
+writing dependency_links to ../../../build/BodyQuaternion/BodyQuaternion.egg-info/dependency_links.txt
+writing entry points to ../../../build/BodyQuaternion/BodyQuaternion.egg-info/entry_points.txt
+writing requirements to ../../../build/BodyQuaternion/BodyQuaternion.egg-info/requires.txt
+writing top-level names to ../../../build/BodyQuaternion/BodyQuaternion.egg-info/top_level.txt
+writing manifest file '../../../build/BodyQuaternion/BodyQuaternion.egg-info/SOURCES.txt'
+reading manifest file '../../../build/BodyQuaternion/BodyQuaternion.egg-info/SOURCES.txt'
+writing manifest file '../../../build/BodyQuaternion/BodyQuaternion.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/gp/Projects/interceptor-sim/build/BodyQuaternion/build
+creating /home/gp/Projects/interceptor-sim/build/BodyQuaternion/build/lib
+creating /home/gp/Projects/interceptor-sim/build/BodyQuaternion/build/lib/BodyQuaternion
+copying BodyQuaternion/__init__.py -> /home/gp/Projects/interceptor-sim/build/BodyQuaternion/build/lib/BodyQuaternion
+copying BodyQuaternion/Attitude.py -> /home/gp/Projects/interceptor-sim/build/BodyQuaternion/build/lib/BodyQuaternion
+running install
+running install_lib
+creating /home/gp/Projects/interceptor-sim/install/BodyQuaternion/lib/python3.12/site-packages/BodyQuaternion
+copying /home/gp/Projects/interceptor-sim/build/BodyQuaternion/build/lib/BodyQuaternion/__init__.py -> /home/gp/Projects/interceptor-sim/install/BodyQuaternion/lib/python3.12/site-packages/BodyQuaternion
+copying /home/gp/Projects/interceptor-sim/build/BodyQuaternion/build/lib/BodyQuaternion/Attitude.py -> /home/gp/Projects/interceptor-sim/install/BodyQuaternion/lib/python3.12/site-packages/BodyQuaternion
+byte-compiling /home/gp/Projects/interceptor-sim/install/BodyQuaternion/lib/python3.12/site-packages/BodyQuaternion/__init__.py to __init__.cpython-312.pyc
+byte-compiling /home/gp/Projects/interceptor-sim/install/BodyQuaternion/lib/python3.12/site-packages/BodyQuaternion/Attitude.py to Attitude.cpython-312.pyc
+running install_data
+creating /home/gp/Projects/interceptor-sim/install/BodyQuaternion/share/ament_index
+creating /home/gp/Projects/interceptor-sim/install/BodyQuaternion/share/ament_index/resource_index
+creating /home/gp/Projects/interceptor-sim/install/BodyQuaternion/share/ament_index/resource_index/packages
+copying resource/BodyQuaternion -> /home/gp/Projects/interceptor-sim/install/BodyQuaternion/share/ament_index/resource_index/packages
+copying package.xml -> /home/gp/Projects/interceptor-sim/install/BodyQuaternion/share/BodyQuaternion
+running install_egg_info
+Copying ../../../build/BodyQuaternion/BodyQuaternion.egg-info to /home/gp/Projects/interceptor-sim/install/BodyQuaternion/lib/python3.12/site-packages/BodyQuaternion-0.0.0-py3.12.egg-info
+running install_scripts
+Installing Attitude script to /home/gp/Projects/interceptor-sim/install/BodyQuaternion/lib/BodyQuaternion
+writing list of installed files to '/home/gp/Projects/interceptor-sim/build/BodyQuaternion/install.log'

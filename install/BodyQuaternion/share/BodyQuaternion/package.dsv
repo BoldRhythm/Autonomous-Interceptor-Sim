@@ -1,0 +1,6 @@
+source;share/BodyQuaternion/hook/pythonpath.ps1
+source;share/BodyQuaternion/hook/pythonpath.dsv
+source;share/BodyQuaternion/hook/pythonpath.sh
+source;share/BodyQuaternion/hook/ament_prefix_path.ps1
+source;share/BodyQuaternion/hook/ament_prefix_path.dsv
+source;share/BodyQuaternion/hook/ament_prefix_path.sh

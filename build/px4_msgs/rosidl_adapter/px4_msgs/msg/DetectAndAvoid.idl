@@ -1,0 +1,78 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from px4_msgs/msg/DetectAndAvoid.msg
+// generated code does not contain a copyright notice
+
+
+module px4_msgs {
+  module msg {
+    module DetectAndAvoid_Constants {
+      const uint8 DAA_CONFLICT_LVL_NONE = 0;
+      const uint8 DAA_CONFLICT_LVL_LOW = 1;
+      const uint8 DAA_CONFLICT_LVL_MEDIUM = 2;
+      const uint8 DAA_CONFLICT_LVL_HIGH = 3;
+      const uint8 DAA_CONFLICT_LVL_CRITICAL = 4;
+      @verbatim (language="comment", text=
+        "`unique_id` contains an ICAO address")
+      const uint8 UNIQUE_ID_ENCODING_ICAO = 0;
+      @verbatim (language="comment", text=
+        "`unique_id` contains an ADS-B callsign packed into a `uint64`")
+      const uint8 UNIQUE_ID_ENCODING_ADSB_CALLSIGN = 1;
+      @verbatim (language="comment", text=
+        "`unique_id` contains the reduced tail bytes of a UAS ID")
+      const uint8 UNIQUE_ID_ENCODING_UAS_ID = 2;
+      const uint8 ORB_QUEUE_LENGTH = 16;
+    };
+    @verbatim (language="comment", text=
+      "Detect-and-avoid conflict assessment for one traffic aircraft." "\n"
+      "" "\n"
+      "Detailed per-traffic output from navigator's `DetectAndAvoid` component." "\n"
+      "A sample is published when an evaluated report indicates a conflict or updates" "\n"
+      "an aircraft already tracked as a conflict. New reports assessed at NONE are omitted." "\n"
+      "" "\n"
+      "Unlike `detect_and_avoid_most_urgent`, this topic does not summarize the single" "\n"
+      "active conflict driving DAA actions or prearm checks. It reports the conflict level" "\n"
+      "and geometry for the specific traffic aircraft that was just evaluated." "\n"
+      "" "\n"
+      "Published by: `navigator` (`DetectAndAvoid`)" "\n"
+      "Used by: logging and tests")
+    struct DetectAndAvoid {
+      @verbatim (language="comment", text=
+        "Time since system start")
+      @unit (value="us")
+      uint64 timestamp;
+
+      @verbatim (language="comment", text=
+        "Encoded traffic identifier selected in priority order: ICAO address, ADS-B callsign, then reduced UAS ID tail bytes")
+      @unit (value="-")
+      uint64 unique_id;
+
+      @verbatim (language="comment", text=
+        "Namespace used to decode `unique_id`")
+      @unit (value="-")
+      uint8 unique_id_encoding;
+
+      @verbatim (language="comment", text=
+        "Conflict level calculated for this traffic aircraft")
+      @unit (value="-")
+      uint8 conflict_level;
+
+      @verbatim (language="comment", text=
+        "Current 3D point-to-point range between ownship and the traffic aircraft")
+      @unit (value="m")
+      float aircraft_dist;
+
+      @verbatim (language="comment", text=
+        "[m] [@frame NED] Horizontal separation metric. In Crosstrack mode this is the signed crosstrack distance when available, otherwise direct horizontal range")
+      float aircraft_dist_hor;
+
+      @verbatim (language="comment", text=
+        "[m] [@frame NED] Vertical separation between ownship (the current vehicle) and the traffic aircraft")
+      float aircraft_dist_vert;
+
+      @verbatim (language="comment", text=
+        "Conservative collision-time estimate from current 3D separation and the sum of ownship and traffic speed magnitudes")
+      @unit (value="s")
+      float expected_min_dist_time;
+    };
+  };
+};

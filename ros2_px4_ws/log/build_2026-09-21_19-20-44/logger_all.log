@@ -1,0 +1,439 @@
+[0.161s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.161s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=16, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x7ee35d133e90>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7ee35d133770>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7ee35d133770>>, mixin_verb=('build',))
+[0.210s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.210s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.210s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.210s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.211s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.211s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.211s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/gp/Projects/interceptor-sim/ros2_px4_ws'
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.249s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.249s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.249s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.249s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.249s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.249s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.249s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.250s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.250s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.250s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.250s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.250s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.250s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.250s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.251s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.251s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.251s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.251s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.251s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.251s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.251s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.252s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.252s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.252s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.252s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.252s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.252s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.253s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.253s] Level 1:colcon.colcon_core.package_identification:_identify(src/BodyQuaternion) by extensions ['ignore', 'ignore_ament_install']
+[0.253s] Level 1:colcon.colcon_core.package_identification:_identify(src/BodyQuaternion) by extension 'ignore'
+[0.253s] Level 1:colcon.colcon_core.package_identification:_identify(src/BodyQuaternion) by extension 'ignore_ament_install'
+[0.253s] Level 1:colcon.colcon_core.package_identification:_identify(src/BodyQuaternion) by extensions ['colcon_pkg']
+[0.253s] Level 1:colcon.colcon_core.package_identification:_identify(src/BodyQuaternion) by extension 'colcon_pkg'
+[0.253s] Level 1:colcon.colcon_core.package_identification:_identify(src/BodyQuaternion) by extensions ['colcon_meta']
+[0.253s] Level 1:colcon.colcon_core.package_identification:_identify(src/BodyQuaternion) by extension 'colcon_meta'
+[0.253s] Level 1:colcon.colcon_core.package_identification:_identify(src/BodyQuaternion) by extensions ['ros']
+[0.253s] Level 1:colcon.colcon_core.package_identification:_identify(src/BodyQuaternion) by extension 'ros'
+[0.256s] DEBUG:colcon.colcon_core.package_identification:Package 'src/BodyQuaternion' with type 'ros.ament_python' and name 'BodyQuaternion'
+[0.256s] Level 1:colcon.colcon_core.package_identification:_identify(src/interceptor_bringup) by extensions ['ignore', 'ignore_ament_install']
+[0.257s] Level 1:colcon.colcon_core.package_identification:_identify(src/interceptor_bringup) by extension 'ignore'
+[0.257s] Level 1:colcon.colcon_core.package_identification:_identify(src/interceptor_bringup) by extension 'ignore_ament_install'
+[0.257s] Level 1:colcon.colcon_core.package_identification:_identify(src/interceptor_bringup) by extensions ['colcon_pkg']
+[0.257s] Level 1:colcon.colcon_core.package_identification:_identify(src/interceptor_bringup) by extension 'colcon_pkg'
+[0.257s] Level 1:colcon.colcon_core.package_identification:_identify(src/interceptor_bringup) by extensions ['colcon_meta']
+[0.257s] Level 1:colcon.colcon_core.package_identification:_identify(src/interceptor_bringup) by extension 'colcon_meta'
+[0.257s] Level 1:colcon.colcon_core.package_identification:_identify(src/interceptor_bringup) by extensions ['ros']
+[0.257s] Level 1:colcon.colcon_core.package_identification:_identify(src/interceptor_bringup) by extension 'ros'
+[0.257s] DEBUG:colcon.colcon_core.package_identification:Package 'src/interceptor_bringup' with type 'ros.ament_python' and name 'interceptor_bringup'
+[0.257s] Level 1:colcon.colcon_core.package_identification:_identify(src/interceptor_vision) by extensions ['ignore', 'ignore_ament_install']
+[0.258s] Level 1:colcon.colcon_core.package_identification:_identify(src/interceptor_vision) by extension 'ignore'
+[0.258s] Level 1:colcon.colcon_core.package_identification:_identify(src/interceptor_vision) by extension 'ignore_ament_install'
+[0.258s] Level 1:colcon.colcon_core.package_identification:_identify(src/interceptor_vision) by extensions ['colcon_pkg']
+[0.258s] Level 1:colcon.colcon_core.package_identification:_identify(src/interceptor_vision) by extension 'colcon_pkg'
+[0.258s] Level 1:colcon.colcon_core.package_identification:_identify(src/interceptor_vision) by extensions ['colcon_meta']
+[0.258s] Level 1:colcon.colcon_core.package_identification:_identify(src/interceptor_vision) by extension 'colcon_meta'
+[0.258s] Level 1:colcon.colcon_core.package_identification:_identify(src/interceptor_vision) by extensions ['ros']
+[0.258s] Level 1:colcon.colcon_core.package_identification:_identify(src/interceptor_vision) by extension 'ros'
+[0.259s] DEBUG:colcon.colcon_core.package_identification:Package 'src/interceptor_vision' with type 'ros.ament_python' and name 'interceptor_vision'
+[0.259s] Level 1:colcon.colcon_core.package_identification:_identify(src/launch) by extensions ['ignore', 'ignore_ament_install']
+[0.259s] Level 1:colcon.colcon_core.package_identification:_identify(src/launch) by extension 'ignore'
+[0.259s] Level 1:colcon.colcon_core.package_identification:_identify(src/launch) by extension 'ignore_ament_install'
+[0.259s] Level 1:colcon.colcon_core.package_identification:_identify(src/launch) by extensions ['colcon_pkg']
+[0.259s] Level 1:colcon.colcon_core.package_identification:_identify(src/launch) by extension 'colcon_pkg'
+[0.259s] Level 1:colcon.colcon_core.package_identification:_identify(src/launch) by extensions ['colcon_meta']
+[0.260s] Level 1:colcon.colcon_core.package_identification:_identify(src/launch) by extension 'colcon_meta'
+[0.260s] Level 1:colcon.colcon_core.package_identification:_identify(src/launch) by extensions ['ros']
+[0.260s] Level 1:colcon.colcon_core.package_identification:_identify(src/launch) by extension 'ros'
+[0.260s] Level 1:colcon.colcon_core.package_identification:_identify(src/launch) by extensions ['cmake', 'python']
+[0.260s] Level 1:colcon.colcon_core.package_identification:_identify(src/launch) by extension 'cmake'
+[0.260s] Level 1:colcon.colcon_core.package_identification:_identify(src/launch) by extension 'python'
+[0.260s] Level 1:colcon.colcon_core.package_identification:_identify(src/launch) by extensions ['python_setup_py']
+[0.260s] Level 1:colcon.colcon_core.package_identification:_identify(src/launch) by extension 'python_setup_py'
+[0.260s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4_gz_markers) by extensions ['ignore', 'ignore_ament_install']
+[0.260s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4_gz_markers) by extension 'ignore'
+[0.260s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4_gz_markers) by extension 'ignore_ament_install'
+[0.260s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4_gz_markers) by extensions ['colcon_pkg']
+[0.260s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4_gz_markers) by extension 'colcon_pkg'
+[0.260s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4_gz_markers) by extensions ['colcon_meta']
+[0.260s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4_gz_markers) by extension 'colcon_meta'
+[0.260s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4_gz_markers) by extensions ['ros']
+[0.260s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4_gz_markers) by extension 'ros'
+[0.261s] DEBUG:colcon.colcon_core.package_identification:Package 'src/px4_gz_markers' with type 'ros.ament_cmake' and name 'px4_gz_markers'
+[0.261s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4_msgs) by extensions ['ignore', 'ignore_ament_install']
+[0.261s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4_msgs) by extension 'ignore'
+[0.261s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4_msgs) by extension 'ignore_ament_install'
+[0.261s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4_msgs) by extensions ['colcon_pkg']
+[0.261s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4_msgs) by extension 'colcon_pkg'
+[0.261s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4_msgs) by extensions ['colcon_meta']
+[0.261s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4_msgs) by extension 'colcon_meta'
+[0.261s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4_msgs) by extensions ['ros']
+[0.261s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4_msgs) by extension 'ros'
+[0.262s] DEBUG:colcon.colcon_core.package_identification:Package 'src/px4_msgs' with type 'ros.ament_cmake' and name 'px4_msgs'
+[0.262s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4_offboard) by extensions ['ignore', 'ignore_ament_install']
+[0.262s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4_offboard) by extension 'ignore'
+[0.262s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4_offboard) by extension 'ignore_ament_install'
+[0.262s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4_offboard) by extensions ['colcon_pkg']
+[0.262s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4_offboard) by extension 'colcon_pkg'
+[0.263s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4_offboard) by extensions ['colcon_meta']
+[0.263s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4_offboard) by extension 'colcon_meta'
+[0.263s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4_offboard) by extensions ['ros']
+[0.263s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4_offboard) by extension 'ros'
+[0.264s] DEBUG:colcon.colcon_core.package_identification:Package 'src/px4_offboard' with type 'ros.ament_python' and name 'px4_offboard'
+[0.264s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.264s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.264s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.264s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.264s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.291s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.291s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.293s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 6 installed packages in /home/gp/Projects/interceptor-sim/ros2_px4_ws/install
+[0.295s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 167 installed packages in /opt/ros/jazzy
+[0.295s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.329s] Level 5:colcon.colcon_core.verb:set package 'BodyQuaternion' build argument 'cmake_args' from command line to 'None'
+[0.329s] Level 5:colcon.colcon_core.verb:set package 'BodyQuaternion' build argument 'cmake_target' from command line to 'None'
+[0.329s] Level 5:colcon.colcon_core.verb:set package 'BodyQuaternion' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.329s] Level 5:colcon.colcon_core.verb:set package 'BodyQuaternion' build argument 'cmake_clean_cache' from command line to 'False'
+[0.329s] Level 5:colcon.colcon_core.verb:set package 'BodyQuaternion' build argument 'cmake_clean_first' from command line to 'False'
+[0.329s] Level 5:colcon.colcon_core.verb:set package 'BodyQuaternion' build argument 'cmake_force_configure' from command line to 'False'
+[0.329s] Level 5:colcon.colcon_core.verb:set package 'BodyQuaternion' build argument 'ament_cmake_args' from command line to 'None'
+[0.329s] Level 5:colcon.colcon_core.verb:set package 'BodyQuaternion' build argument 'catkin_cmake_args' from command line to 'None'
+[0.329s] Level 5:colcon.colcon_core.verb:set package 'BodyQuaternion' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.329s] DEBUG:colcon.colcon_core.verb:Building package 'BodyQuaternion' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/BodyQuaternion', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/BodyQuaternion', 'merge_install': False, 'path': '/home/gp/Projects/interceptor-sim/ros2_px4_ws/src/BodyQuaternion', 'symlink_install': False, 'test_result_base': None}
+[0.330s] Level 5:colcon.colcon_core.verb:set package 'interceptor_bringup' build argument 'cmake_args' from command line to 'None'
+[0.330s] Level 5:colcon.colcon_core.verb:set package 'interceptor_bringup' build argument 'cmake_target' from command line to 'None'
+[0.330s] Level 5:colcon.colcon_core.verb:set package 'interceptor_bringup' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.330s] Level 5:colcon.colcon_core.verb:set package 'interceptor_bringup' build argument 'cmake_clean_cache' from command line to 'False'
+[0.330s] Level 5:colcon.colcon_core.verb:set package 'interceptor_bringup' build argument 'cmake_clean_first' from command line to 'False'
+[0.330s] Level 5:colcon.colcon_core.verb:set package 'interceptor_bringup' build argument 'cmake_force_configure' from command line to 'False'
+[0.330s] Level 5:colcon.colcon_core.verb:set package 'interceptor_bringup' build argument 'ament_cmake_args' from command line to 'None'
+[0.330s] Level 5:colcon.colcon_core.verb:set package 'interceptor_bringup' build argument 'catkin_cmake_args' from command line to 'None'
+[0.330s] Level 5:colcon.colcon_core.verb:set package 'interceptor_bringup' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.330s] DEBUG:colcon.colcon_core.verb:Building package 'interceptor_bringup' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/interceptor_bringup', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_bringup', 'merge_install': False, 'path': '/home/gp/Projects/interceptor-sim/ros2_px4_ws/src/interceptor_bringup', 'symlink_install': False, 'test_result_base': None}
+[0.330s] Level 5:colcon.colcon_core.verb:set package 'interceptor_vision' build argument 'cmake_args' from command line to 'None'
+[0.330s] Level 5:colcon.colcon_core.verb:set package 'interceptor_vision' build argument 'cmake_target' from command line to 'None'
+[0.330s] Level 5:colcon.colcon_core.verb:set package 'interceptor_vision' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.330s] Level 5:colcon.colcon_core.verb:set package 'interceptor_vision' build argument 'cmake_clean_cache' from command line to 'False'
+[0.330s] Level 5:colcon.colcon_core.verb:set package 'interceptor_vision' build argument 'cmake_clean_first' from command line to 'False'
+[0.330s] Level 5:colcon.colcon_core.verb:set package 'interceptor_vision' build argument 'cmake_force_configure' from command line to 'False'
+[0.331s] Level 5:colcon.colcon_core.verb:set package 'interceptor_vision' build argument 'ament_cmake_args' from command line to 'None'
+[0.331s] Level 5:colcon.colcon_core.verb:set package 'interceptor_vision' build argument 'catkin_cmake_args' from command line to 'None'
+[0.331s] Level 5:colcon.colcon_core.verb:set package 'interceptor_vision' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.331s] DEBUG:colcon.colcon_core.verb:Building package 'interceptor_vision' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/interceptor_vision', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision', 'merge_install': False, 'path': '/home/gp/Projects/interceptor-sim/ros2_px4_ws/src/interceptor_vision', 'symlink_install': False, 'test_result_base': None}
+[0.331s] Level 5:colcon.colcon_core.verb:set package 'px4_msgs' build argument 'cmake_args' from command line to 'None'
+[0.331s] Level 5:colcon.colcon_core.verb:set package 'px4_msgs' build argument 'cmake_target' from command line to 'None'
+[0.331s] Level 5:colcon.colcon_core.verb:set package 'px4_msgs' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.331s] Level 5:colcon.colcon_core.verb:set package 'px4_msgs' build argument 'cmake_clean_cache' from command line to 'False'
+[0.331s] Level 5:colcon.colcon_core.verb:set package 'px4_msgs' build argument 'cmake_clean_first' from command line to 'False'
+[0.331s] Level 5:colcon.colcon_core.verb:set package 'px4_msgs' build argument 'cmake_force_configure' from command line to 'False'
+[0.331s] Level 5:colcon.colcon_core.verb:set package 'px4_msgs' build argument 'ament_cmake_args' from command line to 'None'
+[0.331s] Level 5:colcon.colcon_core.verb:set package 'px4_msgs' build argument 'catkin_cmake_args' from command line to 'None'
+[0.331s] Level 5:colcon.colcon_core.verb:set package 'px4_msgs' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.331s] DEBUG:colcon.colcon_core.verb:Building package 'px4_msgs' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/px4_msgs', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs', 'merge_install': False, 'path': '/home/gp/Projects/interceptor-sim/ros2_px4_ws/src/px4_msgs', 'symlink_install': False, 'test_result_base': None}
+[0.332s] Level 5:colcon.colcon_core.verb:set package 'px4_offboard' build argument 'cmake_args' from command line to 'None'
+[0.332s] Level 5:colcon.colcon_core.verb:set package 'px4_offboard' build argument 'cmake_target' from command line to 'None'
+[0.332s] Level 5:colcon.colcon_core.verb:set package 'px4_offboard' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.332s] Level 5:colcon.colcon_core.verb:set package 'px4_offboard' build argument 'cmake_clean_cache' from command line to 'False'
+[0.332s] Level 5:colcon.colcon_core.verb:set package 'px4_offboard' build argument 'cmake_clean_first' from command line to 'False'
+[0.332s] Level 5:colcon.colcon_core.verb:set package 'px4_offboard' build argument 'cmake_force_configure' from command line to 'False'
+[0.332s] Level 5:colcon.colcon_core.verb:set package 'px4_offboard' build argument 'ament_cmake_args' from command line to 'None'
+[0.332s] Level 5:colcon.colcon_core.verb:set package 'px4_offboard' build argument 'catkin_cmake_args' from command line to 'None'
+[0.332s] Level 5:colcon.colcon_core.verb:set package 'px4_offboard' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.332s] DEBUG:colcon.colcon_core.verb:Building package 'px4_offboard' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/px4_offboard', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard', 'merge_install': False, 'path': '/home/gp/Projects/interceptor-sim/ros2_px4_ws/src/px4_offboard', 'symlink_install': False, 'test_result_base': None}
+[0.332s] Level 5:colcon.colcon_core.verb:set package 'px4_gz_markers' build argument 'cmake_args' from command line to 'None'
+[0.332s] Level 5:colcon.colcon_core.verb:set package 'px4_gz_markers' build argument 'cmake_target' from command line to 'None'
+[0.332s] Level 5:colcon.colcon_core.verb:set package 'px4_gz_markers' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.332s] Level 5:colcon.colcon_core.verb:set package 'px4_gz_markers' build argument 'cmake_clean_cache' from command line to 'False'
+[0.332s] Level 5:colcon.colcon_core.verb:set package 'px4_gz_markers' build argument 'cmake_clean_first' from command line to 'False'
+[0.332s] Level 5:colcon.colcon_core.verb:set package 'px4_gz_markers' build argument 'cmake_force_configure' from command line to 'False'
+[0.332s] Level 5:colcon.colcon_core.verb:set package 'px4_gz_markers' build argument 'ament_cmake_args' from command line to 'None'
+[0.332s] Level 5:colcon.colcon_core.verb:set package 'px4_gz_markers' build argument 'catkin_cmake_args' from command line to 'None'
+[0.332s] Level 5:colcon.colcon_core.verb:set package 'px4_gz_markers' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.332s] DEBUG:colcon.colcon_core.verb:Building package 'px4_gz_markers' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/px4_gz_markers', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_gz_markers', 'merge_install': False, 'path': '/home/gp/Projects/interceptor-sim/ros2_px4_ws/src/px4_gz_markers', 'symlink_install': False, 'test_result_base': None}
+[0.332s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.334s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.334s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/gp/Projects/interceptor-sim/ros2_px4_ws/src/px4_msgs' with build type 'ament_cmake'
+[0.334s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/gp/Projects/interceptor-sim/ros2_px4_ws/src/px4_msgs'
+[0.337s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.337s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.337s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.341s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/gp/Projects/interceptor-sim/ros2_px4_ws/src/BodyQuaternion' with build type 'ament_python'
+[0.341s] Level 1:colcon.colcon_core.shell:create_environment_hook('BodyQuaternion', 'ament_prefix_path')
+[0.342s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/BodyQuaternion/share/BodyQuaternion/hook/ament_prefix_path.ps1'
+[0.343s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/BodyQuaternion/share/BodyQuaternion/hook/ament_prefix_path.dsv'
+[0.343s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/BodyQuaternion/share/BodyQuaternion/hook/ament_prefix_path.sh'
+[0.344s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.344s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.346s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/gp/Projects/interceptor-sim/ros2_px4_ws/src/interceptor_bringup' with build type 'ament_python'
+[0.346s] Level 1:colcon.colcon_core.shell:create_environment_hook('interceptor_bringup', 'ament_prefix_path')
+[0.346s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_bringup/share/interceptor_bringup/hook/ament_prefix_path.ps1'
+[0.347s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_bringup/share/interceptor_bringup/hook/ament_prefix_path.dsv'
+[0.347s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_bringup/share/interceptor_bringup/hook/ament_prefix_path.sh'
+[0.347s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.347s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.351s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/gp/Projects/interceptor-sim/ros2_px4_ws/src/interceptor_vision' with build type 'ament_python'
+[0.351s] Level 1:colcon.colcon_core.shell:create_environment_hook('interceptor_vision', 'ament_prefix_path')
+[0.351s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision/share/interceptor_vision/hook/ament_prefix_path.ps1'
+[0.352s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision/share/interceptor_vision/hook/ament_prefix_path.dsv'
+[0.352s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision/share/interceptor_vision/hook/ament_prefix_path.sh'
+[0.353s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.353s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.356s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/gp/Projects/interceptor-sim/ros2_px4_ws/src/px4_offboard' with build type 'ament_python'
+[0.356s] Level 1:colcon.colcon_core.shell:create_environment_hook('px4_offboard', 'ament_prefix_path')
+[0.356s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard/share/px4_offboard/hook/ament_prefix_path.ps1'
+[0.357s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard/share/px4_offboard/hook/ament_prefix_path.dsv'
+[0.358s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard/share/px4_offboard/hook/ament_prefix_path.sh'
+[0.358s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.358s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.368s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/px4_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_bringup:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/BodyQuaternion:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/px4_msgs -- -j16 -l16
+[0.695s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/gp/Projects/interceptor-sim/ros2_px4_ws/src/BodyQuaternion'
+[0.695s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.695s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.997s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/gp/Projects/interceptor-sim/ros2_px4_ws/src/interceptor_bringup'
+[0.997s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.998s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.313s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/gp/Projects/interceptor-sim/ros2_px4_ws/src/interceptor_vision'
+[1.313s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.313s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.628s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/gp/Projects/interceptor-sim/ros2_px4_ws/src/px4_offboard'
+[1.629s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.629s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[2.474s] DEBUG:colcon.colcon_core.task.python.build:Available setuptools commands: upload_docs, build_ext, build_scripts, rotate, build, easy_install, upload, setopt, init_catalog, compile_catalog, egg_info, update_catalog, bdist_egg, alias, extract_messages, register, install_data, develop, test, bdist_wheel, editable_wheel, clean, bdist_rpm, symlink_data, install_egg_info, install_scripts, install_lib, dist_info, install_headers, bdist, bdist_dumb, install, check, build_py, saveopts, sdist, build_clib
+[2.476s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/gp/Projects/interceptor-sim/ros2_px4_ws/src/px4_offboard': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/px4_offboard/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/px4_offboard build --build-base /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/px4_offboard/build install --record /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/px4_offboard/install.log --install-scripts $base/lib/px4_offboard --single-version-externally-managed install_data
+[2.478s] DEBUG:colcon.colcon_core.task.python.build:Available setuptools commands: upload_docs, build_ext, build_scripts, rotate, build, easy_install, upload, setopt, init_catalog, compile_catalog, egg_info, update_catalog, bdist_egg, alias, extract_messages, register, install_data, develop, test, bdist_wheel, editable_wheel, clean, bdist_rpm, symlink_data, install_egg_info, install_scripts, install_lib, dist_info, install_headers, bdist, bdist_dumb, install, check, build_py, saveopts, sdist, build_clib
+[2.486s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/gp/Projects/interceptor-sim/ros2_px4_ws/src/interceptor_bringup': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/interceptor_bringup/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_bringup/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/interceptor_bringup build --build-base /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/interceptor_bringup/build install --record /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/interceptor_bringup/install.log --install-scripts $base/lib/interceptor_bringup --single-version-externally-managed install_data
+[2.513s] DEBUG:colcon.colcon_core.task.python.build:Available setuptools commands: upload_docs, build_ext, build_scripts, rotate, build, easy_install, upload, setopt, init_catalog, compile_catalog, egg_info, update_catalog, bdist_egg, alias, extract_messages, register, install_data, develop, test, bdist_wheel, editable_wheel, clean, bdist_rpm, symlink_data, install_egg_info, install_scripts, install_lib, dist_info, install_headers, bdist, bdist_dumb, install, check, build_py, saveopts, sdist, build_clib
+[2.518s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/gp/Projects/interceptor-sim/ros2_px4_ws/src/BodyQuaternion': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/BodyQuaternion/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/BodyQuaternion/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/BodyQuaternion build --build-base /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/BodyQuaternion/build install --record /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/BodyQuaternion/install.log --install-scripts $base/lib/BodyQuaternion --single-version-externally-managed install_data
+[2.524s] DEBUG:colcon.colcon_core.task.python.build:Available setuptools commands: upload_docs, build_ext, build_scripts, rotate, build, easy_install, upload, setopt, init_catalog, compile_catalog, egg_info, update_catalog, bdist_egg, alias, extract_messages, register, install_data, develop, test, bdist_wheel, editable_wheel, clean, bdist_rpm, symlink_data, install_egg_info, install_scripts, install_lib, dist_info, install_headers, bdist, bdist_dumb, install, check, build_py, saveopts, sdist, build_clib
+[2.529s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/gp/Projects/interceptor-sim/ros2_px4_ws/src/interceptor_vision': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/interceptor_vision/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/interceptor_vision build --build-base /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/interceptor_vision/build install --record /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/interceptor_vision/install.log --install-scripts $base/lib/interceptor_vision --single-version-externally-managed install_data
+[3.253s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/gp/Projects/interceptor-sim/ros2_px4_ws/src/px4_offboard' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/px4_offboard/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/px4_offboard build --build-base /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/px4_offboard/build install --record /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/px4_offboard/install.log --install-scripts $base/lib/px4_offboard --single-version-externally-managed install_data
+[3.254s] Level 1:colcon.colcon_core.environment:checking '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard' for CMake module files
+[3.255s] Level 1:colcon.colcon_core.environment:checking '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard' for CMake config files
+[3.256s] Level 1:colcon.colcon_core.environment:checking '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard/lib'
+[3.256s] Level 1:colcon.colcon_core.environment:checking '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard/bin'
+[3.256s] Level 1:colcon.colcon_core.environment:checking '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard/lib/pkgconfig/px4_offboard.pc'
+[3.256s] Level 1:colcon.colcon_core.environment:checking '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard/lib/python3.12/site-packages'
+[3.257s] Level 1:colcon.colcon_core.shell:create_environment_hook('px4_offboard', 'pythonpath')
+[3.257s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard/share/px4_offboard/hook/pythonpath.ps1'
+[3.258s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard/share/px4_offboard/hook/pythonpath.dsv'
+[3.259s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard/share/px4_offboard/hook/pythonpath.sh'
+[3.261s] Level 1:colcon.colcon_core.environment:checking '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard/bin'
+[3.261s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(px4_offboard)
+[3.261s] INFO:colcon.colcon_core.shell:Creating package script '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard/share/px4_offboard/package.ps1'
+[3.263s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard/share/px4_offboard/package.dsv'
+[3.264s] INFO:colcon.colcon_core.shell:Creating package script '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard/share/px4_offboard/package.sh'
+[3.264s] INFO:colcon.colcon_core.shell:Creating package script '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard/share/px4_offboard/package.bash'
+[3.265s] INFO:colcon.colcon_core.shell:Creating package script '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard/share/px4_offboard/package.zsh'
+[3.266s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard/share/colcon-core/packages/px4_offboard)
+[3.269s] Level 1:colcon.colcon_core.environment:checking '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_bringup' for CMake module files
+[3.270s] Level 1:colcon.colcon_core.environment:checking '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_bringup' for CMake config files
+[3.271s] Level 1:colcon.colcon_core.environment:checking '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_bringup/lib'
+[3.272s] Level 1:colcon.colcon_core.environment:checking '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_bringup/bin'
+[3.272s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/gp/Projects/interceptor-sim/ros2_px4_ws/src/interceptor_bringup' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/interceptor_bringup/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_bringup/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/interceptor_bringup build --build-base /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/interceptor_bringup/build install --record /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/interceptor_bringup/install.log --install-scripts $base/lib/interceptor_bringup --single-version-externally-managed install_data
+[3.272s] Level 1:colcon.colcon_core.environment:checking '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_bringup/lib/pkgconfig/interceptor_bringup.pc'
+[3.272s] Level 1:colcon.colcon_core.environment:checking '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_bringup/lib/python3.12/site-packages'
+[3.273s] Level 1:colcon.colcon_core.shell:create_environment_hook('interceptor_bringup', 'pythonpath')
+[3.273s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_bringup/share/interceptor_bringup/hook/pythonpath.ps1'
+[3.274s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_bringup/share/interceptor_bringup/hook/pythonpath.dsv'
+[3.274s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_bringup/share/interceptor_bringup/hook/pythonpath.sh'
+[3.275s] Level 1:colcon.colcon_core.environment:checking '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_bringup/bin'
+[3.275s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(interceptor_bringup)
+[3.276s] INFO:colcon.colcon_core.shell:Creating package script '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_bringup/share/interceptor_bringup/package.ps1'
+[3.276s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_bringup/share/interceptor_bringup/package.dsv'
+[3.277s] INFO:colcon.colcon_core.shell:Creating package script '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_bringup/share/interceptor_bringup/package.sh'
+[3.278s] INFO:colcon.colcon_core.shell:Creating package script '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_bringup/share/interceptor_bringup/package.bash'
+[3.278s] INFO:colcon.colcon_core.shell:Creating package script '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_bringup/share/interceptor_bringup/package.zsh'
+[3.278s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_bringup/share/colcon-core/packages/interceptor_bringup)
+[3.302s] Level 1:colcon.colcon_core.environment:checking '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/BodyQuaternion' for CMake module files
+[3.303s] Level 1:colcon.colcon_core.environment:checking '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/BodyQuaternion' for CMake config files
+[3.303s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/gp/Projects/interceptor-sim/ros2_px4_ws/src/BodyQuaternion' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/BodyQuaternion/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/BodyQuaternion/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/BodyQuaternion build --build-base /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/BodyQuaternion/build install --record /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/BodyQuaternion/install.log --install-scripts $base/lib/BodyQuaternion --single-version-externally-managed install_data
+[3.304s] Level 1:colcon.colcon_core.environment:checking '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/BodyQuaternion/lib'
+[3.304s] Level 1:colcon.colcon_core.environment:checking '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/BodyQuaternion/bin'
+[3.304s] Level 1:colcon.colcon_core.environment:checking '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/BodyQuaternion/lib/pkgconfig/BodyQuaternion.pc'
+[3.305s] Level 1:colcon.colcon_core.environment:checking '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/BodyQuaternion/lib/python3.12/site-packages'
+[3.305s] Level 1:colcon.colcon_core.shell:create_environment_hook('BodyQuaternion', 'pythonpath')
+[3.306s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/BodyQuaternion/share/BodyQuaternion/hook/pythonpath.ps1'
+[3.308s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/BodyQuaternion/share/BodyQuaternion/hook/pythonpath.dsv'
+[3.309s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/BodyQuaternion/share/BodyQuaternion/hook/pythonpath.sh'
+[3.310s] Level 1:colcon.colcon_core.environment:checking '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/BodyQuaternion/bin'
+[3.311s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(BodyQuaternion)
+[3.311s] INFO:colcon.colcon_core.shell:Creating package script '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/BodyQuaternion/share/BodyQuaternion/package.ps1'
+[3.312s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/BodyQuaternion/share/BodyQuaternion/package.dsv'
+[3.313s] INFO:colcon.colcon_core.shell:Creating package script '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/BodyQuaternion/share/BodyQuaternion/package.sh'
+[3.314s] INFO:colcon.colcon_core.shell:Creating package script '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/BodyQuaternion/share/BodyQuaternion/package.bash'
+[3.314s] INFO:colcon.colcon_core.shell:Creating package script '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/BodyQuaternion/share/BodyQuaternion/package.zsh'
+[3.315s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/BodyQuaternion/share/colcon-core/packages/BodyQuaternion)
+[3.336s] Level 1:colcon.colcon_core.environment:checking '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision' for CMake module files
+[3.337s] Level 1:colcon.colcon_core.environment:checking '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision' for CMake config files
+[3.338s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/gp/Projects/interceptor-sim/ros2_px4_ws/src/interceptor_vision' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/interceptor_vision/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/interceptor_vision build --build-base /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/interceptor_vision/build install --record /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/interceptor_vision/install.log --install-scripts $base/lib/interceptor_vision --single-version-externally-managed install_data
+[3.338s] Level 1:colcon.colcon_core.environment:checking '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision/lib'
+[3.339s] Level 1:colcon.colcon_core.environment:checking '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision/bin'
+[3.339s] Level 1:colcon.colcon_core.environment:checking '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision/lib/pkgconfig/interceptor_vision.pc'
+[3.339s] Level 1:colcon.colcon_core.environment:checking '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision/lib/python3.12/site-packages'
+[3.339s] Level 1:colcon.colcon_core.shell:create_environment_hook('interceptor_vision', 'pythonpath')
+[3.339s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision/share/interceptor_vision/hook/pythonpath.ps1'
+[3.340s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision/share/interceptor_vision/hook/pythonpath.dsv'
+[3.340s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision/share/interceptor_vision/hook/pythonpath.sh'
+[3.341s] Level 1:colcon.colcon_core.environment:checking '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision/bin'
+[3.341s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(interceptor_vision)
+[3.342s] INFO:colcon.colcon_core.shell:Creating package script '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision/share/interceptor_vision/package.ps1'
+[3.343s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision/share/interceptor_vision/package.dsv'
+[3.343s] INFO:colcon.colcon_core.shell:Creating package script '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision/share/interceptor_vision/package.sh'
+[3.344s] INFO:colcon.colcon_core.shell:Creating package script '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision/share/interceptor_vision/package.bash'
+[3.344s] INFO:colcon.colcon_core.shell:Creating package script '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision/share/interceptor_vision/package.zsh'
+[3.345s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision/share/colcon-core/packages/interceptor_vision)
+[4.390s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/px4_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_bringup:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/BodyQuaternion:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/px4_msgs -- -j16 -l16
+[4.410s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/px4_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_bringup:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/BodyQuaternion:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/px4_msgs
+[5.384s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(px4_msgs)
+[5.384s] Level 1:colcon.colcon_core.environment:checking '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs' for CMake module files
+[5.387s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/px4_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_bringup:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/BodyQuaternion:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/px4_msgs
+[5.387s] Level 1:colcon.colcon_core.environment:checking '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs' for CMake config files
+[5.388s] Level 1:colcon.colcon_core.shell:create_environment_hook('px4_msgs', 'cmake_prefix_path')
+[5.388s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs/share/px4_msgs/hook/cmake_prefix_path.ps1'
+[5.389s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs/share/px4_msgs/hook/cmake_prefix_path.dsv'
+[5.389s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs/share/px4_msgs/hook/cmake_prefix_path.sh'
+[5.390s] Level 1:colcon.colcon_core.environment:checking '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs/lib'
+[5.390s] Level 1:colcon.colcon_core.shell:create_environment_hook('px4_msgs', 'ld_library_path_lib')
+[5.390s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs/share/px4_msgs/hook/ld_library_path_lib.ps1'
+[5.391s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs/share/px4_msgs/hook/ld_library_path_lib.dsv'
+[5.391s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs/share/px4_msgs/hook/ld_library_path_lib.sh'
+[5.392s] Level 1:colcon.colcon_core.environment:checking '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs/bin'
+[5.393s] Level 1:colcon.colcon_core.environment:checking '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs/lib/pkgconfig/px4_msgs.pc'
+[5.393s] Level 1:colcon.colcon_core.environment:checking '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs/lib/python3.12/site-packages'
+[5.393s] Level 1:colcon.colcon_core.shell:create_environment_hook('px4_msgs', 'pythonpath')
+[5.393s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs/share/px4_msgs/hook/pythonpath.ps1'
+[5.394s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs/share/px4_msgs/hook/pythonpath.dsv'
+[5.394s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs/share/px4_msgs/hook/pythonpath.sh'
+[5.395s] Level 1:colcon.colcon_core.environment:checking '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs/bin'
+[5.395s] INFO:colcon.colcon_core.shell:Creating package script '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs/share/px4_msgs/package.ps1'
+[5.396s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs/share/px4_msgs/package.dsv'
+[5.396s] INFO:colcon.colcon_core.shell:Creating package script '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs/share/px4_msgs/package.sh'
+[5.397s] INFO:colcon.colcon_core.shell:Creating package script '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs/share/px4_msgs/package.bash'
+[5.397s] INFO:colcon.colcon_core.shell:Creating package script '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs/share/px4_msgs/package.zsh'
+[5.398s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs/share/colcon-core/packages/px4_msgs)
+[5.399s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(px4_msgs)
+[5.399s] Level 1:colcon.colcon_core.environment:checking '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs' for CMake module files
+[5.400s] Level 1:colcon.colcon_core.environment:checking '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs' for CMake config files
+[5.400s] Level 1:colcon.colcon_core.shell:create_environment_hook('px4_msgs', 'cmake_prefix_path')
+[5.400s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs/share/px4_msgs/hook/cmake_prefix_path.ps1'
+[5.400s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs/share/px4_msgs/hook/cmake_prefix_path.dsv'
+[5.401s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs/share/px4_msgs/hook/cmake_prefix_path.sh'
+[5.401s] Level 1:colcon.colcon_core.environment:checking '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs/lib'
+[5.402s] Level 1:colcon.colcon_core.shell:create_environment_hook('px4_msgs', 'ld_library_path_lib')
+[5.402s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs/share/px4_msgs/hook/ld_library_path_lib.ps1'
+[5.402s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs/share/px4_msgs/hook/ld_library_path_lib.dsv'
+[5.403s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs/share/px4_msgs/hook/ld_library_path_lib.sh'
+[5.403s] Level 1:colcon.colcon_core.environment:checking '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs/bin'
+[5.403s] Level 1:colcon.colcon_core.environment:checking '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs/lib/pkgconfig/px4_msgs.pc'
+[5.403s] Level 1:colcon.colcon_core.environment:checking '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs/lib/python3.12/site-packages'
+[5.404s] Level 1:colcon.colcon_core.shell:create_environment_hook('px4_msgs', 'pythonpath')
+[5.404s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs/share/px4_msgs/hook/pythonpath.ps1'
+[5.404s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs/share/px4_msgs/hook/pythonpath.dsv'
+[5.404s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs/share/px4_msgs/hook/pythonpath.sh'
+[5.405s] Level 1:colcon.colcon_core.environment:checking '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs/bin'
+[5.405s] INFO:colcon.colcon_core.shell:Creating package script '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs/share/px4_msgs/package.ps1'
+[5.406s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs/share/px4_msgs/package.dsv'
+[5.406s] INFO:colcon.colcon_core.shell:Creating package script '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs/share/px4_msgs/package.sh'
+[5.407s] INFO:colcon.colcon_core.shell:Creating package script '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs/share/px4_msgs/package.bash'
+[5.407s] INFO:colcon.colcon_core.shell:Creating package script '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs/share/px4_msgs/package.zsh'
+[5.408s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs/share/colcon-core/packages/px4_msgs)
+[5.408s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/gp/Projects/interceptor-sim/ros2_px4_ws/src/px4_gz_markers' with build type 'ament_cmake'
+[5.408s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/gp/Projects/interceptor-sim/ros2_px4_ws/src/px4_gz_markers'
+[5.409s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[5.409s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[5.422s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/px4_gz_markers': CMAKE_PREFIX_PATH=/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_gz_markers:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_bringup:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/BodyQuaternion:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs/lib/python3.12/site-packages:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard/lib/python3.12/site-packages:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision/lib/python3.12/site-packages:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_bringup/lib/python3.12/site-packages:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/BodyQuaternion/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages /usr/bin/cmake --build /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/px4_gz_markers -- -j16 -l16
+[5.563s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/px4_gz_markers' returned '0': CMAKE_PREFIX_PATH=/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_gz_markers:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_bringup:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/BodyQuaternion:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs/lib/python3.12/site-packages:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard/lib/python3.12/site-packages:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision/lib/python3.12/site-packages:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_bringup/lib/python3.12/site-packages:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/BodyQuaternion/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages /usr/bin/cmake --build /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/px4_gz_markers -- -j16 -l16
+[5.565s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/px4_gz_markers': CMAKE_PREFIX_PATH=/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_gz_markers:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_bringup:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/BodyQuaternion:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs/lib/python3.12/site-packages:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard/lib/python3.12/site-packages:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision/lib/python3.12/site-packages:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_bringup/lib/python3.12/site-packages:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/BodyQuaternion/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages /usr/bin/cmake --install /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/px4_gz_markers
+[5.583s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(px4_gz_markers)
+[5.583s] Level 1:colcon.colcon_core.environment:checking '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_gz_markers' for CMake module files
+[5.584s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/px4_gz_markers' returned '0': CMAKE_PREFIX_PATH=/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_gz_markers:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_bringup:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/BodyQuaternion:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs/lib/python3.12/site-packages:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard/lib/python3.12/site-packages:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision/lib/python3.12/site-packages:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_bringup/lib/python3.12/site-packages:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/BodyQuaternion/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages /usr/bin/cmake --install /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/px4_gz_markers
+[5.584s] Level 1:colcon.colcon_core.environment:checking '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_gz_markers' for CMake config files
+[5.585s] Level 1:colcon.colcon_core.shell:create_environment_hook('px4_gz_markers', 'cmake_prefix_path')
+[5.585s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_gz_markers/share/px4_gz_markers/hook/cmake_prefix_path.ps1'
+[5.586s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_gz_markers/share/px4_gz_markers/hook/cmake_prefix_path.dsv'
+[5.587s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_gz_markers/share/px4_gz_markers/hook/cmake_prefix_path.sh'
+[5.587s] Level 1:colcon.colcon_core.environment:checking '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_gz_markers/lib'
+[5.587s] Level 1:colcon.colcon_core.environment:checking '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_gz_markers/bin'
+[5.588s] Level 1:colcon.colcon_core.environment:checking '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_gz_markers/lib/pkgconfig/px4_gz_markers.pc'
+[5.588s] Level 1:colcon.colcon_core.environment:checking '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_gz_markers/lib/python3.12/site-packages'
+[5.588s] Level 1:colcon.colcon_core.environment:checking '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_gz_markers/bin'
+[5.589s] INFO:colcon.colcon_core.shell:Creating package script '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_gz_markers/share/px4_gz_markers/package.ps1'
+[5.589s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_gz_markers/share/px4_gz_markers/package.dsv'
+[5.590s] INFO:colcon.colcon_core.shell:Creating package script '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_gz_markers/share/px4_gz_markers/package.sh'
+[5.590s] INFO:colcon.colcon_core.shell:Creating package script '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_gz_markers/share/px4_gz_markers/package.bash'
+[5.590s] INFO:colcon.colcon_core.shell:Creating package script '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_gz_markers/share/px4_gz_markers/package.zsh'
+[5.591s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_gz_markers/share/colcon-core/packages/px4_gz_markers)
+[5.591s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(px4_gz_markers)
+[5.592s] Level 1:colcon.colcon_core.environment:checking '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_gz_markers' for CMake module files
+[5.592s] Level 1:colcon.colcon_core.environment:checking '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_gz_markers' for CMake config files
+[5.593s] Level 1:colcon.colcon_core.shell:create_environment_hook('px4_gz_markers', 'cmake_prefix_path')
+[5.593s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_gz_markers/share/px4_gz_markers/hook/cmake_prefix_path.ps1'
+[5.593s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_gz_markers/share/px4_gz_markers/hook/cmake_prefix_path.dsv'
+[5.594s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_gz_markers/share/px4_gz_markers/hook/cmake_prefix_path.sh'
+[5.594s] Level 1:colcon.colcon_core.environment:checking '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_gz_markers/lib'
+[5.594s] Level 1:colcon.colcon_core.environment:checking '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_gz_markers/bin'
+[5.594s] Level 1:colcon.colcon_core.environment:checking '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_gz_markers/lib/pkgconfig/px4_gz_markers.pc'
+[5.595s] Level 1:colcon.colcon_core.environment:checking '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_gz_markers/lib/python3.12/site-packages'
+[5.595s] Level 1:colcon.colcon_core.environment:checking '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_gz_markers/bin'
+[5.595s] INFO:colcon.colcon_core.shell:Creating package script '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_gz_markers/share/px4_gz_markers/package.ps1'
+[5.596s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_gz_markers/share/px4_gz_markers/package.dsv'
+[5.596s] INFO:colcon.colcon_core.shell:Creating package script '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_gz_markers/share/px4_gz_markers/package.sh'
+[5.596s] INFO:colcon.colcon_core.shell:Creating package script '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_gz_markers/share/px4_gz_markers/package.bash'
+[5.597s] INFO:colcon.colcon_core.shell:Creating package script '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_gz_markers/share/px4_gz_markers/package.zsh'
+[5.597s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_gz_markers/share/colcon-core/packages/px4_gz_markers)
+[5.597s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[5.598s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[5.598s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[5.598s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[5.606s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[5.606s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[5.606s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[5.612s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[5.613s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/local_setup.ps1'
+[5.614s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/_local_setup_util_ps1.py'
+[5.616s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/setup.ps1'
+[5.618s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/local_setup.sh'
+[5.618s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/_local_setup_util_sh.py'
+[5.619s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/setup.sh'
+[5.620s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/local_setup.bash'
+[5.621s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/setup.bash'
+[5.621s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/local_setup.zsh'
+[5.622s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/setup.zsh'

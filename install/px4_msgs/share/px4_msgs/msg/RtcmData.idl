@@ -1,0 +1,54 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from px4_msgs/msg/RtcmData.msg
+// generated code does not contain a copyright notice
+
+
+module px4_msgs {
+  module msg {
+    typedef uint8 uint8__300[300];
+    module RtcmData_Constants {
+      const uint8 ORB_QUEUE_LENGTH = 16;
+      @verbatim (language="comment", text=
+        "Sized for the fixed-base corrections case (up to four independent sources). The moving-baseline" "\n"        "topic only uses instance 0 (single publisher per vehicle).")
+      const uint8 MAX_INSTANCES = 4;
+    };
+    @verbatim (language="comment", text=
+      "RTCM3 data exchanged with GNSS receivers." "\n"
+      "" "\n"
+      "Published under two topic names that share this definition (see TOPICS below):" "\n"
+      "" "\n"
+      "rtcm_corrections - external fixed-base corrections fed into the vehicle (MAVLink" "\n"
+      "GPS_RTCM_DATA, UAVCAN RTCMStream, GPS drivers in dump mode). Multiple" "\n"
+      "sources are allowed, one uORB instance each; consumers select an instance" "\n"
+      "via their stale-link logic." "\n"
+      "" "\n"
+      "rtcm_moving_baseline - moving-base GPS output (RTCM 4072 or equivalent) intended for a rover." "\n"
+      "Single publisher per vehicle (on-board moving base, or a CANnode" "\n"
+      "forwarding MovingBaselineData); consumers only read instance 0.")
+    struct RtcmData {
+      @verbatim (language="comment", text=
+        "Time since system start")
+      @unit (value="us")
+      uint64 timestamp;
+
+      @verbatim (language="comment", text=
+        "Unique device ID of the publisher that produced this RTCM")
+      @unit (value="-")
+      uint32 device_id;
+
+      @verbatim (language="comment", text=
+        "Length of data")
+      @unit (value="-")
+      uint16 len;
+
+      @verbatim (language="comment", text=
+        "LSB: 1=fragmented")
+      @unit (value="-")
+      uint8 flags;
+
+      @verbatim (language="comment", text=
+        "Correction payload (fixed-base RTCM3 and/or SPARTN frames, or moving-baseline RTCM3)")
+      uint8__300 data;
+    };
+  };
+};
