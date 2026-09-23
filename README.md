@@ -7,7 +7,7 @@ For the current progress reagrding guidance algorithm, check https://github.com/
 
 ![Project Structure and Scope](assets/structure.png)
 
-![Proposed System Architecure](assets/flow.png)
+![Proposed System Architecure](assets/image.png)
 
 
 # Current Progress: 
