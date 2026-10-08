@@ -27,6 +27,8 @@ setup(
             'Attitude = BodyQuaternion.Attitude:main',
             'Test = BodyQuaternion.Test:main',
             'Working = BodyQuaternion.Attitude_working:main',
+            'FMCW_RADAR = BodyQuaternion.FMCW_RADAR:main',
+            'estimate_R = BodyQuaternion.estimate_R:main',
         ],
     },
 )
