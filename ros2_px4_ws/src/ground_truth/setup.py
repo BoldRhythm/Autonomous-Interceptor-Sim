@@ -25,6 +25,7 @@ setup(
     entry_points={
         'console_scripts': [
             'relativePosition = ground_truth.relative_position_node:main',
+            'interceptSuccess = ground_truth.intercept_success:main',
         ],
     },
 )

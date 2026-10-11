@@ -1,0 +1,25 @@
+[1.244s] Invoking command in '/home/gp/Projects/interceptor-sim/ros2_px4_ws/src/ground_truth': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/ground_truth/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/ground_truth/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/ground_truth build --build-base /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/ground_truth/build install --record /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/ground_truth/install.log --install-scripts $base/lib/ground_truth --single-version-externally-managed install_data
+[1.622s] running egg_info
+[1.648s] writing ../../build/ground_truth/ground_truth.egg-info/PKG-INFO
+[1.648s] writing dependency_links to ../../build/ground_truth/ground_truth.egg-info/dependency_links.txt
+[1.648s] writing entry points to ../../build/ground_truth/ground_truth.egg-info/entry_points.txt
+[1.649s] writing requirements to ../../build/ground_truth/ground_truth.egg-info/requires.txt
+[1.649s] writing top-level names to ../../build/ground_truth/ground_truth.egg-info/top_level.txt
+[1.713s] reading manifest file '../../build/ground_truth/ground_truth.egg-info/SOURCES.txt'
+[1.713s] writing manifest file '../../build/ground_truth/ground_truth.egg-info/SOURCES.txt'
+[1.713s] running build
+[1.714s] running build_py
+[1.714s] copying ground_truth/intercept_success.py -> /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/ground_truth/build/lib/ground_truth
+[1.714s] running install
+[1.723s] running install_lib
+[1.752s] copying /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/ground_truth/build/lib/ground_truth/intercept_success.py -> /home/gp/Projects/interceptor-sim/ros2_px4_ws/install/ground_truth/lib/python3.12/site-packages/ground_truth
+[1.753s] byte-compiling /home/gp/Projects/interceptor-sim/ros2_px4_ws/install/ground_truth/lib/python3.12/site-packages/ground_truth/intercept_success.py to intercept_success.cpython-312.pyc
+[1.756s] running install_data
+[1.756s] running install_egg_info
+[1.784s] removing '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/ground_truth/lib/python3.12/site-packages/ground_truth-0.0.0-py3.12.egg-info' (and everything under it)
+[1.784s] Copying ../../build/ground_truth/ground_truth.egg-info to /home/gp/Projects/interceptor-sim/ros2_px4_ws/install/ground_truth/lib/python3.12/site-packages/ground_truth-0.0.0-py3.12.egg-info
+[1.786s] running install_scripts
+[1.982s] Installing interceptSuccess script to /home/gp/Projects/interceptor-sim/ros2_px4_ws/install/ground_truth/lib/ground_truth
+[1.982s] Installing relativePosition script to /home/gp/Projects/interceptor-sim/ros2_px4_ws/install/ground_truth/lib/ground_truth
+[1.982s] writing list of installed files to '/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/ground_truth/install.log'
+[2.051s] Invoked command in '/home/gp/Projects/interceptor-sim/ros2_px4_ws/src/ground_truth' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/ground_truth/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/ground_truth/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/ground_truth build --build-base /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/ground_truth/build install --record /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/ground_truth/install.log --install-scripts $base/lib/ground_truth --single-version-externally-managed install_data

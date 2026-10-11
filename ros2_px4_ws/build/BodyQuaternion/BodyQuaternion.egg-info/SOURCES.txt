@@ -10,10 +10,10 @@ setup.py
 ../../build/BodyQuaternion/BodyQuaternion.egg-info/zip-safe
 BodyQuaternion/Attitude.py
 BodyQuaternion/Attitude_working.py
-BodyQuaternion/FMCW_RADAR.py
 BodyQuaternion/Test.py
 BodyQuaternion/__init__.py
 BodyQuaternion/estimate_R.py
+BodyQuaternion/stability_diagnostic_test.py
 resource/BodyQuaternion
 test/test_copyright.py
 test/test_flake8.py
