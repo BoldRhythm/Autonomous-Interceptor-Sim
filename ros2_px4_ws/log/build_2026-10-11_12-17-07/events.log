@@ -1,0 +1,552 @@
+[0.000000] (-) TimerEvent: {}
+[0.000796] (BodyQuaternion) JobQueued: {'identifier': 'BodyQuaternion', 'dependencies': OrderedDict()}
+[0.001266] (ground_truth) JobQueued: {'identifier': 'ground_truth', 'dependencies': OrderedDict()}
+[0.001475] (interceptor_bringup) JobQueued: {'identifier': 'interceptor_bringup', 'dependencies': OrderedDict()}
+[0.001507] (interceptor_vision) JobQueued: {'identifier': 'interceptor_vision', 'dependencies': OrderedDict()}
+[0.001810] (px4_msgs) JobQueued: {'identifier': 'px4_msgs', 'dependencies': OrderedDict()}
+[0.001855] (px4_offboard) JobQueued: {'identifier': 'px4_offboard', 'dependencies': OrderedDict()}
+[0.001868] (px4_gz_markers) JobQueued: {'identifier': 'px4_gz_markers', 'dependencies': OrderedDict({'px4_msgs': '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs'})}
+[0.001941] (px4_msgs) JobStarted: {'identifier': 'px4_msgs'}
+[0.010337] (BodyQuaternion) JobStarted: {'identifier': 'BodyQuaternion'}
+[0.019804] (ground_truth) JobStarted: {'identifier': 'ground_truth'}
+[0.028323] (interceptor_bringup) JobStarted: {'identifier': 'interceptor_bringup'}
+[0.037320] (interceptor_vision) JobStarted: {'identifier': 'interceptor_vision'}
+[0.045514] (px4_offboard) JobStarted: {'identifier': 'px4_offboard'}
+[0.053271] (px4_msgs) JobProgress: {'identifier': 'px4_msgs', 'progress': 'cmake'}
+[0.053855] (px4_msgs) JobProgress: {'identifier': 'px4_msgs', 'progress': 'build'}
+[0.054479] (px4_msgs) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/px4_msgs', '--', '-j16', '-l16'], 'cwd': '/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/px4_msgs', 'env': OrderedDict({'GZ_SIM_SYSTEM_PLUGIN_PATH': '/opt/ros/jazzy/lib', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'LANGUAGE': 'en_US', 'USER': 'gp', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SEAT': 'seat0', 'XDG_SESSION_TYPE': 'x11', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs/lib:/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/gp', 'OLDPWD': '/home/gp', 'DESKTOP_SESSION': 'xubuntu', 'ROS_PYTHON_VERSION': '3', 'XDG_SEAT_PATH': '/org/freedesktop/DisplayManager/Seat0', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'GNOME_KEYRING_CONTROL': '/run/user/1000/keyring', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'QT_QPA_PLATFORMTHEME': 'gtk2', 'COLCON_PREFIX_PATH': '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install', 'ROS_DISTRO': 'jazzy', 'GTK_IM_MODULE': 'ibus', 'LOGNAME': 'gp', 'WINDOWID': '85983326', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'CLUTTER_BACKEND': 'x11', 'TERM': 'xterm-256color', 'GTK_OVERLAY_SCROLLING': '0', 'XDG_SESSION_ID': 'c2', 'PATH': '/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/usr/local/cuda-13.3/bin:/home/gp/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/xtensa-esp-elf/bin/', 'SESSION_MANAGER': 'local/gp-System-Product-Name:@/tmp/.ICE-unix/2599,unix/gp-System-Product-Name:/tmp/.ICE-unix/2599', 'GDM_LANG': 'en_US', 'XDG_SESSION_PATH': '/org/freedesktop/DisplayManager/Session0', 'XDG_MENU_PREFIX': 'xfce-', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0.0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'XFCE', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'xubuntu', 'XAUTHORITY': '/home/gp/.Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'XDG_GREETER_DATA_DIR': '/var/lib/lightdm-data/gp', 'AMENT_PREFIX_PATH': '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_gz_markers:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_bringup:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/ground_truth:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/BodyQuaternion:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'xubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'XDG_VTNR': '7', 'PWD': '/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/px4_msgs', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-xubuntu:/etc/xdg', 'CLUTTER_IM_MODULE': 'ibus', 'XDG_DATA_DIRS': '/usr/share/xubuntu:/usr/share/xfce4:/home/gp/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share:/var/lib/snapd/desktop:/usr/share', 'PYTHONPATH': '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard/lib/python3.12/site-packages:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs/lib/python3.12/site-packages:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision/lib/python3.12/site-packages:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_bringup/lib/python3.12/site-packages:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/ground_truth/lib/python3.12/site-packages:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/BodyQuaternion/lib/python3.12/site-packages:/opt/ros/jazzy/opt/gz_sim_vendor/lib/python:/opt/ros/jazzy/opt/sdformat_vendor/lib/python:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_gz_markers:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_bringup:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/ground_truth:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/BodyQuaternion:/opt/ros/jazzy'}), 'shell': False}
+[0.099919] (-) TimerEvent: {}
+[0.200489] (-) TimerEvent: {}
+[0.302407] (-) TimerEvent: {}
+[0.402748] (-) TimerEvent: {}
+[0.504826] (-) TimerEvent: {}
+[0.605337] (-) TimerEvent: {}
+[0.705661] (-) TimerEvent: {}
+[0.805971] (-) TimerEvent: {}
+[0.907148] (-) TimerEvent: {}
+[1.007619] (-) TimerEvent: {}
+[1.109752] (-) TimerEvent: {}
+[1.210090] (-) TimerEvent: {}
+[1.310450] (-) TimerEvent: {}
+[1.318422] (px4_msgs) StdoutLine: {'line': b'[  0%] Built target px4_msgs__rs\n'}
+[1.410569] (-) TimerEvent: {}
+[1.412006] (px4_msgs) StdoutLine: {'line': b'[  0%] Built target ament_cmake_python_copy_px4_msgs\n'}
+[1.462608] (px4_msgs) StdoutLine: {'line': b'[  0%] Built target px4_msgs__rosidl_generator_type_description\n'}
+[1.510675] (-) TimerEvent: {}
+[1.611038] (-) TimerEvent: {}
+[1.712130] (-) TimerEvent: {}
+[1.770002] (px4_msgs) StdoutLine: {'line': b'running egg_info\n'}
+[1.796675] (px4_msgs) StdoutLine: {'line': b'writing px4_msgs.egg-info/PKG-INFO\n'}
+[1.796925] (px4_msgs) StdoutLine: {'line': b'writing dependency_links to px4_msgs.egg-info/dependency_links.txt\n'}
+[1.797030] (px4_msgs) StdoutLine: {'line': b'writing top-level names to px4_msgs.egg-info/top_level.txt\n'}
+[1.812338] (-) TimerEvent: {}
+[1.884978] (px4_msgs) StdoutLine: {'line': b"reading manifest file 'px4_msgs.egg-info/SOURCES.txt'\n"}
+[1.888100] (px4_msgs) StdoutLine: {'line': b"writing manifest file 'px4_msgs.egg-info/SOURCES.txt'\n"}
+[1.912433] (-) TimerEvent: {}
+[1.935981] (px4_msgs) StdoutLine: {'line': b'[  0%] Built target ament_cmake_python_build_px4_msgs_egg\n'}
+[2.012552] (-) TimerEvent: {}
+[2.038002] (px4_msgs) StdoutLine: {'line': b'[  0%] Built target px4_msgs__cpp\n'}
+[2.112695] (-) TimerEvent: {}
+[2.214683] (-) TimerEvent: {}
+[2.315028] (-) TimerEvent: {}
+[2.415693] (-) TimerEvent: {}
+[2.516519] (-) TimerEvent: {}
+[2.531908] (interceptor_vision) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/interceptor_vision', 'build', '--build-base', '/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/interceptor_vision/build', 'install', '--record', '/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/interceptor_vision/install.log', '--install-scripts', '$base/lib/interceptor_vision', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/gp/Projects/interceptor-sim/ros2_px4_ws/src/interceptor_vision', 'env': {'GZ_SIM_SYSTEM_PLUGIN_PATH': '/opt/ros/jazzy/lib', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'LANGUAGE': 'en_US', 'USER': 'gp', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SEAT': 'seat0', 'XDG_SESSION_TYPE': 'x11', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs/lib:/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/gp', 'OLDPWD': '/home/gp', 'DESKTOP_SESSION': 'xubuntu', 'ROS_PYTHON_VERSION': '3', 'XDG_SEAT_PATH': '/org/freedesktop/DisplayManager/Seat0', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'GNOME_KEYRING_CONTROL': '/run/user/1000/keyring', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'QT_QPA_PLATFORMTHEME': 'gtk2', 'COLCON_PREFIX_PATH': '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install', 'ROS_DISTRO': 'jazzy', 'GTK_IM_MODULE': 'ibus', 'LOGNAME': 'gp', 'WINDOWID': '85983326', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'CLUTTER_BACKEND': 'x11', 'TERM': 'xterm-256color', 'GTK_OVERLAY_SCROLLING': '0', 'XDG_SESSION_ID': 'c2', 'PATH': '/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/usr/local/cuda-13.3/bin:/home/gp/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/xtensa-esp-elf/bin/', 'SESSION_MANAGER': 'local/gp-System-Product-Name:@/tmp/.ICE-unix/2599,unix/gp-System-Product-Name:/tmp/.ICE-unix/2599', 'GDM_LANG': 'en_US', 'XDG_SESSION_PATH': '/org/freedesktop/DisplayManager/Session0', 'XDG_MENU_PREFIX': 'xfce-', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0.0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'XFCE', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'xubuntu', 'XAUTHORITY': '/home/gp/.Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'XDG_GREETER_DATA_DIR': '/var/lib/lightdm-data/gp', 'AMENT_PREFIX_PATH': '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_gz_markers:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_bringup:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/ground_truth:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/BodyQuaternion:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'xubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'XDG_VTNR': '7', 'PWD': '/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/interceptor_vision', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-xubuntu:/etc/xdg', 'CLUTTER_IM_MODULE': 'ibus', 'XDG_DATA_DIRS': '/usr/share/xubuntu:/usr/share/xfce4:/home/gp/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share:/var/lib/snapd/desktop:/usr/share', 'PYTHONPATH': '/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/interceptor_vision/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision/lib/python3.12/site-packages:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard/lib/python3.12/site-packages:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs/lib/python3.12/site-packages:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision/lib/python3.12/site-packages:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_bringup/lib/python3.12/site-packages:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/ground_truth/lib/python3.12/site-packages:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/BodyQuaternion/lib/python3.12/site-packages:/opt/ros/jazzy/opt/gz_sim_vendor/lib/python:/opt/ros/jazzy/opt/sdformat_vendor/lib/python:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_gz_markers:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor'}, 'shell': False}
+[2.544086] (ground_truth) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/ground_truth', 'build', '--build-base', '/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/ground_truth/build', 'install', '--record', '/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/ground_truth/install.log', '--install-scripts', '$base/lib/ground_truth', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/gp/Projects/interceptor-sim/ros2_px4_ws/src/ground_truth', 'env': {'GZ_SIM_SYSTEM_PLUGIN_PATH': '/opt/ros/jazzy/lib', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'LANGUAGE': 'en_US', 'USER': 'gp', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SEAT': 'seat0', 'XDG_SESSION_TYPE': 'x11', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs/lib:/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/gp', 'OLDPWD': '/home/gp', 'DESKTOP_SESSION': 'xubuntu', 'ROS_PYTHON_VERSION': '3', 'XDG_SEAT_PATH': '/org/freedesktop/DisplayManager/Seat0', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'GNOME_KEYRING_CONTROL': '/run/user/1000/keyring', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'QT_QPA_PLATFORMTHEME': 'gtk2', 'COLCON_PREFIX_PATH': '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install', 'ROS_DISTRO': 'jazzy', 'GTK_IM_MODULE': 'ibus', 'LOGNAME': 'gp', 'WINDOWID': '85983326', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'CLUTTER_BACKEND': 'x11', 'TERM': 'xterm-256color', 'GTK_OVERLAY_SCROLLING': '0', 'XDG_SESSION_ID': 'c2', 'PATH': '/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/usr/local/cuda-13.3/bin:/home/gp/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/xtensa-esp-elf/bin/', 'SESSION_MANAGER': 'local/gp-System-Product-Name:@/tmp/.ICE-unix/2599,unix/gp-System-Product-Name:/tmp/.ICE-unix/2599', 'GDM_LANG': 'en_US', 'XDG_SESSION_PATH': '/org/freedesktop/DisplayManager/Session0', 'XDG_MENU_PREFIX': 'xfce-', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0.0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'XFCE', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'xubuntu', 'XAUTHORITY': '/home/gp/.Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'XDG_GREETER_DATA_DIR': '/var/lib/lightdm-data/gp', 'AMENT_PREFIX_PATH': '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_gz_markers:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_bringup:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/ground_truth:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/BodyQuaternion:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'xubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'XDG_VTNR': '7', 'PWD': '/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/ground_truth', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-xubuntu:/etc/xdg', 'CLUTTER_IM_MODULE': 'ibus', 'XDG_DATA_DIRS': '/usr/share/xubuntu:/usr/share/xfce4:/home/gp/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share:/var/lib/snapd/desktop:/usr/share', 'PYTHONPATH': '/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/ground_truth/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/ground_truth/lib/python3.12/site-packages:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard/lib/python3.12/site-packages:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs/lib/python3.12/site-packages:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision/lib/python3.12/site-packages:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_bringup/lib/python3.12/site-packages:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/ground_truth/lib/python3.12/site-packages:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/BodyQuaternion/lib/python3.12/site-packages:/opt/ros/jazzy/opt/gz_sim_vendor/lib/python:/opt/ros/jazzy/opt/sdformat_vendor/lib/python:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_gz_markers:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor'}, 'shell': False}
+[2.557889] (BodyQuaternion) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/BodyQuaternion', 'build', '--build-base', '/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/BodyQuaternion/build', 'install', '--record', '/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/BodyQuaternion/install.log', '--install-scripts', '$base/lib/BodyQuaternion', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/gp/Projects/interceptor-sim/ros2_px4_ws/src/BodyQuaternion', 'env': {'GZ_SIM_SYSTEM_PLUGIN_PATH': '/opt/ros/jazzy/lib', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'LANGUAGE': 'en_US', 'USER': 'gp', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SEAT': 'seat0', 'XDG_SESSION_TYPE': 'x11', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs/lib:/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/gp', 'OLDPWD': '/home/gp', 'DESKTOP_SESSION': 'xubuntu', 'ROS_PYTHON_VERSION': '3', 'XDG_SEAT_PATH': '/org/freedesktop/DisplayManager/Seat0', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'GNOME_KEYRING_CONTROL': '/run/user/1000/keyring', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'QT_QPA_PLATFORMTHEME': 'gtk2', 'COLCON_PREFIX_PATH': '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install', 'ROS_DISTRO': 'jazzy', 'GTK_IM_MODULE': 'ibus', 'LOGNAME': 'gp', 'WINDOWID': '85983326', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'CLUTTER_BACKEND': 'x11', 'TERM': 'xterm-256color', 'GTK_OVERLAY_SCROLLING': '0', 'XDG_SESSION_ID': 'c2', 'PATH': '/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/usr/local/cuda-13.3/bin:/home/gp/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/xtensa-esp-elf/bin/', 'SESSION_MANAGER': 'local/gp-System-Product-Name:@/tmp/.ICE-unix/2599,unix/gp-System-Product-Name:/tmp/.ICE-unix/2599', 'GDM_LANG': 'en_US', 'XDG_SESSION_PATH': '/org/freedesktop/DisplayManager/Session0', 'XDG_MENU_PREFIX': 'xfce-', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0.0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'XFCE', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'xubuntu', 'XAUTHORITY': '/home/gp/.Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'XDG_GREETER_DATA_DIR': '/var/lib/lightdm-data/gp', 'AMENT_PREFIX_PATH': '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_gz_markers:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_bringup:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/ground_truth:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/BodyQuaternion:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'xubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'XDG_VTNR': '7', 'PWD': '/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/BodyQuaternion', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-xubuntu:/etc/xdg', 'CLUTTER_IM_MODULE': 'ibus', 'XDG_DATA_DIRS': '/usr/share/xubuntu:/usr/share/xfce4:/home/gp/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share:/var/lib/snapd/desktop:/usr/share', 'PYTHONPATH': '/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/BodyQuaternion/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/BodyQuaternion/lib/python3.12/site-packages:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard/lib/python3.12/site-packages:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs/lib/python3.12/site-packages:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision/lib/python3.12/site-packages:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_bringup/lib/python3.12/site-packages:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/ground_truth/lib/python3.12/site-packages:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/BodyQuaternion/lib/python3.12/site-packages:/opt/ros/jazzy/opt/gz_sim_vendor/lib/python:/opt/ros/jazzy/opt/sdformat_vendor/lib/python:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_gz_markers:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor'}, 'shell': False}
+[2.566568] (px4_offboard) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/px4_offboard', 'build', '--build-base', '/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/px4_offboard/build', 'install', '--record', '/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/px4_offboard/install.log', '--install-scripts', '$base/lib/px4_offboard', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/gp/Projects/interceptor-sim/ros2_px4_ws/src/px4_offboard', 'env': {'GZ_SIM_SYSTEM_PLUGIN_PATH': '/opt/ros/jazzy/lib', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'LANGUAGE': 'en_US', 'USER': 'gp', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SEAT': 'seat0', 'XDG_SESSION_TYPE': 'x11', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs/lib:/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/gp', 'OLDPWD': '/home/gp', 'DESKTOP_SESSION': 'xubuntu', 'ROS_PYTHON_VERSION': '3', 'XDG_SEAT_PATH': '/org/freedesktop/DisplayManager/Seat0', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'GNOME_KEYRING_CONTROL': '/run/user/1000/keyring', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'QT_QPA_PLATFORMTHEME': 'gtk2', 'COLCON_PREFIX_PATH': '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install', 'ROS_DISTRO': 'jazzy', 'GTK_IM_MODULE': 'ibus', 'LOGNAME': 'gp', 'WINDOWID': '85983326', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'CLUTTER_BACKEND': 'x11', 'TERM': 'xterm-256color', 'GTK_OVERLAY_SCROLLING': '0', 'XDG_SESSION_ID': 'c2', 'PATH': '/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/usr/local/cuda-13.3/bin:/home/gp/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/xtensa-esp-elf/bin/', 'SESSION_MANAGER': 'local/gp-System-Product-Name:@/tmp/.ICE-unix/2599,unix/gp-System-Product-Name:/tmp/.ICE-unix/2599', 'GDM_LANG': 'en_US', 'XDG_SESSION_PATH': '/org/freedesktop/DisplayManager/Session0', 'XDG_MENU_PREFIX': 'xfce-', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0.0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'XFCE', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'xubuntu', 'XAUTHORITY': '/home/gp/.Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'XDG_GREETER_DATA_DIR': '/var/lib/lightdm-data/gp', 'AMENT_PREFIX_PATH': '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_gz_markers:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_bringup:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/ground_truth:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/BodyQuaternion:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'xubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'XDG_VTNR': '7', 'PWD': '/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/px4_offboard', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-xubuntu:/etc/xdg', 'CLUTTER_IM_MODULE': 'ibus', 'XDG_DATA_DIRS': '/usr/share/xubuntu:/usr/share/xfce4:/home/gp/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share:/var/lib/snapd/desktop:/usr/share', 'PYTHONPATH': '/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/px4_offboard/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard/lib/python3.12/site-packages:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard/lib/python3.12/site-packages:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs/lib/python3.12/site-packages:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision/lib/python3.12/site-packages:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_bringup/lib/python3.12/site-packages:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/ground_truth/lib/python3.12/site-packages:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/BodyQuaternion/lib/python3.12/site-packages:/opt/ros/jazzy/opt/gz_sim_vendor/lib/python:/opt/ros/jazzy/opt/sdformat_vendor/lib/python:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_gz_markers:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor'}, 'shell': False}
+[2.570743] (interceptor_bringup) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/interceptor_bringup', 'build', '--build-base', '/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/interceptor_bringup/build', 'install', '--record', '/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/interceptor_bringup/install.log', '--install-scripts', '$base/lib/interceptor_bringup', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/gp/Projects/interceptor-sim/ros2_px4_ws/src/interceptor_bringup', 'env': {'GZ_SIM_SYSTEM_PLUGIN_PATH': '/opt/ros/jazzy/lib', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'LANGUAGE': 'en_US', 'USER': 'gp', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SEAT': 'seat0', 'XDG_SESSION_TYPE': 'x11', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs/lib:/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/gp', 'OLDPWD': '/home/gp', 'DESKTOP_SESSION': 'xubuntu', 'ROS_PYTHON_VERSION': '3', 'XDG_SEAT_PATH': '/org/freedesktop/DisplayManager/Seat0', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'GNOME_KEYRING_CONTROL': '/run/user/1000/keyring', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'QT_QPA_PLATFORMTHEME': 'gtk2', 'COLCON_PREFIX_PATH': '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install', 'ROS_DISTRO': 'jazzy', 'GTK_IM_MODULE': 'ibus', 'LOGNAME': 'gp', 'WINDOWID': '85983326', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'CLUTTER_BACKEND': 'x11', 'TERM': 'xterm-256color', 'GTK_OVERLAY_SCROLLING': '0', 'XDG_SESSION_ID': 'c2', 'PATH': '/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/usr/local/cuda-13.3/bin:/home/gp/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/xtensa-esp-elf/bin/', 'SESSION_MANAGER': 'local/gp-System-Product-Name:@/tmp/.ICE-unix/2599,unix/gp-System-Product-Name:/tmp/.ICE-unix/2599', 'GDM_LANG': 'en_US', 'XDG_SESSION_PATH': '/org/freedesktop/DisplayManager/Session0', 'XDG_MENU_PREFIX': 'xfce-', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0.0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'XFCE', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'xubuntu', 'XAUTHORITY': '/home/gp/.Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'XDG_GREETER_DATA_DIR': '/var/lib/lightdm-data/gp', 'AMENT_PREFIX_PATH': '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_gz_markers:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_bringup:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/ground_truth:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/BodyQuaternion:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'xubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'XDG_VTNR': '7', 'PWD': '/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/interceptor_bringup', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-xubuntu:/etc/xdg', 'CLUTTER_IM_MODULE': 'ibus', 'XDG_DATA_DIRS': '/usr/share/xubuntu:/usr/share/xfce4:/home/gp/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share:/var/lib/snapd/desktop:/usr/share', 'PYTHONPATH': '/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/interceptor_bringup/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_bringup/lib/python3.12/site-packages:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard/lib/python3.12/site-packages:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs/lib/python3.12/site-packages:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision/lib/python3.12/site-packages:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_bringup/lib/python3.12/site-packages:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/ground_truth/lib/python3.12/site-packages:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/BodyQuaternion/lib/python3.12/site-packages:/opt/ros/jazzy/opt/gz_sim_vendor/lib/python:/opt/ros/jazzy/opt/sdformat_vendor/lib/python:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_gz_markers:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_msgs:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor'}, 'shell': False}
+[2.616569] (-) TimerEvent: {}
+[2.717094] (-) TimerEvent: {}
+[2.818807] (-) TimerEvent: {}
+[2.903743] (interceptor_vision) StdoutLine: {'line': b'running egg_info\n'}
+[2.917671] (ground_truth) StdoutLine: {'line': b'running egg_info\n'}
+[2.919467] (-) TimerEvent: {}
+[2.931774] (interceptor_vision) StdoutLine: {'line': b'writing ../../build/interceptor_vision/interceptor_vision.egg-info/PKG-INFO\n'}
+[2.932121] (interceptor_vision) StdoutLine: {'line': b'writing dependency_links to ../../build/interceptor_vision/interceptor_vision.egg-info/dependency_links.txt\n'}
+[2.932686] (interceptor_vision) StdoutLine: {'line': b'writing entry points to ../../build/interceptor_vision/interceptor_vision.egg-info/entry_points.txt\n'}
+[2.932821] (interceptor_vision) StdoutLine: {'line': b'writing requirements to ../../build/interceptor_vision/interceptor_vision.egg-info/requires.txt\n'}
+[2.932999] (interceptor_vision) StdoutLine: {'line': b'writing top-level names to ../../build/interceptor_vision/interceptor_vision.egg-info/top_level.txt\n'}
+[2.944438] (interceptor_bringup) StdoutLine: {'line': b'running egg_info\n'}
+[2.944802] (px4_offboard) StdoutLine: {'line': b'running egg_info\n'}
+[2.946539] (ground_truth) StdoutLine: {'line': b'writing ../../build/ground_truth/ground_truth.egg-info/PKG-INFO\n'}
+[2.946992] (ground_truth) StdoutLine: {'line': b'writing dependency_links to ../../build/ground_truth/ground_truth.egg-info/dependency_links.txt\n'}
+[2.947237] (ground_truth) StdoutLine: {'line': b'writing entry points to ../../build/ground_truth/ground_truth.egg-info/entry_points.txt\n'}
+[2.947415] (ground_truth) StdoutLine: {'line': b'writing requirements to ../../build/ground_truth/ground_truth.egg-info/requires.txt\n'}
+[2.947545] (ground_truth) StdoutLine: {'line': b'writing top-level names to ../../build/ground_truth/ground_truth.egg-info/top_level.txt\n'}
+[2.952256] (BodyQuaternion) StdoutLine: {'line': b'running egg_info\n'}
+[2.969147] (px4_offboard) StdoutLine: {'line': b'writing ../../build/px4_offboard/px4_offboard.egg-info/PKG-INFO\n'}
+[2.970188] (px4_offboard) StdoutLine: {'line': b'writing dependency_links to ../../build/px4_offboard/px4_offboard.egg-info/dependency_links.txt\n'}
+[2.970438] (px4_offboard) StdoutLine: {'line': b'writing entry points to ../../build/px4_offboard/px4_offboard.egg-info/entry_points.txt\n'}
+[2.970637] (px4_offboard) StdoutLine: {'line': b'writing requirements to ../../build/px4_offboard/px4_offboard.egg-info/requires.txt\n'}
+[2.971084] (px4_offboard) StdoutLine: {'line': b'writing top-level names to ../../build/px4_offboard/px4_offboard.egg-info/top_level.txt\n'}
+[2.971643] (interceptor_bringup) StdoutLine: {'line': b'writing ../../build/interceptor_bringup/interceptor_bringup.egg-info/PKG-INFO\n'}
+[2.972051] (interceptor_bringup) StdoutLine: {'line': b'writing dependency_links to ../../build/interceptor_bringup/interceptor_bringup.egg-info/dependency_links.txt\n'}
+[2.972419] (interceptor_bringup) StdoutLine: {'line': b'writing requirements to ../../build/interceptor_bringup/interceptor_bringup.egg-info/requires.txt\n'}
+[2.972971] (interceptor_bringup) StdoutLine: {'line': b'writing top-level names to ../../build/interceptor_bringup/interceptor_bringup.egg-info/top_level.txt\n'}
+[2.978238] (BodyQuaternion) StdoutLine: {'line': b'writing ../../build/BodyQuaternion/BodyQuaternion.egg-info/PKG-INFO\n'}
+[2.978555] (BodyQuaternion) StdoutLine: {'line': b'writing dependency_links to ../../build/BodyQuaternion/BodyQuaternion.egg-info/dependency_links.txt\n'}
+[2.978896] (BodyQuaternion) StdoutLine: {'line': b'writing entry points to ../../build/BodyQuaternion/BodyQuaternion.egg-info/entry_points.txt\n'}
+[2.979077] (BodyQuaternion) StdoutLine: {'line': b'writing requirements to ../../build/BodyQuaternion/BodyQuaternion.egg-info/requires.txt\n'}
+[2.979205] (BodyQuaternion) StdoutLine: {'line': b'writing top-level names to ../../build/BodyQuaternion/BodyQuaternion.egg-info/top_level.txt\n'}
+[2.982685] (interceptor_vision) StdoutLine: {'line': b"reading manifest file '../../build/interceptor_vision/interceptor_vision.egg-info/SOURCES.txt'\n"}
+[2.983758] (interceptor_vision) StdoutLine: {'line': b"writing manifest file '../../build/interceptor_vision/interceptor_vision.egg-info/SOURCES.txt'\n"}
+[2.984000] (interceptor_vision) StdoutLine: {'line': b'running build\n'}
+[2.984135] (interceptor_vision) StdoutLine: {'line': b'running build_py\n'}
+[2.985004] (interceptor_vision) StdoutLine: {'line': b'running install\n'}
+[2.991732] (interceptor_vision) StdoutLine: {'line': b'running install_lib\n'}
+[2.996217] (ground_truth) StdoutLine: {'line': b"reading manifest file '../../build/ground_truth/ground_truth.egg-info/SOURCES.txt'\n"}
+[2.997089] (ground_truth) StdoutLine: {'line': b"writing manifest file '../../build/ground_truth/ground_truth.egg-info/SOURCES.txt'\n"}
+[2.997348] (ground_truth) StdoutLine: {'line': b'running build\n'}
+[2.997473] (ground_truth) StdoutLine: {'line': b'running build_py\n'}
+[2.997685] (ground_truth) StdoutLine: {'line': b'running install\n'}
+[3.004731] (ground_truth) StdoutLine: {'line': b'running install_lib\n'}
+[3.015773] (interceptor_vision) StdoutLine: {'line': b'running install_data\n'}
+[3.016203] (interceptor_vision) StdoutLine: {'line': b'running install_egg_info\n'}
+[3.019535] (px4_offboard) StdoutLine: {'line': b"reading manifest file '../../build/px4_offboard/px4_offboard.egg-info/SOURCES.txt'\n"}
+[3.019740] (-) TimerEvent: {}
+[3.020457] (px4_offboard) StdoutLine: {'line': b"writing manifest file '../../build/px4_offboard/px4_offboard.egg-info/SOURCES.txt'\n"}
+[3.020684] (px4_offboard) StdoutLine: {'line': b'running build\n'}
+[3.020821] (px4_offboard) StdoutLine: {'line': b'running build_py\n'}
+[3.021121] (px4_offboard) StdoutLine: {'line': b'running install\n'}
+[3.021902] (interceptor_bringup) StdoutLine: {'line': b"reading manifest file '../../build/interceptor_bringup/interceptor_bringup.egg-info/SOURCES.txt'\n"}
+[3.022104] (interceptor_bringup) StdoutLine: {'line': b"adding license file 'LICENSE'\n"}
+[3.022675] (interceptor_bringup) StdoutLine: {'line': b"writing manifest file '../../build/interceptor_bringup/interceptor_bringup.egg-info/SOURCES.txt'\n"}
+[3.022845] (interceptor_bringup) StdoutLine: {'line': b'running build\n'}
+[3.022985] (interceptor_bringup) StdoutLine: {'line': b'running build_py\n'}
+[3.023136] (interceptor_bringup) StdoutLine: {'line': b'running install\n'}
+[3.028697] (px4_offboard) StdoutLine: {'line': b'running install_lib\n'}
+[3.029689] (ground_truth) StdoutLine: {'line': b'running install_data\n'}
+[3.029989] (BodyQuaternion) StdoutLine: {'line': b"reading manifest file '../../build/BodyQuaternion/BodyQuaternion.egg-info/SOURCES.txt'\n"}
+[3.030141] (ground_truth) StdoutLine: {'line': b'running install_egg_info\n'}
+[3.030431] (interceptor_bringup) StdoutLine: {'line': b'running install_lib\n'}
+[3.030965] (BodyQuaternion) StdoutLine: {'line': b"writing manifest file '../../build/BodyQuaternion/BodyQuaternion.egg-info/SOURCES.txt'\n"}
+[3.031166] (BodyQuaternion) StdoutLine: {'line': b'running build\n'}
+[3.031317] (BodyQuaternion) StdoutLine: {'line': b'running build_py\n'}
+[3.031565] (BodyQuaternion) StdoutLine: {'line': b'copying BodyQuaternion/Test.py -> /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/BodyQuaternion/build/lib/BodyQuaternion\n'}
+[3.031931] (BodyQuaternion) StdoutLine: {'line': b'running install\n'}
+[3.039449] (BodyQuaternion) StdoutLine: {'line': b'running install_lib\n'}
+[3.041821] (interceptor_vision) StdoutLine: {'line': b"removing '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision/lib/python3.12/site-packages/interceptor_vision-0.0.0-py3.12.egg-info' (and everything under it)\n"}
+[3.042336] (interceptor_vision) StdoutLine: {'line': b'Copying ../../build/interceptor_vision/interceptor_vision.egg-info to /home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision/lib/python3.12/site-packages/interceptor_vision-0.0.0-py3.12.egg-info\n'}
+[3.043192] (interceptor_vision) StdoutLine: {'line': b'running install_scripts\n'}
+[3.055000] (px4_offboard) StdoutLine: {'line': b'running install_data\n'}
+[3.055334] (px4_offboard) StdoutLine: {'line': b'running install_egg_info\n'}
+[3.055758] (interceptor_bringup) StdoutLine: {'line': b'running install_data\n'}
+[3.056083] (interceptor_bringup) StdoutLine: {'line': b'running install_egg_info\n'}
+[3.056556] (ground_truth) StdoutLine: {'line': b"removing '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/ground_truth/lib/python3.12/site-packages/ground_truth-0.0.0-py3.12.egg-info' (and everything under it)\n"}
+[3.058781] (ground_truth) StdoutLine: {'line': b'Copying ../../build/ground_truth/ground_truth.egg-info to /home/gp/Projects/interceptor-sim/ros2_px4_ws/install/ground_truth/lib/python3.12/site-packages/ground_truth-0.0.0-py3.12.egg-info\n'}
+[3.058958] (ground_truth) StdoutLine: {'line': b'running install_scripts\n'}
+[3.065164] (BodyQuaternion) StdoutLine: {'line': b'copying /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/BodyQuaternion/build/lib/BodyQuaternion/Test.py -> /home/gp/Projects/interceptor-sim/ros2_px4_ws/install/BodyQuaternion/lib/python3.12/site-packages/BodyQuaternion\n'}
+[3.066400] (BodyQuaternion) StdoutLine: {'line': b'byte-compiling /home/gp/Projects/interceptor-sim/ros2_px4_ws/install/BodyQuaternion/lib/python3.12/site-packages/BodyQuaternion/Test.py to Test.cpython-312.pyc\n'}
+[3.070086] (BodyQuaternion) StdoutLine: {'line': b'running install_data\n'}
+[3.070387] (BodyQuaternion) StdoutLine: {'line': b'running install_egg_info\n'}
+[3.081448] (px4_offboard) StdoutLine: {'line': b"removing '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard/lib/python3.12/site-packages/px4_offboard-0.0.1-py3.12.egg-info' (and everything under it)\n"}
+[3.081937] (px4_offboard) StdoutLine: {'line': b'Copying ../../build/px4_offboard/px4_offboard.egg-info to /home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard/lib/python3.12/site-packages/px4_offboard-0.0.1-py3.12.egg-info\n'}
+[3.082861] (px4_offboard) StdoutLine: {'line': b'running install_scripts\n'}
+[3.084941] (interceptor_bringup) StdoutLine: {'line': b"removing '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_bringup/lib/python3.12/site-packages/interceptor_bringup-0.0.0-py3.12.egg-info' (and everything under it)\n"}
+[3.085315] (interceptor_bringup) StdoutLine: {'line': b'Copying ../../build/interceptor_bringup/interceptor_bringup.egg-info to /home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_bringup/lib/python3.12/site-packages/interceptor_bringup-0.0.0-py3.12.egg-info\n'}
+[3.086128] (interceptor_bringup) StdoutLine: {'line': b'running install_scripts\n'}
+[3.097374] (BodyQuaternion) StdoutLine: {'line': b"removing '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/BodyQuaternion/lib/python3.12/site-packages/BodyQuaternion-0.0.0-py3.12.egg-info' (and everything under it)\n"}
+[3.098941] (BodyQuaternion) StdoutLine: {'line': b'Copying ../../build/BodyQuaternion/BodyQuaternion.egg-info to /home/gp/Projects/interceptor-sim/ros2_px4_ws/install/BodyQuaternion/lib/python3.12/site-packages/BodyQuaternion-0.0.0-py3.12.egg-info\n'}
+[3.099288] (BodyQuaternion) StdoutLine: {'line': b'running install_scripts\n'}
+[3.119837] (-) TimerEvent: {}
+[3.203185] (interceptor_vision) StdoutLine: {'line': b'Installing YOLO_node script to /home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision/lib/interceptor_vision\n'}
+[3.203785] (interceptor_vision) StdoutLine: {'line': b'Installing vision_node script to /home/gp/Projects/interceptor-sim/ros2_px4_ws/install/interceptor_vision/lib/interceptor_vision\n'}
+[3.203922] (interceptor_vision) StdoutLine: {'line': b"writing list of installed files to '/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/interceptor_vision/install.log'\n"}
+[3.220129] (-) TimerEvent: {}
+[3.221956] (ground_truth) StdoutLine: {'line': b'Installing relativePosition script to /home/gp/Projects/interceptor-sim/ros2_px4_ws/install/ground_truth/lib/ground_truth\n'}
+[3.223000] (ground_truth) StdoutLine: {'line': b"writing list of installed files to '/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/ground_truth/install.log'\n"}
+[3.259773] (px4_offboard) StdoutLine: {'line': b'Installing main_velocity_offboard.py script to /home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard/lib/px4_offboard\n'}
+[3.260190] (px4_offboard) StdoutLine: {'line': b'Installing position_offboard_control.py script to /home/gp/Projects/interceptor-sim/ros2_px4_ws/install/px4_offboard/lib/px4_offboard\n'}
+[3.260468] (px4_offboard) StdoutLine: {'line': b"writing list of installed files to '/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/px4_offboard/install.log'\n"}
+[3.264199] (interceptor_bringup) StdoutLine: {'line': b"writing list of installed files to '/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/interceptor_bringup/install.log'\n"}
+[3.275959] (BodyQuaternion) StdoutLine: {'line': b'Installing Attitude script to /home/gp/Projects/interceptor-sim/ros2_px4_ws/install/BodyQuaternion/lib/BodyQuaternion\n'}
+[3.276362] (BodyQuaternion) StdoutLine: {'line': b'Installing FMCW_RADAR script to /home/gp/Projects/interceptor-sim/ros2_px4_ws/install/BodyQuaternion/lib/BodyQuaternion\n'}
+[3.276460] (BodyQuaternion) StdoutLine: {'line': b'Installing Test script to /home/gp/Projects/interceptor-sim/ros2_px4_ws/install/BodyQuaternion/lib/BodyQuaternion\n'}
+[3.276725] (BodyQuaternion) StdoutLine: {'line': b'Installing Working script to /home/gp/Projects/interceptor-sim/ros2_px4_ws/install/BodyQuaternion/lib/BodyQuaternion\n'}
+[3.276836] (BodyQuaternion) StdoutLine: {'line': b'Installing estimate_R script to /home/gp/Projects/interceptor-sim/ros2_px4_ws/install/BodyQuaternion/lib/BodyQuaternion\n'}
+[3.279190] (BodyQuaternion) StdoutLine: {'line': b"writing list of installed files to '/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/BodyQuaternion/install.log'\n"}
+[3.313276] (interceptor_vision) CommandEnded: {'returncode': 0}
+[3.320341] (-) TimerEvent: {}
+[3.326057] (interceptor_vision) JobEnded: {'identifier': 'interceptor_vision', 'rc': 0}
+[3.342999] (ground_truth) CommandEnded: {'returncode': 0}
+[3.351267] (ground_truth) JobEnded: {'identifier': 'ground_truth', 'rc': 0}
+[3.366815] (px4_offboard) CommandEnded: {'returncode': 0}
+[3.375179] (px4_offboard) JobEnded: {'identifier': 'px4_offboard', 'rc': 0}
+[3.377725] (interceptor_bringup) CommandEnded: {'returncode': 0}
+[3.386106] (interceptor_bringup) JobEnded: {'identifier': 'interceptor_bringup', 'rc': 0}
+[3.387498] (BodyQuaternion) CommandEnded: {'returncode': 0}
+[3.395304] (BodyQuaternion) JobEnded: {'identifier': 'BodyQuaternion', 'rc': 0}
+[3.420568] (-) TimerEvent: {}
+[3.521230] (-) TimerEvent: {}
+[3.621592] (-) TimerEvent: {}
+[3.722079] (-) TimerEvent: {}
+[3.822580] (-) TimerEvent: {}
+[3.922983] (-) TimerEvent: {}
+[4.023357] (-) TimerEvent: {}
+[4.123937] (-) TimerEvent: {}
+[4.224359] (-) TimerEvent: {}
+[4.324733] (-) TimerEvent: {}
+[4.425078] (-) TimerEvent: {}
+[4.525682] (-) TimerEvent: {}
+[4.626213] (-) TimerEvent: {}
+[4.726562] (-) TimerEvent: {}
+[4.826968] (-) TimerEvent: {}
+[4.927260] (-) TimerEvent: {}
+[5.027768] (-) TimerEvent: {}
+[5.128457] (-) TimerEvent: {}
+[5.228945] (-) TimerEvent: {}
+[5.329857] (-) TimerEvent: {}
+[5.430268] (-) TimerEvent: {}
+[5.530634] (-) TimerEvent: {}
+[5.631813] (-) TimerEvent: {}
+[5.732575] (-) TimerEvent: {}
+[5.833096] (-) TimerEvent: {}
+[5.934417] (-) TimerEvent: {}
+[6.034815] (-) TimerEvent: {}
+[6.135421] (-) TimerEvent: {}
+[6.235901] (-) TimerEvent: {}
+[6.336444] (-) TimerEvent: {}
+[6.436774] (-) TimerEvent: {}
+[6.537209] (-) TimerEvent: {}
+[6.637733] (-) TimerEvent: {}
+[6.738241] (-) TimerEvent: {}
+[6.839349] (-) TimerEvent: {}
+[6.939716] (-) TimerEvent: {}
+[7.040277] (-) TimerEvent: {}
+[7.140695] (-) TimerEvent: {}
+[7.241167] (-) TimerEvent: {}
+[7.341481] (-) TimerEvent: {}
+[7.441978] (-) TimerEvent: {}
+[7.543748] (-) TimerEvent: {}
+[7.644482] (-) TimerEvent: {}
+[7.744874] (-) TimerEvent: {}
+[7.845547] (-) TimerEvent: {}
+[7.945955] (-) TimerEvent: {}
+[8.046414] (-) TimerEvent: {}
+[8.147510] (-) TimerEvent: {}
+[8.247908] (-) TimerEvent: {}
+[8.348371] (-) TimerEvent: {}
+[8.448679] (-) TimerEvent: {}
+[8.549049] (-) TimerEvent: {}
+[8.649406] (-) TimerEvent: {}
+[8.749849] (-) TimerEvent: {}
+[8.850218] (-) TimerEvent: {}
+[8.950705] (-) TimerEvent: {}
+[9.051153] (-) TimerEvent: {}
+[9.151487] (-) TimerEvent: {}
+[9.251951] (-) TimerEvent: {}
+[9.352731] (-) TimerEvent: {}
+[9.453233] (-) TimerEvent: {}
+[9.554166] (-) TimerEvent: {}
+[9.655404] (-) TimerEvent: {}
+[9.756271] (-) TimerEvent: {}
+[9.856634] (-) TimerEvent: {}
+[9.956973] (-) TimerEvent: {}
+[10.057424] (-) TimerEvent: {}
+[10.157931] (-) TimerEvent: {}
+[10.258221] (-) TimerEvent: {}
+[10.358677] (-) TimerEvent: {}
+[10.459777] (-) TimerEvent: {}
+[10.560262] (-) TimerEvent: {}
+[10.662233] (-) TimerEvent: {}
+[10.762574] (-) TimerEvent: {}
+[10.863310] (-) TimerEvent: {}
+[10.964871] (-) TimerEvent: {}
+[11.065391] (-) TimerEvent: {}
+[11.165857] (-) TimerEvent: {}
+[11.266442] (-) TimerEvent: {}
+[11.367371] (-) TimerEvent: {}
+[11.468124] (-) TimerEvent: {}
+[11.568562] (-) TimerEvent: {}
+[11.668935] (-) TimerEvent: {}
+[11.769439] (-) TimerEvent: {}
+[11.869947] (-) TimerEvent: {}
+[11.970426] (-) TimerEvent: {}
+[12.071062] (-) TimerEvent: {}
+[12.171516] (-) TimerEvent: {}
+[12.272411] (-) TimerEvent: {}
+[12.374274] (-) TimerEvent: {}
+[12.474756] (-) TimerEvent: {}
+[12.575747] (-) TimerEvent: {}
+[12.676314] (-) TimerEvent: {}
+[12.776846] (-) TimerEvent: {}
+[12.877314] (-) TimerEvent: {}
+[12.977875] (-) TimerEvent: {}
+[13.078381] (-) TimerEvent: {}
+[13.178699] (-) TimerEvent: {}
+[13.279530] (-) TimerEvent: {}
+[13.380418] (-) TimerEvent: {}
+[13.481023] (-) TimerEvent: {}
+[13.582007] (-) TimerEvent: {}
+[13.682401] (-) TimerEvent: {}
+[13.782805] (-) TimerEvent: {}
+[13.883161] (-) TimerEvent: {}
+[13.983703] (-) TimerEvent: {}
+[14.084316] (-) TimerEvent: {}
+[14.184979] (-) TimerEvent: {}
+[14.286723] (-) TimerEvent: {}
+[14.388009] (-) TimerEvent: {}
+[14.488393] (-) TimerEvent: {}
+[14.588834] (-) TimerEvent: {}
+[14.689256] (-) TimerEvent: {}
+[14.789648] (-) TimerEvent: {}
+[14.890178] (-) TimerEvent: {}
+[14.991242] (-) TimerEvent: {}
+[15.093811] (-) TimerEvent: {}
+[15.194290] (-) TimerEvent: {}
+[15.294673] (-) TimerEvent: {}
+[15.395047] (-) TimerEvent: {}
+[15.495444] (-) TimerEvent: {}
+[15.596169] (-) TimerEvent: {}
+[15.696776] (-) TimerEvent: {}
+[15.797130] (-) TimerEvent: {}
+[15.897435] (-) TimerEvent: {}
+[15.997888] (-) TimerEvent: {}
+[16.099017] (-) TimerEvent: {}
+[16.199525] (-) TimerEvent: {}
+[16.300642] (-) TimerEvent: {}
+[16.400973] (-) TimerEvent: {}
+[16.501385] (-) TimerEvent: {}
+[16.602117] (-) TimerEvent: {}
+[16.703021] (-) TimerEvent: {}
+[16.803769] (-) TimerEvent: {}
+[16.904382] (-) TimerEvent: {}
+[17.004864] (-) TimerEvent: {}
+[17.106248] (-) TimerEvent: {}
+[17.206697] (-) TimerEvent: {}
+[17.307152] (-) TimerEvent: {}
+[17.407830] (-) TimerEvent: {}
+[17.508574] (-) TimerEvent: {}
+[17.609165] (-) TimerEvent: {}
+[17.709500] (-) TimerEvent: {}
+[17.811188] (-) TimerEvent: {}
+[17.913808] (-) TimerEvent: {}
+[18.014413] (-) TimerEvent: {}
+[18.114685] (-) TimerEvent: {}
+[18.214998] (-) TimerEvent: {}
+[18.315366] (-) TimerEvent: {}
+[18.416025] (-) TimerEvent: {}
+[18.516410] (-) TimerEvent: {}
+[18.616886] (-) TimerEvent: {}
+[18.717726] (-) TimerEvent: {}
+[18.818705] (-) TimerEvent: {}
+[18.919145] (-) TimerEvent: {}
+[19.019434] (-) TimerEvent: {}
+[19.119704] (-) TimerEvent: {}
+[19.217009] (px4_msgs) StdoutLine: {'line': b'[  0%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/action_request__description.c.o\x1b[0m\n'}
+[19.219770] (-) TimerEvent: {}
+[19.279908] (px4_msgs) StdoutLine: {'line': b'[  0%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/actuator_servos__description.c.o\x1b[0m\n'}
+[19.319973] (-) TimerEvent: {}
+[19.345470] (px4_msgs) StdoutLine: {'line': b'[  0%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/actuator_servos__functions.c.o\x1b[0m\n'}
+[19.415323] (px4_msgs) StdoutLine: {'line': b'[  0%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/actuator_servos__type_support.c.o\x1b[0m\n'}
+[19.420358] (-) TimerEvent: {}
+[19.467426] (px4_msgs) StdoutLine: {'line': b'[  0%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/actuator_servos_trim__description.c.o\x1b[0m\n'}
+[19.520412] (-) TimerEvent: {}
+[19.533234] (px4_msgs) StdoutLine: {'line': b'[  0%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/actuator_servos_trim__functions.c.o\x1b[0m\n'}
+[19.607905] (px4_msgs) StdoutLine: {'line': b'[  0%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/actuator_servos_trim__type_support.c.o\x1b[0m\n'}
+[19.620554] (-) TimerEvent: {}
+[19.658512] (px4_msgs) StdoutLine: {'line': b'[  0%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/actuator_test__description.c.o\x1b[0m\n'}
+[19.715598] (px4_msgs) StdoutLine: {'line': b'[  0%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/actuator_test__functions.c.o\x1b[0m\n'}
+[19.720642] (-) TimerEvent: {}
+[19.793885] (px4_msgs) StdoutLine: {'line': b'[  1%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/actuator_test__type_support.c.o\x1b[0m\n'}
+[19.821081] (-) TimerEvent: {}
+[19.840732] (px4_msgs) StdoutLine: {'line': b'[  1%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/adc_report__description.c.o\x1b[0m\n'}
+[19.899920] (px4_msgs) StdoutLine: {'line': b'[  1%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/adc_report__functions.c.o\x1b[0m\n'}
+[19.921172] (-) TimerEvent: {}
+[19.976658] (px4_msgs) StdoutLine: {'line': b'[  1%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/adc_report__type_support.c.o\x1b[0m\n'}
+[20.021275] (-) TimerEvent: {}
+[20.024075] (px4_msgs) StdoutLine: {'line': b'[  1%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/airspeed__description.c.o\x1b[0m\n'}
+[20.086291] (px4_msgs) StdoutLine: {'line': b'[  1%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/airspeed__functions.c.o\x1b[0m\n'}
+[20.121396] (-) TimerEvent: {}
+[20.163987] (px4_msgs) StdoutLine: {'line': b'[  1%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/airspeed__type_support.c.o\x1b[0m\n'}
+[20.215284] (px4_msgs) StdoutLine: {'line': b'[  1%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/airspeed_validated__description.c.o\x1b[0m\n'}
+[20.221531] (-) TimerEvent: {}
+[20.275229] (px4_msgs) StdoutLine: {'line': b'[  1%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/airspeed_validated__functions.c.o\x1b[0m\n'}
+[20.322056] (-) TimerEvent: {}
+[20.350148] (px4_msgs) StdoutLine: {'line': b'[  1%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/airspeed_validated__type_support.c.o\x1b[0m\n'}
+[20.399604] (px4_msgs) StdoutLine: {'line': b'[  1%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/airspeed_wind__description.c.o\x1b[0m\n'}
+[20.422203] (-) TimerEvent: {}
+[20.455893] (px4_msgs) StdoutLine: {'line': b'[  1%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/airspeed_wind__functions.c.o\x1b[0m\n'}
+[20.522350] (-) TimerEvent: {}
+[20.525523] (px4_msgs) StdoutLine: {'line': b'[  1%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/airspeed_wind__type_support.c.o\x1b[0m\n'}
+[20.576794] (px4_msgs) StdoutLine: {'line': b'[  1%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/arming_check_reply__description.c.o\x1b[0m\n'}
+[20.622491] (-) TimerEvent: {}
+[20.642223] (px4_msgs) StdoutLine: {'line': b'[  1%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/arming_check_reply__functions.c.o\x1b[0m\n'}
+[20.717777] (px4_msgs) StdoutLine: {'line': b'[  1%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/arming_check_reply__type_support.c.o\x1b[0m\n'}
+[20.722602] (-) TimerEvent: {}
+[20.772732] (px4_msgs) StdoutLine: {'line': b'[  1%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/arming_check_request__description.c.o\x1b[0m\n'}
+[20.822737] (-) TimerEvent: {}
+[20.834294] (px4_msgs) StdoutLine: {'line': b'[  1%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/arming_check_request__functions.c.o\x1b[0m\n'}
+[20.906033] (px4_msgs) StdoutLine: {'line': b'[  1%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/arming_check_request__type_support.c.o\x1b[0m\n'}
+[20.922822] (-) TimerEvent: {}
+[20.958095] (px4_msgs) StdoutLine: {'line': b'[  1%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/autotune_attitude_control_status__description.c.o\x1b[0m\n'}
+[21.019874] (px4_msgs) StdoutLine: {'line': b'[  1%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/autotune_attitude_control_status__functions.c.o\x1b[0m\n'}
+[21.022916] (-) TimerEvent: {}
+[21.091178] (px4_msgs) StdoutLine: {'line': b'[  1%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/autotune_attitude_control_status__type_support.c.o\x1b[0m\n'}
+[21.123176] (-) TimerEvent: {}
+[21.141183] (px4_msgs) StdoutLine: {'line': b'[  1%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/aux_global_position__description.c.o\x1b[0m\n'}
+[21.200266] (px4_msgs) StdoutLine: {'line': b'[  1%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/aux_global_position__functions.c.o\x1b[0m\n'}
+[21.223818] (-) TimerEvent: {}
+[21.277457] (px4_msgs) StdoutLine: {'line': b'[  1%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/aux_global_position__type_support.c.o\x1b[0m\n'}
+[21.323895] (-) TimerEvent: {}
+[21.326005] (px4_msgs) StdoutLine: {'line': b'[  1%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/battery_info__description.c.o\x1b[0m\n'}
+[21.383769] (px4_msgs) StdoutLine: {'line': b'[  2%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/battery_info__functions.c.o\x1b[0m\n'}
+[21.424005] (-) TimerEvent: {}
+[21.445483] (px4_msgs) StdoutLine: {'line': b'[  2%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/battery_info__type_support.c.o\x1b[0m\n'}
+[21.500192] (px4_msgs) StdoutLine: {'line': b'[  2%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/battery_status__description.c.o\x1b[0m\n'}
+[21.524164] (-) TimerEvent: {}
+[21.562601] (px4_msgs) StdoutLine: {'line': b'[  2%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/battery_status__functions.c.o\x1b[0m\n'}
+[21.624518] (-) TimerEvent: {}
+[21.646376] (px4_msgs) StdoutLine: {'line': b'[  2%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/battery_status__type_support.c.o\x1b[0m\n'}
+[21.690544] (px4_msgs) StdoutLine: {'line': b'[  2%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/button_event__description.c.o\x1b[0m\n'}
+[21.724590] (-) TimerEvent: {}
+[21.744255] (px4_msgs) StdoutLine: {'line': b'[  2%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/button_event__functions.c.o\x1b[0m\n'}
+[21.808600] (px4_msgs) StdoutLine: {'line': b'[  2%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/button_event__type_support.c.o\x1b[0m\n'}
+[21.824869] (-) TimerEvent: {}
+[21.860078] (px4_msgs) StdoutLine: {'line': b'[  2%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/camera_capture__description.c.o\x1b[0m\n'}
+[21.921519] (px4_msgs) StdoutLine: {'line': b'[  2%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/camera_capture__functions.c.o\x1b[0m\n'}
+[21.924943] (-) TimerEvent: {}
+[21.988386] (px4_msgs) StdoutLine: {'line': b'[  2%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/camera_capture__type_support.c.o\x1b[0m\n'}
+[22.025056] (-) TimerEvent: {}
+[22.029778] (px4_msgs) StdoutLine: {'line': b'[  2%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/camera_status__description.c.o\x1b[0m\n'}
+[22.079301] (px4_msgs) StdoutLine: {'line': b'[  2%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/camera_status__functions.c.o\x1b[0m\n'}
+[22.125175] (-) TimerEvent: {}
+[22.150487] (px4_msgs) StdoutLine: {'line': b'[  2%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/camera_status__type_support.c.o\x1b[0m\n'}
+[22.203105] (px4_msgs) StdoutLine: {'line': b'[  2%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/camera_trigger__description.c.o\x1b[0m\n'}
+[22.225308] (-) TimerEvent: {}
+[22.258717] (px4_msgs) StdoutLine: {'line': b'[  2%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/camera_trigger__functions.c.o\x1b[0m\n'}
+[22.325421] (-) TimerEvent: {}
+[22.334172] (px4_msgs) StdoutLine: {'line': b'[  2%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/camera_trigger__type_support.c.o\x1b[0m\n'}
+[22.386524] (px4_msgs) StdoutLine: {'line': b'[  2%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/can_interface_status__description.c.o\x1b[0m\n'}
+[22.425558] (-) TimerEvent: {}
+[22.444314] (px4_msgs) StdoutLine: {'line': b'[  2%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/can_interface_status__functions.c.o\x1b[0m\n'}
+[22.514316] (px4_msgs) StdoutLine: {'line': b'[  2%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/can_interface_status__type_support.c.o\x1b[0m\n'}
+[22.525738] (-) TimerEvent: {}
+[22.570407] (px4_msgs) StdoutLine: {'line': b'[  2%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/cellular_status__description.c.o\x1b[0m\n'}
+[22.625819] (-) TimerEvent: {}
+[22.632841] (px4_msgs) StdoutLine: {'line': b'[  2%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/cellular_status__functions.c.o\x1b[0m\n'}
+[22.710586] (px4_msgs) StdoutLine: {'line': b'[  2%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/cellular_status__type_support.c.o\x1b[0m\n'}
+[22.726028] (-) TimerEvent: {}
+[22.760739] (px4_msgs) StdoutLine: {'line': b'[  2%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/collision_constraints__description.c.o\x1b[0m\n'}
+[22.822615] (px4_msgs) StdoutLine: {'line': b'[  2%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/collision_constraints__functions.c.o\x1b[0m\n'}
+[22.826498] (-) TimerEvent: {}
+[22.895674] (px4_msgs) StdoutLine: {'line': b'[  2%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/collision_constraints__type_support.c.o\x1b[0m\n'}
+[22.926767] (-) TimerEvent: {}
+[22.945671] (px4_msgs) StdoutLine: {'line': b'[  2%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/config_overrides__description.c.o\x1b[0m\n'}
+[23.008571] (px4_msgs) StdoutLine: {'line': b'[  3%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/config_overrides__functions.c.o\x1b[0m\n'}
+[23.026848] (-) TimerEvent: {}
+[23.079758] (px4_msgs) StdoutLine: {'line': b'[  3%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/config_overrides__type_support.c.o\x1b[0m\n'}
+[23.127032] (-) TimerEvent: {}
+[23.128509] (px4_msgs) StdoutLine: {'line': b'[  3%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/control_allocator_status__description.c.o\x1b[0m\n'}
+[23.190959] (px4_msgs) StdoutLine: {'line': b'[  3%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/control_allocator_status__functions.c.o\x1b[0m\n'}
+[23.227189] (-) TimerEvent: {}
+[23.261623] (px4_msgs) StdoutLine: {'line': b'[  3%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/control_allocator_status__type_support.c.o\x1b[0m\n'}
+[23.312106] (px4_msgs) StdoutLine: {'line': b'[  3%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/cpuload__description.c.o\x1b[0m\n'}
+[23.327305] (-) TimerEvent: {}
+[23.359275] (px4_msgs) StdoutLine: {'line': b'[  3%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/cpuload__functions.c.o\x1b[0m\n'}
+[23.416987] (px4_msgs) StdoutLine: {'line': b'[  3%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/cpuload__type_support.c.o\x1b[0m\n'}
+[23.427422] (-) TimerEvent: {}
+[23.464661] (px4_msgs) StdoutLine: {'line': b'[  3%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/dataman_request__description.c.o\x1b[0m\n'}
+[23.519616] (px4_msgs) StdoutLine: {'line': b'[  3%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/dataman_request__functions.c.o\x1b[0m\n'}
+[23.527571] (-) TimerEvent: {}
+[23.593408] (px4_msgs) StdoutLine: {'line': b'[  3%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/dataman_request__type_support.c.o\x1b[0m\n'}
+[23.627800] (-) TimerEvent: {}
+[23.645868] (px4_msgs) StdoutLine: {'line': b'[  3%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/dataman_response__description.c.o\x1b[0m\n'}
+[23.703168] (px4_msgs) StdoutLine: {'line': b'[  3%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/dataman_response__functions.c.o\x1b[0m\n'}
+[23.729918] (-) TimerEvent: {}
+[23.780694] (px4_msgs) StdoutLine: {'line': b'[  3%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/dataman_response__type_support.c.o\x1b[0m\n'}
+[23.830024] (-) TimerEvent: {}
+[23.830761] (px4_msgs) StdoutLine: {'line': b'[  3%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/debug_array__description.c.o\x1b[0m\n'}
+[23.886304] (px4_msgs) StdoutLine: {'line': b'[  3%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/debug_array__functions.c.o\x1b[0m\n'}
+[23.930382] (-) TimerEvent: {}
+[23.951562] (px4_msgs) StdoutLine: {'line': b'[  3%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/debug_array__type_support.c.o\x1b[0m\n'}
+[23.996051] (px4_msgs) StdoutLine: {'line': b'[  3%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/debug_key_value__description.c.o\x1b[0m\n'}
+[24.030658] (-) TimerEvent: {}
+[24.048313] (px4_msgs) StdoutLine: {'line': b'[  3%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/debug_key_value__functions.c.o\x1b[0m\n'}
+[24.120565] (px4_msgs) StdoutLine: {'line': b'[  3%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/debug_key_value__type_support.c.o\x1b[0m\n'}
+[24.130736] (-) TimerEvent: {}
+[24.168063] (px4_msgs) StdoutLine: {'line': b'[  3%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/debug_value__description.c.o\x1b[0m\n'}
+[24.229238] (px4_msgs) StdoutLine: {'line': b'[  3%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/debug_value__functions.c.o\x1b[0m\n'}
+[24.230806] (-) TimerEvent: {}
+[24.300926] (px4_msgs) StdoutLine: {'line': b'[  3%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/debug_value__type_support.c.o\x1b[0m\n'}
+[24.330942] (-) TimerEvent: {}
+[24.354230] (px4_msgs) StdoutLine: {'line': b'[  3%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/debug_vect__description.c.o\x1b[0m\n'}
+[24.405682] (px4_msgs) StdoutLine: {'line': b'[  3%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/debug_vect__functions.c.o\x1b[0m\n'}
+[24.431034] (-) TimerEvent: {}
+[24.469791] (px4_msgs) StdoutLine: {'line': b'[  3%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/debug_vect__type_support.c.o\x1b[0m\n'}
+[24.510129] (px4_msgs) StdoutLine: {'line': b'[  4%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/detect_and_avoid__description.c.o\x1b[0m\n'}
+[24.531500] (-) TimerEvent: {}
+[24.567614] (px4_msgs) StdoutLine: {'line': b'[  4%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/detect_and_avoid__functions.c.o\x1b[0m\n'}
+[24.631622] (-) TimerEvent: {}
+[24.646676] (px4_msgs) StdoutLine: {'line': b'[  4%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/detect_and_avoid__type_support.c.o\x1b[0m\n'}
+[24.698464] (px4_msgs) StdoutLine: {'line': b'[  4%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/detect_and_avoid_most_urgent__description.c.o\x1b[0m\n'}
+[24.732036] (-) TimerEvent: {}
+[24.755556] (px4_msgs) StdoutLine: {'line': b'[  4%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/detect_and_avoid_most_urgent__functions.c.o\x1b[0m\n'}
+[24.827454] (px4_msgs) StdoutLine: {'line': b'[  4%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/detect_and_avoid_most_urgent__type_support.c.o\x1b[0m\n'}
+[24.831890] (-) TimerEvent: {}
+[24.876824] (px4_msgs) StdoutLine: {'line': b'[  4%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/device_information__description.c.o\x1b[0m\n'}
+[24.932124] (-) TimerEvent: {}
+[24.939168] (px4_msgs) StdoutLine: {'line': b'[  4%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/device_information__functions.c.o\x1b[0m\n'}
+[25.016188] (px4_msgs) StdoutLine: {'line': b'[  4%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/device_information__type_support.c.o\x1b[0m\n'}
+[25.032695] (-) TimerEvent: {}
+[25.067316] (px4_msgs) StdoutLine: {'line': b'[  4%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/differential_pressure__description.c.o\x1b[0m\n'}
+[25.127046] (px4_msgs) StdoutLine: {'line': b'[  4%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/differential_pressure__functions.c.o\x1b[0m\n'}
+[25.132830] (-) TimerEvent: {}
+[25.197859] (px4_msgs) StdoutLine: {'line': b'[  4%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/differential_pressure__type_support.c.o\x1b[0m\n'}
+[25.233360] (-) TimerEvent: {}
+[25.241995] (px4_msgs) StdoutLine: {'line': b'[  4%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/distance_sensor__description.c.o\x1b[0m\n'}
+[25.304776] (px4_msgs) StdoutLine: {'line': b'[  4%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/distance_sensor__functions.c.o\x1b[0m\n'}
+[25.334422] (-) TimerEvent: {}
+[25.380687] (px4_msgs) StdoutLine: {'line': b'[  4%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/distance_sensor__type_support.c.o\x1b[0m\n'}
+[25.425782] (px4_msgs) StdoutLine: {'line': b'[  4%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/distance_sensor_mode_change_request__description.c.o\x1b[0m\n'}
+[25.434472] (-) TimerEvent: {}
+[25.481351] (px4_msgs) StdoutLine: {'line': b'[  4%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/distance_sensor_mode_change_request__functions.c.o\x1b[0m\n'}
+[25.535228] (-) TimerEvent: {}
+[25.547675] (px4_msgs) StdoutLine: {'line': b'[  4%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/distance_sensor_mode_change_request__type_support.c.o\x1b[0m\n'}
+[25.588960] (px4_msgs) StdoutLine: {'line': b'[  4%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/dronecan_node_status__description.c.o\x1b[0m\n'}
+[25.635419] (-) TimerEvent: {}
+[25.638275] (px4_msgs) StdoutLine: {'line': b'[  4%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/dronecan_node_status__functions.c.o\x1b[0m\n'}
+[25.709224] (px4_msgs) StdoutLine: {'line': b'[  4%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/dronecan_node_status__type_support.c.o\x1b[0m\n'}
+[25.735714] (-) TimerEvent: {}
+[25.761763] (px4_msgs) StdoutLine: {'line': b'[  4%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/ekf2_timestamps__description.c.o\x1b[0m\n'}
+[25.820772] (px4_msgs) StdoutLine: {'line': b'[  4%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/ekf2_timestamps__functions.c.o\x1b[0m\n'}
+[25.836118] (-) TimerEvent: {}
+[25.893341] (px4_msgs) StdoutLine: {'line': b'[  4%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/ekf2_timestamps__type_support.c.o\x1b[0m\n'}
+[25.937659] (-) TimerEvent: {}
+[25.943204] (px4_msgs) StdoutLine: {'line': b'[  4%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/esc_eeprom_read__description.c.o\x1b[0m\n'}
+[26.002209] (px4_msgs) StdoutLine: {'line': b'[  4%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/esc_eeprom_read__functions.c.o\x1b[0m\n'}
+[26.037755] (-) TimerEvent: {}
+[26.077983] (px4_msgs) StdoutLine: {'line': b'[  4%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/esc_eeprom_read__type_support.c.o\x1b[0m\n'}
+[26.129054] (px4_msgs) StdoutLine: {'line': b'[  5%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/esc_eeprom_write__description.c.o\x1b[0m\n'}
+[26.137888] (-) TimerEvent: {}
+[26.192014] (px4_msgs) StdoutLine: {'line': b'[  5%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/esc_eeprom_write__functions.c.o\x1b[0m\n'}
+[26.238033] (-) TimerEvent: {}
+[26.265846] (px4_msgs) StdoutLine: {'line': b'[  5%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/esc_eeprom_write__type_support.c.o\x1b[0m\n'}
+[26.317378] (px4_msgs) StdoutLine: {'line': b'[  5%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/esc_report__description.c.o\x1b[0m\n'}
+[26.338141] (-) TimerEvent: {}
+[26.374426] (px4_msgs) StdoutLine: {'line': b'[  5%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/esc_report__functions.c.o\x1b[0m\n'}
+[26.440042] (-) TimerEvent: {}
+[26.447987] (px4_msgs) StdoutLine: {'line': b'[  5%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/esc_report__type_support.c.o\x1b[0m\n'}
+[26.498522] (px4_msgs) StdoutLine: {'line': b'[  5%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/esc_status__description.c.o\x1b[0m\n'}
+[26.540178] (-) TimerEvent: {}
+[26.572791] (px4_msgs) StdoutLine: {'line': b'[  5%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/esc_status__functions.c.o\x1b[0m\n'}
+[26.640262] (-) TimerEvent: {}
+[26.642842] (px4_msgs) StdoutLine: {'line': b'[  5%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/esc_status__type_support.c.o\x1b[0m\n'}
+[26.682569] (px4_msgs) StdoutLine: {'line': b'[  5%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_aid_source1d__description.c.o\x1b[0m\n'}
+[26.738378] (px4_msgs) StdoutLine: {'line': b'[  5%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_aid_source1d__functions.c.o\x1b[0m\n'}
+[26.740396] (-) TimerEvent: {}
+[26.812323] (px4_msgs) StdoutLine: {'line': b'[  5%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_aid_source1d__type_support.c.o\x1b[0m\n'}
+[26.840533] (-) TimerEvent: {}
+[26.861940] (px4_msgs) StdoutLine: {'line': b'[  5%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_aid_source2d__description.c.o\x1b[0m\n'}
+[26.926783] (px4_msgs) StdoutLine: {'line': b'[  5%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_aid_source2d__functions.c.o\x1b[0m\n'}
+[26.940622] (-) TimerEvent: {}
+[27.006169] (px4_msgs) StdoutLine: {'line': b'[  5%] \x1b[32mBuilding C object CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_aid_source2d__type_support.c.o\x1b[0m\n'}
+[27.040781] (-) TimerEvent: {}
+[27.058652] (px4_msgs) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/px4_msgs__rosidl_generator_c.dir/build.make:7877: CMakeFiles/px4_msgs__rosidl_generator_c.dir/rosidl_generator_c/px4_msgs/msg/detail/estimator_aid_source3d__description.c.o] Interrupt\n'}
+[27.060219] (px4_msgs) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:260: CMakeFiles/px4_msgs__rosidl_generator_c.dir/all] Interrupt\n'}
+[27.060695] (px4_msgs) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Interrupt\n'}
+[27.069698] (px4_msgs) CommandEnded: {'returncode': -2}
+[27.079595] (px4_msgs) JobEnded: {'identifier': 'px4_msgs', 'rc': 'SIGINT'}
+[27.091718] (px4_gz_markers) JobSkipped: {'identifier': 'px4_gz_markers'}
+[27.091884] (-) EventReactorShutdown: {}

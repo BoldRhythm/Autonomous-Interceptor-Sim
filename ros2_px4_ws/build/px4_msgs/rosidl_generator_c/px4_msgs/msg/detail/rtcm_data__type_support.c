@@ -4,9 +4,9 @@
 
 #include <string.h>
 
-#include "px4_msgs/msg/detail/rtcm_data__functions.h"
-#include "rosidl_typesupport_interface/macros.h"
 #include "px4_msgs/msg/detail/rtcm_data__type_support.h"
+#include "rosidl_typesupport_interface/macros.h"
+#include "px4_msgs/msg/detail/rtcm_data__functions.h"
 #include "px4_msgs/msg/detail/rtcm_data__struct.h"
 
 #ifdef __cplusplus

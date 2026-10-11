@@ -4,10 +4,10 @@
 
 #include <string.h>
 
-#include "px4_msgs/msg/detail/setpoint_config_reply__type_support.h"
-#include "rosidl_typesupport_interface/macros.h"
-#include "px4_msgs/msg/detail/setpoint_config_reply__functions.h"
 #include "px4_msgs/msg/detail/setpoint_config_reply__struct.h"
+#include "rosidl_typesupport_interface/macros.h"
+#include "px4_msgs/msg/detail/setpoint_config_reply__type_support.h"
+#include "px4_msgs/msg/detail/setpoint_config_reply__functions.h"
 
 #ifdef __cplusplus
 extern "C"

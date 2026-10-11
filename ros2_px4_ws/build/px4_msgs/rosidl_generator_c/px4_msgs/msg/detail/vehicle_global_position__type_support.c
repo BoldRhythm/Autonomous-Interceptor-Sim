@@ -5,9 +5,9 @@
 #include <string.h>
 
 #include "px4_msgs/msg/detail/vehicle_global_position__struct.h"
-#include "rosidl_typesupport_interface/macros.h"
 #include "px4_msgs/msg/detail/vehicle_global_position__type_support.h"
 #include "px4_msgs/msg/detail/vehicle_global_position__functions.h"
+#include "rosidl_typesupport_interface/macros.h"
 
 #ifdef __cplusplus
 extern "C"

@@ -5,8 +5,8 @@
 #include <string.h>
 
 #include "px4_msgs/msg/detail/gpio_config__struct.h"
-#include "rosidl_typesupport_interface/macros.h"
 #include "px4_msgs/msg/detail/gpio_config__type_support.h"
+#include "rosidl_typesupport_interface/macros.h"
 #include "px4_msgs/msg/detail/gpio_config__functions.h"
 
 #ifdef __cplusplus

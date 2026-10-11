@@ -4,10 +4,10 @@
 
 #include <string.h>
 
-#include "px4_msgs/msg/detail/control_allocator_status__functions.h"
-#include "rosidl_typesupport_interface/macros.h"
 #include "px4_msgs/msg/detail/control_allocator_status__struct.h"
+#include "rosidl_typesupport_interface/macros.h"
 #include "px4_msgs/msg/detail/control_allocator_status__type_support.h"
+#include "px4_msgs/msg/detail/control_allocator_status__functions.h"
 
 #ifdef __cplusplus
 extern "C"

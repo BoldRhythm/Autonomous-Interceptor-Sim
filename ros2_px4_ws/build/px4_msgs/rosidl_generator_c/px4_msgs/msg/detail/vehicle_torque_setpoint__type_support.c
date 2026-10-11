@@ -4,10 +4,10 @@
 
 #include <string.h>
 
-#include "px4_msgs/msg/detail/vehicle_torque_setpoint__type_support.h"
+#include "px4_msgs/msg/detail/vehicle_torque_setpoint__functions.h"
 #include "px4_msgs/msg/detail/vehicle_torque_setpoint__struct.h"
 #include "rosidl_typesupport_interface/macros.h"
-#include "px4_msgs/msg/detail/vehicle_torque_setpoint__functions.h"
+#include "px4_msgs/msg/detail/vehicle_torque_setpoint__type_support.h"
 
 #ifdef __cplusplus
 extern "C"

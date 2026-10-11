@@ -5,8 +5,8 @@
 #include <string.h>
 
 #include "px4_msgs/msg/detail/ranging_beacon__type_support.h"
-#include "px4_msgs/msg/detail/ranging_beacon__functions.h"
 #include "px4_msgs/msg/detail/ranging_beacon__struct.h"
+#include "px4_msgs/msg/detail/ranging_beacon__functions.h"
 #include "rosidl_typesupport_interface/macros.h"
 
 #ifdef __cplusplus

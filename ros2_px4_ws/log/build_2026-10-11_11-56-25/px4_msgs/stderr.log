@@ -1,0 +1,4 @@
+gmake[2]: *** Deleting file 'rosidl_generator_c/px4_msgs/msg/gimbal_manager_information.h'
+gmake[2]: *** [CMakeFiles/px4_msgs__rosidl_generator_c.dir/build.make:1377: rosidl_generator_c/px4_msgs/msg/gimbal_manager_information.h] Interrupt
+gmake[1]: *** [CMakeFiles/Makefile2:259: CMakeFiles/px4_msgs__rosidl_generator_c.dir/all] Interrupt
+gmake: *** [Makefile:146: all] Interrupt

@@ -4,10 +4,10 @@
 
 #include <string.h>
 
-#include "px4_msgs/msg/detail/failsafe_flags__type_support.h"
-#include "px4_msgs/msg/detail/failsafe_flags__functions.h"
 #include "px4_msgs/msg/detail/failsafe_flags__struct.h"
 #include "rosidl_typesupport_interface/macros.h"
+#include "px4_msgs/msg/detail/failsafe_flags__type_support.h"
+#include "px4_msgs/msg/detail/failsafe_flags__functions.h"
 
 #ifdef __cplusplus
 extern "C"

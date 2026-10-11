@@ -4,10 +4,10 @@
 
 #include <string.h>
 
-#include "px4_msgs/msg/detail/trajectory_setpoint6dof__struct.h"
-#include "px4_msgs/msg/detail/trajectory_setpoint6dof__functions.h"
 #include "px4_msgs/msg/detail/trajectory_setpoint6dof__type_support.h"
 #include "rosidl_typesupport_interface/macros.h"
+#include "px4_msgs/msg/detail/trajectory_setpoint6dof__struct.h"
+#include "px4_msgs/msg/detail/trajectory_setpoint6dof__functions.h"
 
 #ifdef __cplusplus
 extern "C"

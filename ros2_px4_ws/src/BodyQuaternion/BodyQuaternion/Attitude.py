@@ -1,21 +1,64 @@
-import time, math, rclpy
-from rclpy.node import Node
-from rclpy.qos import QoSProfile, QoSReliabilityPolicy, QoSHistoryPolicy, QoSDurabilityPolicy
-from px4_msgs.msg import VehicleAttitude, VehicleStatus
-from px4_msgs.msg import VehicleRatesSetpoint
-from px4_msgs.msg import OffboardControlMode
-from px4_msgs.msg import VehicleLocalPosition
-from px4_msgs.msg import VehicleCommand
-from px4_msgs.msg import TrajectorySetpoint
-from geometry_msgs.msg import Twist, Point
-from std_msgs.msg import Bool
+#!/usr/bin/env python3
+
+import math
 import numpy as np
+import rclpy
+
+from rclpy.node import Node
+from rclpy.qos import (
+    QoSProfile,
+    QoSReliabilityPolicy,
+    QoSHistoryPolicy,
+    QoSDurabilityPolicy
+)
+
+from px4_msgs.msg import (
+    OffboardControlMode,
+    TrajectorySetpoint,
+    VehicleCommand,
+    VehicleStatus,
+    VehicleLocalPosition,
+    VehicleAttitude,
+    VehicleRatesSetpoint
+)
+
+from geometry_msgs.msg import Point
 from spatialmath import UnitQuaternion
 
 
+# PARAMETERS
+
+SETPOINT_RATE_HZ = 50.0
+SETPOINT_WARMUP_COUNT = 30
+
+TAKEOFF_HEIGHT = -5.0
+
+TAKEOFF_VELOCITY = -1.0
+
+# Direct body-rate control bypasses PX4's velocity/altitude controller.
+# This is the nominal hover-thrust magnitude; tune it to the vehicle/SITL
+# (PX4's MPC_THR_HOVER is a useful starting reference).
+HOVER_THRUST = 0.70
+
+# Vertical position/velocity feedback used ONLY to maintain the takeoff
+# altitude while the paper's tracking law supplies roll/pitch/yaw body rates.
+ALTITUDE_KP = 1.2            # desired vertical acceleration per metre [1/s^2]
+ALTITUDE_KD = 1.6            # vertical damping [1/s]
+MAX_VERTICAL_ACCEL = 3.0     # clamp desired NED vertical acceleration [m/s^2]
+MIN_THRUST_MAGNITUDE = 0.15
+MAX_THRUST_MAGNITUDE = 0.85
+MIN_VERTICAL_THRUST_COS = 0.5
+GRAVITY = 9.81
+TAKEOFF_SETTLE_VZ = 0.2      # wait for takeoff climb to slow before changing modes [m/s]
+
+
 class Attitude(Node):
+
     def __init__(self):
+
         super().__init__('Attitude')
+
+        # QoS
 
         qos = QoSProfile(
             reliability=QoSReliabilityPolicy.BEST_EFFORT,
@@ -23,6 +66,8 @@ class Attitude(Node):
             history=QoSHistoryPolicy.KEEP_LAST,
             depth=5
         )
+
+        # PARAMETERS
 
         self.declare_parameter("instance", 1)
         self.declare_parameter("mav_sys_id", 2)
@@ -32,11 +77,17 @@ class Attitude(Node):
 
         self.prefix = f"/px4_{self.instance}"
 
-        # Publishers
+        # PUBLISHERS
 
-        self.rate_setpoint_pub = self.create_publisher(
-            VehicleRatesSetpoint,
-            f"{self.prefix}/fmu/in/vehicle_rates_setpoint",
+        self.ctrl_mode_pub = self.create_publisher(
+            OffboardControlMode,
+            f"{self.prefix}/fmu/in/offboard_control_mode",
+            qos
+        )
+
+        self.setpoint_pub = self.create_publisher(
+            TrajectorySetpoint,
+            f"{self.prefix}/fmu/in/trajectory_setpoint",
             qos
         )
 
@@ -46,31 +97,32 @@ class Attitude(Node):
             qos
         )
 
-        self.ctrl_mode_pub = self.create_publisher(
-            OffboardControlMode,
-            f"{self.prefix}/fmu/in/offboard_control_mode",
+        self.rate_setpoint_pub = self.create_publisher(
+            VehicleRatesSetpoint,
+            f"{self.prefix}/fmu/in/vehicle_rates_setpoint",
             qos
         )
 
-        self.velocity_pub = self.create_publisher(
-            TrajectorySetpoint,
-            f"{self.prefix}/fmu/in/trajectory_setpoint",
+        # SUBSCRIBERS
+
+        self.create_subscription(
+            VehicleStatus,
+            f"{self.prefix}/fmu/out/vehicle_status_v4",
+            self.status_cb,
             qos
         )
 
         self.create_subscription(
             VehicleLocalPosition,
-            f"{self.prefix}/fmu/out/vehicle_local_position",
+            f"{self.prefix}/fmu/out/vehicle_local_position_v1",
             self.position_cb,
             qos
         )
-        
-        # Subscriptions
 
         self.create_subscription(
             VehicleAttitude,
             f"{self.prefix}/fmu/out/vehicle_attitude",
-            self.att_cb,
+            self.attitude_cb,
             qos
         )
 
@@ -81,38 +133,42 @@ class Attitude(Node):
             qos
         )
 
-        self.create_subscription(
-            VehicleStatus,
-            f"{self.prefix}/fmu/out/vehicle_status_v4",
-            self.status_cb,
-            qos
-        )
+        # STATE
 
-
-        # Initial state
-
-        self.control_mode = "velocity"
         self.status = VehicleStatus()
-        self.armed = False
-        self.z = None
-        self.takeoff_altitude = -5.0
-        
 
-        self.create_timer(0.02, self.offboard_loop)
+        self.armed = False
+
+        self.position = VehicleLocalPosition()
+
+        self.yaw = 0.0
+
         self.offboard_counter = 0
-        self.SETPOINT_WARMUP_COUNT = 100
+
+        # CONTROL STATE
+
+        self.phase = "WARMUP"
+        # Use velocity control for warmup/takeoff, then body-rate control for tracking.
+        self.control_mode = "velocity"
+
+        # MATH
+
         self.omega_1 = np.zeros(3)
 
-        self.thrust_body = np.array([0.0, 0.0, -1.0]) # direction of thrust, used only for initial math testing
         self.q = None
         self.kb = 0.5
-        self.forward_body = np.array([1.0, 0.0, 0.0]) # just the window function to pick up the LOS vector of the interceptor
+
+        self.forward_body = np.array([
+            1.0,
+            0.0,
+            0.0
+        ])
 
         # Camera orientation (from model.sdf)
 
         self.roll = math.radians(0.0)
         self.pitch = math.radians(0.0)
-        self.yaw = math.radians(0.0)
+        self.yaw_camera = math.radians(0.0)
 
         self.R_BC = np.array([
             [0.0, 0.0, 1.0],
@@ -122,11 +178,18 @@ class Attitude(Node):
 
         self.width = 640
         self.height = 480
-        self.hfov = 1.74 # radians
-        self.vfov = 1.45 # radians 
-        
-        self.fx = (self.width / 2) / math.tan(self.hfov / 2)
-        self.fy = (self.height / 2) / math.tan(self.vfov / 2)
+        self.hfov = 1.74
+        self.vfov = 1.45
+
+        self.fx = (
+            (self.width / 2)
+            / math.tan(self.hfov / 2)
+        )
+
+        self.fy = (
+            (self.height / 2)
+            / math.tan(self.vfov / 2)
+        )
 
         self.cx = self.width / 2
         self.cy = self.height / 2
@@ -137,10 +200,52 @@ class Attitude(Node):
             [0.0, 0.0, 1.0]
         ])
 
+        # TIMER
+
+        self.create_timer(
+            1.0 / SETPOINT_RATE_HZ,
+            self.loop
+        )
+
+        self.get_logger().info(
+            "Attitude initialized."
+        )
+
+    # CALLBACKS
+
+    def status_cb(self, msg):
+
+        self.status = msg
+
+        self.armed = (
+            msg.arming_state ==
+            VehicleStatus.ARMING_STATE_ARMED
+        )
+
+    def position_cb(self, msg):
+
+        self.position = msg
+
+    def attitude_cb(self, msg):
+
+        self.q = UnitQuaternion(msg.q)
+
+        q = msg.q
+
+        if len(q) == 4:
+
+            w, x, y, z = q
+
+            self.yaw = math.atan2(
+                2.0 * (w * z + x * y),
+                1.0 - 2.0 * (y * y + z * z)
+            )
+
+    # MATH
 
     def q_rotate(self, q, vector):
 
-        q_rotated = q * vector # since q is a SpatialMath UnitQuaternion, it handles q*v*q_conj. No need to explicitly write out that eqn.
+        q_rotated = q * vector
         return q_rotated
 
     def align_camera(self, roll, pitch, yaw):
@@ -148,14 +253,15 @@ class Attitude(Node):
         # the goal of this function is to handle the orientation of camera wrt base link, ie the drone.
         camera_orientation = UnitQuaternion.RPY(
             [roll, pitch, yaw],
-            order = 'zyx'
+            order='zyx'
         )
+
         return camera_orientation
 
     def pixel_to_camera_ray(self, u, v):
 
         x = (u - self.cx) / self.fx
-        y = (v - self.cy) / self.fy # The division in both is due to normalization
+        y = (v - self.cy) / self.fy
 
         ray = np.array([
             x,
@@ -175,33 +281,50 @@ class Attitude(Node):
             error_v
         ])
 
-
     def get_interceptor_LOS(self):
 
-        ntd = self.q_rotate(self.q, self.forward_body)
+        ntd = self.q_rotate(
+            self.q,
+            self.forward_body
+        )
 
         return ntd
 
     def get_LOS_error(self, nt, ntd):
 
         dot_product = np.dot(ntd, nt)
-        dot_product = np.clip(dot_product, -1.0, 1.0)
 
-        z1 = 1.0 - dot_product # LOS error
+        dot_product = np.clip(
+            dot_product,
+            -1.0,
+            1.0
+        )
+
+        z1 = 1.0 - dot_product
 
         return z1
 
     def collinear_controller(self, nt, ntd):
 
-        z1 = self.get_LOS_error(nt, ntd)
+        z1 = self.get_LOS_error(
+            nt,
+            ntd
+        )
 
         if z1 >= self.kb**2:
+
             self.get_logger().error(
-                f"Barrier condition violated: z1={z1:.4f}, kb^2={self.kb**2:.4f}"
+                f"Barrier condition violated: "
+                f"z1={z1:.4f}, "
+                f"kb^2={self.kb**2:.4f}"
             )
 
         R_be = self.q.R
-        cross_product = np.cross(ntd, nt)
+
+        cross_product = np.cross(
+            ntd,
+            nt
+        )
 
         omega_1 = (
             z1 / (self.kb**2 - z1**2)
@@ -209,159 +332,24 @@ class Attitude(Node):
 
         return omega_1
 
-    def publish_omega(self, omega_1):
+    # TIMESTAMP
 
-        msg = VehicleRatesSetpoint()
+    def micros(self):
 
-        msg.timestamp = int(self.get_clock().now().nanoseconds / 1000)
-
-        msg.roll = float(omega_1[0])
-        msg.pitch = float(omega_1[1])
-        msg.yaw = float(omega_1[2])
-
-        self.rate_setpoint_pub.publish(msg)
-
-    def att_cb(self, msg):
-
-        self.q = UnitQuaternion(msg.q)
-
-        thrust_ned = self.q_rotate(self.q, self.thrust_body)
-
-        ntd = self.get_interceptor_LOS()
-
-        # self.get_logger().info(
-        #     f"q = {msg.q}, thrust_ned = {thrust_ned}"
-        # )
-
-    def centroid_cb(self, msg):
-
-        u = msg.x
-        v = msg.y
-
-        # ICS → CCS
-        nt_camera = self.pixel_to_camera_ray(u, v)
-
-        # CCS → BCS
-        nt_body = self.R_BC @ nt_camera
-
-        if self.q is None:
-            return
-
-        # BCS → EFCS
-        nt = self.q_rotate(self.q, nt_body)
-
-        # Current interceptor LOS
-        ntd = self.get_interceptor_LOS()
-
-        # Current difference in LOS of the interceptor and target in EFCS
-        z1 = self.get_LOS_error(nt, ntd)
-
-        # Paper Eq. (13)
-        omega_1 = self.collinear_controller(nt, ntd)
-
-        # self.omega_1 = omega_1
-        self.omega_1 = np.array([0.0, 0.0, 0.5])
-
-        self.get_logger().info(
-            f"nt  = {nt} | "
-            f"ntd = {ntd} | "
-            f"omega_1 = {omega_1} |"
-            f"z1 = {z1}"
+        return int(
+            self.get_clock().now().nanoseconds / 1000
         )
 
-    def status_cb(self, msg):
-        self.status = msg
-        self.armed = (
-            msg.arming_state == VehicleStatus.ARMING_STATE_ARMED
-        )
+    # OFFBOARD MODE
 
-    def offboard_loop(self):
-
-        # ---------------------------------
-        # 1. Warm-up
-        # ---------------------------------
-        if self.offboard_counter < self.SETPOINT_WARMUP_COUNT:
-
-            self.control_mode = "velocity"
-            self.publish_mode()
-            self.publish_velocity(0.0, 0.0, 0.0)
-
-            self.offboard_counter += 1
-            return
-
-        # ---------------------------------
-        # 2. Enter Offboard + arm
-        # ---------------------------------
-        if self.offboard_counter == self.SETPOINT_WARMUP_COUNT:
-
-            self.control_mode = "velocity"
-            self.publish_mode()
-            self.publish_velocity(0.0, 0.0, 0.0)
-
-            self.publish_cmd(
-                VehicleCommand.VEHICLE_CMD_DO_SET_MODE,
-                param1=1.0,
-                param2=6.0
-            )
-
-            self.publish_cmd(
-                VehicleCommand.VEHICLE_CMD_COMPONENT_ARM_DISARM,
-                param1=1.0
-            )
-
-            self.offboard_counter += 1
-            return
-
-        # ---------------------------------
-        # 3. Wait until PX4 confirms
-        # ---------------------------------
-        if (
-            self.status.nav_state !=
-            VehicleStatus.NAVIGATION_STATE_OFFBOARD
-            or not self.armed
-        ):
-            self.control_mode = "velocity"
-            self.publish_mode()
-            self.publish_velocity(0.0, 0.0, 0.0)
-            return
-
-        # ---------------------------------
-        # 4. Takeoff
-        # ---------------------------------
-        if self.z is None:
-            self.control_mode = "velocity"
-            self.publish_mode()
-            self.publish_velocity(0.0, 0.0, -1.0)
-            return
-
-        if self.z > self.takeoff_altitude:
-
-            self.control_mode = "velocity"
-            self.publish_mode()
-
-            # NED: negative Z = upward
-            self.publish_velocity(0.0, 0.0, -1.0)
-
-            return
-
-        # ---------------------------------
-        # 5. Takeoff complete → body-rate
-        # ---------------------------------
-        self.control_mode = "body_rate"
-        self.publish_mode()
-
-        self.publish_omega(self.omega_1)
-
-
-    def position_cb(self, msg):
-
-        self.z = msg.z
-    
     def publish_mode(self):
 
         msg = OffboardControlMode()
-        msg.timestamp = int(self.get_clock().now().nanoseconds / 1000)
 
+        msg.timestamp = self.micros()
+
+        # Select the active Offboard interface.
+        # Velocity mode is used for warmup/takeoff; body-rate mode is used for tracking.
         msg.position = False
         msg.velocity = self.control_mode == "velocity"
         msg.acceleration = False
@@ -370,11 +358,29 @@ class Attitude(Node):
 
         self.ctrl_mode_pub.publish(msg)
 
-    def publish_velocity(self, vx, vy, vz):
+    # TRAJECTORY SETPOINT
+
+    def publish_setpoint(
+        self,
+        vx,
+        vy,
+        vz,
+        yawspeed
+    ):
 
         msg = TrajectorySetpoint()
 
-        msg.timestamp = int(self.get_clock().now().nanoseconds / 1000)
+        msg.timestamp = self.micros()
+
+        # Position unused
+
+        msg.position = [
+            float('nan'),
+            float('nan'),
+            float('nan')
+        ]
+
+        # Velocity control
 
         msg.velocity = [
             float(vx),
@@ -382,37 +388,397 @@ class Attitude(Node):
             float(vz)
         ]
 
-        # Don't command position/acceleration
-        msg.position = [float('nan')] * 3
-        msg.acceleration = [float('nan')] * 3
+        # Acceleration unused
 
-        self.velocity_pub.publish(msg)
+        msg.acceleration = [
+            float('nan'),
+            float('nan'),
+            float('nan')
+        ]
 
-    def publish_cmd(self, command, param1=0.0, param2=0.0):
+        # Jerk unused
+
+        msg.jerk = [
+            float('nan'),
+            float('nan'),
+            float('nan')
+        ]
+
+        # We don't want absolute yaw.
+
+        msg.yaw = float('nan')
+
+        # We want a yaw rate.
+
+        msg.yawspeed = float(yawspeed)
+
+        self.setpoint_pub.publish(msg)
+
+    # ALTITUDE HOLD FOR DIRECT BODY-RATE MODE
+
+    def altitude_hold_thrust(self):
+
+        # PX4 local position uses NED: z and vz are positive downward.
+        z = float(self.position.z)
+        vz = float(self.position.vz)
+
+        # Desired acceleration in NED z. Negative means accelerate upward.
+        # The tracking law remains untouched; this loop only supplies thrust
+        # needed to avoid losing altitude after bypassing velocity control.
+        acceleration_z = (
+            ALTITUDE_KP * (TAKEOFF_HEIGHT - z)
+            - ALTITUDE_KD * vz
+        )
+        acceleration_z = float(np.clip(
+            acceleration_z,
+            -MAX_VERTICAL_ACCEL,
+            MAX_VERTICAL_ACCEL
+        ))
+
+        # With body-z thrust, only the vertical component counters gravity.
+        # Compensate modest roll/pitch tilts, while preventing singular values.
+        if self.q is not None:
+            vertical_cosine = float(self.q.R[2, 2])
+        else:
+            vertical_cosine = 1.0
+        vertical_cosine = max(MIN_VERTICAL_THRUST_COS, vertical_cosine)
+
+        # Approximate thrust mapping around hover:
+        # a_z = g - g * (thrust_magnitude / HOVER_THRUST) * vertical_cosine
+        thrust_magnitude = (
+            HOVER_THRUST
+            * (1.0 - acceleration_z / GRAVITY)
+            / vertical_cosine
+        )
+        thrust_magnitude = float(np.clip(
+            thrust_magnitude,
+            MIN_THRUST_MAGNITUDE,
+            MAX_THRUST_MAGNITUDE
+        ))
+
+        # PX4 multicopter thrust uses body FRD convention: negative z is up.
+        return -thrust_magnitude, acceleration_z
+
+    # BODY-RATE SETPOINT
+
+    def publish_rates(self, omega, thrust_z):
+
+        msg = VehicleRatesSetpoint()
+        msg.timestamp = self.micros()
+
+        # Three-axis body-rate command from the paper's tracking controller [rad/s].
+        msg.roll = float(omega[0])
+        msg.pitch = float(omega[1])
+        msg.yaw = float(omega[2])
+
+        # Negative body-z thrust produces upward thrust in PX4's FRD convention.
+        msg.thrust_body = [0.0, 0.0, float(thrust_z)]
+
+        self.rate_setpoint_pub.publish(msg)
+
+    # VEHICLE COMMAND
+
+    def publish_cmd(
+        self,
+        cmd,
+        **params
+    ):
+
         msg = VehicleCommand()
-        msg.timestamp = int(self.get_clock().now().nanoseconds / 1000)
 
-        msg.param1 = param1
-        msg.param2 = param2
+        msg.timestamp = self.micros()
 
-        msg.command = command
+        msg.command = cmd
+
         msg.target_system = self.mav_sys_id
+
         msg.target_component = 1
 
         msg.source_system = self.mav_sys_id
+
         msg.source_component = 1
 
         msg.from_external = True
 
+        for parameter in [
+            "param1",
+            "param2",
+            "param3",
+            "param4",
+            "param5",
+            "param6",
+            "param7"
+        ]:
+
+            setattr(
+                msg,
+                parameter,
+                params.get(parameter, 0.0)
+            )
+
         self.cmd_pub.publish(msg)
 
+    # TARGET CENTROID
+
+    def centroid_cb(self, msg):
+
+        u = msg.x
+        v = msg.y
+
+        if self.q is None:
+            return
+
+        # ICS → CCS
+        nt_camera = self.pixel_to_camera_ray(
+            u,
+            v
+        )
+
+        # CCS → BCS
+        nt_body = self.R_BC @ nt_camera
+
+        # BCS → EFCS
+        nt = self.q_rotate(
+            self.q,
+            nt_body
+        )
+
+        # Current interceptor LOS
+        ntd = self.get_interceptor_LOS()
+
+        # Current difference in LOS of the interceptor and target in EFCS
+        z1 = self.get_LOS_error(
+            nt,
+            ntd
+        )
+
+        # Paper Eq. (13)
+        omega_1 = self.collinear_controller(
+            nt,
+            ntd
+        )
+
+        self.omega_1 = omega_1
+
+        self.get_logger().info(
+            f"nt  = {nt} | "
+            f"ntd = {ntd} | "
+            f"omega_1 = {omega_1} | "
+            f"z1 = {z1}"
+        )
+
+    # MAIN LOOP
+
+    def loop(self):
+
+        # Select exactly one Offboard interface for this timer cycle.
+        # Use velocity control through takeoff; direct body rates only in tracking.
+        self.control_mode = "body_rate" if self.phase == "OMEGA_1" else "velocity"
+        self.publish_mode()
+
+        # PHASE 1: WARMUP
+
+        if self.offboard_counter < SETPOINT_WARMUP_COUNT:
+
+            self.phase = "WARMUP"
+
+            self.publish_setpoint(
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            )
+
+            self.offboard_counter += 1
+
+            return
+
+        # PHASE 2: ENTER OFFBOARD + ARM
+
+        if self.phase == "WARMUP":
+
+            self.phase = "OFFBOARD_REQUEST"
+
+            self.get_logger().info(
+                "Warmup complete. Requesting OFFBOARD."
+            )
+
+
+        if self.phase == "OFFBOARD_REQUEST":
+
+            # Keep sending a valid velocity setpoint.
+
+            self.publish_setpoint(
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            )
+
+            # Request OFFBOARD.
+
+            if (
+                self.status.nav_state
+                != VehicleStatus.NAVIGATION_STATE_OFFBOARD
+            ):
+
+                self.publish_cmd(
+                    VehicleCommand.VEHICLE_CMD_DO_SET_MODE,
+                    param1=1.0,
+                    param2=6.0
+                )
+
+                self.get_logger().info(
+                    "OFFBOARD command sent.",
+                    throttle_duration_sec=1.0
+                )
+
+                return
+
+            # PX4 accepted OFFBOARD.
+
+            self.get_logger().info(
+                "OFFBOARD accepted."
+            )
+
+            self.phase = "ARM"
+
+            return
+
+        # PHASE 3: ARM
+
+        if self.phase == "ARM":
+
+            self.publish_setpoint(
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            )
+
+            if not self.armed:
+
+                self.publish_cmd(
+                    VehicleCommand.VEHICLE_CMD_COMPONENT_ARM_DISARM,
+                    param1=1.0
+                )
+
+                self.get_logger().info(
+                    "ARM command sent.",
+                    throttle_duration_sec=1.0
+                )
+
+                return
+
+            # PX4 reports armed.
+
+            self.get_logger().info(
+                "Vehicle ARMED."
+            )
+
+            self.phase = "TAKEOFF"
+
+            return
+
+        # PHASE 4: TAKEOFF
+
+        if self.phase == "TAKEOFF":
+
+            z = self.position.z
+
+            # NED:
+            #
+            # z = 0       starting altitude
+            # z = -5      5 m above starting altitude
+            #
+            if z > TAKEOFF_HEIGHT:
+
+                self.publish_setpoint(
+                    0.0,
+                    0.0,
+                    TAKEOFF_VELOCITY,
+                    0.0
+                )
+
+                self.get_logger().info(
+                    f"TAKEOFF | "
+                    f"z={z:.2f} m | "
+                    f"vz={TAKEOFF_VELOCITY:.2f} m/s",
+                    throttle_duration_sec=0.5
+                )
+
+                return
+
+            # At the target altitude, first command zero vertical velocity in
+            # velocity mode so the vehicle does not enter rate mode still climbing.
+            self.publish_setpoint(
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            )
+
+            vz = float(self.position.vz)
+            if abs(vz) > TAKEOFF_SETTLE_VZ:
+                self.get_logger().info(
+                    f"TAKEOFF SETTLING | z={z:.2f} m | vz={vz:.2f} m/s",
+                    throttle_duration_sec=0.5
+                )
+                return
+
+            self.get_logger().info(
+                f"TAKEOFF COMPLETE | z={z:.2f} m | vz={vz:.2f} m/s"
+            )
+
+            self.phase = "OMEGA_1"
+
+            return
+
+        # PHASE 5: OMEGA_1
+
+        if self.phase == "OMEGA_1":
+
+            z = float(self.position.z)
+            vz = float(self.position.vz)
+            thrust_z, acceleration_z = self.altitude_hold_thrust()
+
+            # Keep the paper's omega_1 tracking result as the rate command.
+            # Only the thrust channel is supplemented with altitude feedback.
+            self.publish_rates(self.omega_1, thrust_z)
+
+            self.get_logger().info(
+                f"OMEGA_1 | z={z:.2f} m | vz={vz:.2f} m/s | "
+                f"body_rates={self.omega_1} | thrust_z={thrust_z:.3f} | "
+                f"a_z_cmd={acceleration_z:.2f} m/s^2",
+                throttle_duration_sec=0.5
+            )
+
+
+# MAIN
+
 def main(args=None):
-    rclpy.init()
+
+    rclpy.init(args=args)
+
     node = Attitude()
-    rclpy.spin(node)
-    node.destroy_node()
-    rclpy.shutdown()
+
+    try:
+
+        rclpy.spin(node)
+
+    except KeyboardInterrupt:
+
+        node.get_logger().info(
+            "Attitude shutting down."
+        )
+
+    finally:
+
+        node.destroy_node()
+
+        rclpy.shutdown()
 
 
 if __name__ == '__main__':
+
     main()

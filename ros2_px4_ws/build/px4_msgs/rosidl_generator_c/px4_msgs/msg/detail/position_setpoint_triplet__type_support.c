@@ -4,10 +4,10 @@
 
 #include <string.h>
 
-#include "px4_msgs/msg/detail/position_setpoint_triplet__type_support.h"
-#include "px4_msgs/msg/detail/position_setpoint_triplet__functions.h"
-#include "rosidl_typesupport_interface/macros.h"
 #include "px4_msgs/msg/detail/position_setpoint_triplet__struct.h"
+#include "rosidl_typesupport_interface/macros.h"
+#include "px4_msgs/msg/detail/position_setpoint_triplet__functions.h"
+#include "px4_msgs/msg/detail/position_setpoint_triplet__type_support.h"
 
 #ifdef __cplusplus
 extern "C"

@@ -5,9 +5,9 @@
 #include <string.h>
 
 #include "px4_msgs/msg/detail/fixed_wing_lateral_guidance_status__functions.h"
+#include "rosidl_typesupport_interface/macros.h"
 #include "px4_msgs/msg/detail/fixed_wing_lateral_guidance_status__struct.h"
 #include "px4_msgs/msg/detail/fixed_wing_lateral_guidance_status__type_support.h"
-#include "rosidl_typesupport_interface/macros.h"
 
 #ifdef __cplusplus
 extern "C"

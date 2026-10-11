@@ -1,0 +1,16 @@
+package.xml
+setup.cfg
+setup.py
+../../build/ground_truth/ground_truth.egg-info/PKG-INFO
+../../build/ground_truth/ground_truth.egg-info/SOURCES.txt
+../../build/ground_truth/ground_truth.egg-info/dependency_links.txt
+../../build/ground_truth/ground_truth.egg-info/entry_points.txt
+../../build/ground_truth/ground_truth.egg-info/requires.txt
+../../build/ground_truth/ground_truth.egg-info/top_level.txt
+../../build/ground_truth/ground_truth.egg-info/zip-safe
+ground_truth/__init__.py
+ground_truth/relative_position_node.py
+resource/ground_truth
+test/test_copyright.py
+test/test_flake8.py
+test/test_pep257.py

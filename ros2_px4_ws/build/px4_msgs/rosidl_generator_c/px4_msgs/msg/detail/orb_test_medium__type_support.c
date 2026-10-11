@@ -5,9 +5,9 @@
 #include <string.h>
 
 #include "px4_msgs/msg/detail/orb_test_medium__type_support.h"
-#include "px4_msgs/msg/detail/orb_test_medium__struct.h"
 #include "rosidl_typesupport_interface/macros.h"
 #include "px4_msgs/msg/detail/orb_test_medium__functions.h"
+#include "px4_msgs/msg/detail/orb_test_medium__struct.h"
 
 #ifdef __cplusplus
 extern "C"

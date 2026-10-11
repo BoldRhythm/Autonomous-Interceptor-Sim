@@ -4,10 +4,10 @@
 
 #include <string.h>
 
-#include "px4_msgs/msg/detail/landing_target_pose__struct.h"
-#include "px4_msgs/msg/detail/landing_target_pose__type_support.h"
-#include "rosidl_typesupport_interface/macros.h"
 #include "px4_msgs/msg/detail/landing_target_pose__functions.h"
+#include "px4_msgs/msg/detail/landing_target_pose__struct.h"
+#include "rosidl_typesupport_interface/macros.h"
+#include "px4_msgs/msg/detail/landing_target_pose__type_support.h"
 
 #ifdef __cplusplus
 extern "C"

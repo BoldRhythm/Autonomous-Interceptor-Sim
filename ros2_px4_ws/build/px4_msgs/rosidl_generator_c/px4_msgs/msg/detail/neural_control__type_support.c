@@ -5,8 +5,8 @@
 #include <string.h>
 
 #include "px4_msgs/msg/detail/neural_control__functions.h"
-#include "px4_msgs/msg/detail/neural_control__type_support.h"
 #include "rosidl_typesupport_interface/macros.h"
+#include "px4_msgs/msg/detail/neural_control__type_support.h"
 #include "px4_msgs/msg/detail/neural_control__struct.h"
 
 #ifdef __cplusplus

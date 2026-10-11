@@ -4,8 +4,8 @@
 
 #include <string.h>
 
-#include "px4_msgs/msg/detail/sensor_uwb__type_support.h"
 #include "px4_msgs/msg/detail/sensor_uwb__struct.h"
+#include "px4_msgs/msg/detail/sensor_uwb__type_support.h"
 #include "rosidl_typesupport_interface/macros.h"
 #include "px4_msgs/msg/detail/sensor_uwb__functions.h"
 

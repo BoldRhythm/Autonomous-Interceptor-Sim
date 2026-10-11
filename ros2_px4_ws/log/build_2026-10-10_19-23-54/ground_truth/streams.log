@@ -1,0 +1,21 @@
+[2.984s] Invoking command in '/home/gp/Projects/interceptor-sim/ros2_px4_ws/src/ground_truth': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/ground_truth/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/ground_truth/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/ground_truth build --build-base /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/ground_truth/build install --record /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/ground_truth/install.log --install-scripts $base/lib/ground_truth --single-version-externally-managed install_data
+[3.402s] running egg_info
+[3.431s] writing ../../build/ground_truth/ground_truth.egg-info/PKG-INFO
+[3.432s] writing dependency_links to ../../build/ground_truth/ground_truth.egg-info/dependency_links.txt
+[3.435s] writing entry points to ../../build/ground_truth/ground_truth.egg-info/entry_points.txt
+[3.436s] writing requirements to ../../build/ground_truth/ground_truth.egg-info/requires.txt
+[3.436s] writing top-level names to ../../build/ground_truth/ground_truth.egg-info/top_level.txt
+[3.497s] reading manifest file '../../build/ground_truth/ground_truth.egg-info/SOURCES.txt'
+[3.499s] writing manifest file '../../build/ground_truth/ground_truth.egg-info/SOURCES.txt'
+[3.499s] running build
+[3.500s] running build_py
+[3.500s] running install
+[3.507s] running install_lib
+[3.538s] running install_data
+[3.538s] running install_egg_info
+[3.572s] removing '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/ground_truth/lib/python3.12/site-packages/ground_truth-0.0.0-py3.12.egg-info' (and everything under it)
+[3.572s] Copying ../../build/ground_truth/ground_truth.egg-info to /home/gp/Projects/interceptor-sim/ros2_px4_ws/install/ground_truth/lib/python3.12/site-packages/ground_truth-0.0.0-py3.12.egg-info
+[3.575s] running install_scripts
+[3.788s] Installing relativePosition script to /home/gp/Projects/interceptor-sim/ros2_px4_ws/install/ground_truth/lib/ground_truth
+[3.789s] writing list of installed files to '/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/ground_truth/install.log'
+[3.948s] Invoked command in '/home/gp/Projects/interceptor-sim/ros2_px4_ws/src/ground_truth' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/ground_truth/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/ground_truth/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/ground_truth build --build-base /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/ground_truth/build install --record /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/ground_truth/install.log --install-scripts $base/lib/ground_truth --single-version-externally-managed install_data

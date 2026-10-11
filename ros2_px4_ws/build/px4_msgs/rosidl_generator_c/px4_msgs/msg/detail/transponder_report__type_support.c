@@ -4,10 +4,10 @@
 
 #include <string.h>
 
-#include "px4_msgs/msg/detail/transponder_report__type_support.h"
+#include "px4_msgs/msg/detail/transponder_report__functions.h"
 #include "px4_msgs/msg/detail/transponder_report__struct.h"
 #include "rosidl_typesupport_interface/macros.h"
-#include "px4_msgs/msg/detail/transponder_report__functions.h"
+#include "px4_msgs/msg/detail/transponder_report__type_support.h"
 
 #ifdef __cplusplus
 extern "C"

@@ -4,10 +4,10 @@
 
 #include <string.h>
 
-#include "px4_msgs/msg/detail/ekf2_timestamps__type_support.h"
-#include "rosidl_typesupport_interface/macros.h"
 #include "px4_msgs/msg/detail/ekf2_timestamps__functions.h"
 #include "px4_msgs/msg/detail/ekf2_timestamps__struct.h"
+#include "rosidl_typesupport_interface/macros.h"
+#include "px4_msgs/msg/detail/ekf2_timestamps__type_support.h"
 
 #ifdef __cplusplus
 extern "C"

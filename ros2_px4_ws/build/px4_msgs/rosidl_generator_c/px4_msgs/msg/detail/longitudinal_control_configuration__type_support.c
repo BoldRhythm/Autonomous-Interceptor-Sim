@@ -4,10 +4,10 @@
 
 #include <string.h>
 
-#include "px4_msgs/msg/detail/longitudinal_control_configuration__functions.h"
 #include "px4_msgs/msg/detail/longitudinal_control_configuration__struct.h"
 #include "rosidl_typesupport_interface/macros.h"
 #include "px4_msgs/msg/detail/longitudinal_control_configuration__type_support.h"
+#include "px4_msgs/msg/detail/longitudinal_control_configuration__functions.h"
 
 #ifdef __cplusplus
 extern "C"

@@ -4,9 +4,9 @@
 
 #include <string.h>
 
-#include "px4_msgs/msg/detail/adc_report__struct.h"
-#include "rosidl_typesupport_interface/macros.h"
 #include "px4_msgs/msg/detail/adc_report__type_support.h"
+#include "rosidl_typesupport_interface/macros.h"
+#include "px4_msgs/msg/detail/adc_report__struct.h"
 #include "px4_msgs/msg/detail/adc_report__functions.h"
 
 #ifdef __cplusplus

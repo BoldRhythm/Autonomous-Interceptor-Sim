@@ -4,10 +4,10 @@
 
 #include <string.h>
 
-#include "px4_msgs/msg/detail/actuator_servos__functions.h"
-#include "px4_msgs/msg/detail/actuator_servos__struct.h"
-#include "rosidl_typesupport_interface/macros.h"
 #include "px4_msgs/msg/detail/actuator_servos__type_support.h"
+#include "rosidl_typesupport_interface/macros.h"
+#include "px4_msgs/msg/detail/actuator_servos__struct.h"
+#include "px4_msgs/msg/detail/actuator_servos__functions.h"
 
 #ifdef __cplusplus
 extern "C"

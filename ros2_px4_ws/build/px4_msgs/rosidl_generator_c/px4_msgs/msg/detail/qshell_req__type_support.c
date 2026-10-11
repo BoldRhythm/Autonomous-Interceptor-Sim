@@ -4,9 +4,9 @@
 
 #include <string.h>
 
+#include "rosidl_typesupport_interface/macros.h"
 #include "px4_msgs/msg/detail/qshell_req__struct.h"
 #include "px4_msgs/msg/detail/qshell_req__functions.h"
-#include "rosidl_typesupport_interface/macros.h"
 #include "px4_msgs/msg/detail/qshell_req__type_support.h"
 
 #ifdef __cplusplus

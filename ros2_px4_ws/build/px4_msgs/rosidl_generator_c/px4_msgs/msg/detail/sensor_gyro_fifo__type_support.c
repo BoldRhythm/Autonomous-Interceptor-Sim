@@ -4,8 +4,8 @@
 
 #include <string.h>
 
-#include "px4_msgs/msg/detail/sensor_gyro_fifo__struct.h"
 #include "px4_msgs/msg/detail/sensor_gyro_fifo__functions.h"
+#include "px4_msgs/msg/detail/sensor_gyro_fifo__struct.h"
 #include "rosidl_typesupport_interface/macros.h"
 #include "px4_msgs/msg/detail/sensor_gyro_fifo__type_support.h"
 

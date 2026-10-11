@@ -5,8 +5,8 @@
 #include <string.h>
 
 #include "px4_msgs/msg/detail/camera_trigger__type_support.h"
-#include "px4_msgs/msg/detail/camera_trigger__struct.h"
 #include "rosidl_typesupport_interface/macros.h"
+#include "px4_msgs/msg/detail/camera_trigger__struct.h"
 #include "px4_msgs/msg/detail/camera_trigger__functions.h"
 
 #ifdef __cplusplus

@@ -5,9 +5,9 @@
 #include <string.h>
 
 #include "px4_msgs/msg/detail/landing_gear__struct.h"
-#include "px4_msgs/msg/detail/landing_gear__functions.h"
 #include "px4_msgs/msg/detail/landing_gear__type_support.h"
 #include "rosidl_typesupport_interface/macros.h"
+#include "px4_msgs/msg/detail/landing_gear__functions.h"
 
 #ifdef __cplusplus
 extern "C"

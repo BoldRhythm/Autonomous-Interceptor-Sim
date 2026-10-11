@@ -1,0 +1,26 @@
+running egg_info
+creating ../../build/ground_truth/ground_truth.egg-info
+writing ../../build/ground_truth/ground_truth.egg-info/PKG-INFO
+writing dependency_links to ../../build/ground_truth/ground_truth.egg-info/dependency_links.txt
+writing entry points to ../../build/ground_truth/ground_truth.egg-info/entry_points.txt
+writing requirements to ../../build/ground_truth/ground_truth.egg-info/requires.txt
+writing top-level names to ../../build/ground_truth/ground_truth.egg-info/top_level.txt
+writing manifest file '../../build/ground_truth/ground_truth.egg-info/SOURCES.txt'
+reading manifest file '../../build/ground_truth/ground_truth.egg-info/SOURCES.txt'
+writing manifest file '../../build/ground_truth/ground_truth.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/ground_truth/build
+creating /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/ground_truth/build/lib
+creating /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/ground_truth/build/lib/ground_truth
+copying ground_truth/__init__.py -> /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/ground_truth/build/lib/ground_truth
+copying ground_truth/relative_position_node.py -> /home/gp/Projects/interceptor-sim/ros2_px4_ws/build/ground_truth/build/lib/ground_truth
+running install
+running install_lib
+running install_data
+running install_egg_info
+removing '/home/gp/Projects/interceptor-sim/ros2_px4_ws/install/ground_truth/lib/python3.12/site-packages/ground_truth-0.0.0-py3.12.egg-info' (and everything under it)
+Copying ../../build/ground_truth/ground_truth.egg-info to /home/gp/Projects/interceptor-sim/ros2_px4_ws/install/ground_truth/lib/python3.12/site-packages/ground_truth-0.0.0-py3.12.egg-info
+running install_scripts
+Installing relativePosition script to /home/gp/Projects/interceptor-sim/ros2_px4_ws/install/ground_truth/lib/ground_truth
+writing list of installed files to '/home/gp/Projects/interceptor-sim/ros2_px4_ws/build/ground_truth/install.log'

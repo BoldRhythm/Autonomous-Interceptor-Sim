@@ -23,7 +23,7 @@ from px4_msgs.msg import (
     SensorCombined
 )
 
-from geometry_msgs.msg import Point
+from geometry_msgs.msg import Point, Vector3
 from spatialmath import UnitQuaternion
 
 
@@ -129,16 +129,26 @@ class Attitude(Node):
             qos
         )
 
+        self.gt_position_sub = self.create_subscription(
+            Point,
+            '/ground_truth/relative_position',
+            self.gt_position_cb,
+            10
+        )
+
+        self.gt_velocity_sub = self.create_subscription(
+            Vector3,
+            '/ground_truth/relative_velocity',
+            self.gt_velocity_cb,
+            10
+        )
+
         # STATE
 
         self.status = VehicleStatus()
-
         self.armed = False
-
         self.position = VehicleLocalPosition()
-
         self.yaw = 0.0
-
         self.offboard_counter = 0
 
 
@@ -180,6 +190,13 @@ class Attitude(Node):
             [0.0, 0.0, 1.0],
             [1.0, 0.0, 0.0],
             [0.0, 1.0, 0.0]
+        ])
+
+        # Gazebo world (ENU) -> PX4 local world (NED)
+        self.C_NED_ENU = np.array([
+            [0.0, 1.0,  0.0],
+            [1.0, 0.0,  0.0],
+            [0.0, 0.0, -1.0]
         ])
 
         self.width = 640
@@ -236,10 +253,6 @@ class Attitude(Node):
         self.BG_SLICE = slice(12, 15)
         self.BA_SLICE = slice(15, 18)
 
-        # Temporary measurement-noise estimation
-        self.r_samples = []
-        self.R_samples_required = 1000
-
         self.dkf_initialized = False
 
         # Initial Relative Velocity
@@ -266,11 +279,30 @@ class Attitude(Node):
             1e-6
         ])
 
+        # Ground-truth relative state, used only for DKF initialization
+        self.gt_relative_position = None
+        self.gt_relative_velocity = None
+
         # Acceleration (ad) control parameters 
         self.a_d = np.zeros(3) # acceleration vector init (to hold nt, ntd, and z1)
         self.k1 = 1.0
         self.k2 = 2.0
         self.mass = 2.1143076923  # kg, total interceptor mass: X500 + 4 rotors + monocular camera
+
+        # Desired thrust control parameters
+        self.g = np.array([
+            0.0,
+            0.0,
+            9.81
+        ])  # Gravity in NED coordinates (m/s^2)
+
+        self.n_fd = np.array([
+            0.0,
+            0.0,
+            -1.0
+        ])  # Desired thrust direction
+
+        self.f_d = 0.0  # Desired thrust magnitude (N)
 
 
     # --- MATH HELPER FUNCTIONS ---
@@ -596,6 +628,7 @@ class Attitude(Node):
         F[15:18, 15:18] = np.eye(3)
 
         return F
+    
 
     def store_dkf_state(self, x, P, omega, accel, dt, p_img, pzc):
         # Store one IMU prediction for delayed DKF replay.
@@ -622,6 +655,7 @@ class Attitude(Node):
 
         if len(self.imu_buffer) > max_buffer:
             self.imu_buffer.pop(0)
+
 
     def delayed_correction(self, p_img):
         """
@@ -925,6 +959,167 @@ class Attitude(Node):
 
         self.cmd_pub.publish(msg)
 
+
+    def desired_thrust_direction(self, a_d):
+        """
+        Calculate the desired thrust direction using Eq. (21).
+
+        a_d: Desired acceleration in NED coordinates (m/s^2).
+        Returns:
+            n_fd: Unit vector representing desired thrust direction.
+        """
+
+        # Equation (21), neglecting aerodynamic drag:
+        thrust_acceleration = a_d - self.g
+
+        thrust_norm = np.linalg.norm(thrust_acceleration)
+
+        if thrust_norm < 1e-6:
+            self.get_logger().warning(
+                "Cannot calculate desired thrust direction: "
+                "thrust acceleration is near zero."
+            )
+
+            return None
+
+        n_fd = thrust_acceleration / thrust_norm
+
+        return n_fd
+
+
+    def desired_thrust_magnitude(self, a_d):
+        """
+        Calculate the desired thrust magnitude using the paper's
+        thrust equation, neglecting aerodynamic drag.
+
+        a_d: Desired acceleration in NED coordinates (m/s^2).
+        Returns:
+            f_d: Desired thrust magnitude in Newtons.
+        """
+
+        if self.q is None:
+            return None
+
+        # Current thrust direction in NED.
+        # PX4 body frame is FRD, so thrust acts along negative body Z.
+        R_be = self.q.R
+
+        n_f = R_be @ np.array([
+            0.0,
+            0.0,
+            -1.0
+        ])
+
+        # Equation for desired thrust magnitude, neglecting drag:
+        # f_d = n_f^T (m*a_d - m*g)
+
+        force_required = self.mass * (a_d - self.g)
+
+        f_d = float(np.dot(n_f, force_required))
+
+        # A multicopter cannot produce negative thrust.
+        f_d = max(0.0, f_d)
+
+        return f_d
+
+
+    def desired_attitude(self, n_f, n_fd, R_be):
+        """
+        Construct the desired attitude matrix R_d.
+
+        n_f: Current thrust direction in the earth/NED frame.
+        n_fd: Desired thrust direction in the earth/NED frame.
+        R_be: Current body-to-earth/NED rotation matrix.
+
+        Returns:
+            R_d: Desired body-to-earth/NED rotation matrix.
+        """
+
+        n_f = np.asarray(n_f, dtype=float)
+        n_fd = np.asarray(n_fd, dtype=float)
+
+        # Normalize both thrust-direction vectors.
+        n_f_norm = np.linalg.norm(n_f)
+        n_fd_norm = np.linalg.norm(n_fd)
+
+        if n_f_norm < 1e-6 or n_fd_norm < 1e-6:
+            return None
+
+        n_f = n_f / n_f_norm
+        n_fd = n_fd / n_fd_norm
+
+        # Axis and angle required to rotate the current
+        # thrust direction onto the desired thrust direction.
+        cross_product = np.cross(n_f, n_fd)
+
+        dot_product = float(np.clip(
+            np.dot(n_f, n_fd),
+            -1.0,
+            1.0
+        ))
+
+        # Skew-symmetric cross-product matrix.
+        S = np.array([
+            [0.0, -cross_product[2], cross_product[1]],
+            [cross_product[2], 0.0, -cross_product[0]],
+            [-cross_product[1], cross_product[0], 0.0]
+        ])
+
+        # Handle the case where the thrust directions are
+        # already aligned.
+        if dot_product > 1.0 - 1e-8:
+            R_tilt = np.eye(3)
+
+        # The directions are opposite, so the minimum-angle
+        # rotation axis is ambiguous.
+        elif dot_product < -1.0 + 1e-8:
+            self.get_logger().warning(
+                "Current and desired thrust directions are "
+                "nearly opposite; desired attitude is ambiguous."
+            )
+            return None
+
+        else:
+            # Rodrigues' rotation formula.
+            R_tilt = (
+                np.eye(3)
+                + S
+                + (S @ S) / (1.0 + dot_product)
+            )
+
+        # Apply the tilt correction to the current attitude.
+        R_d = R_tilt @ R_be
+
+        return R_d
+    
+    def attitude_correction(self, R_d, R_be):
+        """
+        Calculate the attitude-correction angular velocity
+        using the paper's SO(3) attitude-error expression.
+
+        R_d: Desired body-to-earth rotation matrix.
+        R_be: Current body-to-earth rotation matrix.
+
+        Returns:
+            omega_2: Three-component attitude-correction vector.
+        """
+
+        attitude_error = (
+            R_d.T @ R_be
+            - R_be.T @ R_d
+        )
+
+        # vex() extracts the vector corresponding to a
+        # 3x3 skew-symmetric matrix.
+        omega_2 = -0.5 * np.array([
+            attitude_error[2, 1] - attitude_error[1, 2],
+            attitude_error[0, 2] - attitude_error[2, 0],
+            attitude_error[1, 0] - attitude_error[0, 1]
+        ])
+
+        return omega_2
+
+
     # BODY RATE PUBLISH Fn
 
     def publish_rates(self, omega, thrust):
@@ -945,7 +1140,27 @@ class Attitude(Node):
 
         self.rate_setpoint_pub.publish(msg)
 
+
 # --- CALLBACKS ---
+
+    # GROUND-TRUTH INITIALIZATION INPUTS
+
+    def gt_position_cb(self, msg):
+        self.gt_relative_position = np.array([
+            msg.x,
+            msg.y,
+            msg.z
+        ], dtype=float)
+
+
+    def gt_velocity_cb(self, msg):
+        self.gt_relative_velocity = np.array([
+            msg.x,
+            msg.y,
+            msg.z
+        ], dtype=float)
+
+
 
     def status_cb(self, msg):
 
@@ -982,32 +1197,22 @@ class Attitude(Node):
         u = msg.x
         v = msg.y
 
+        self.get_logger().info(
+            f"CENTROID CALLBACK | u={u:.1f}, v={v:.1f}",
+            throttle_duration_sec=1.0
+        )
+
         p_img = np.array([
             (u - self.cx) / self.fx,
             (v - self.cy) / self.fy
         ])
 
         if self.q is None:
+            self.get_logger().warning(
+                "CENTROID CALLBACK STOPPED: attitude is None",
+                throttle_duration_sec=1.0
+            )
             return
-
-        # Collect image measurements for R estimation
-        if len(self.r_samples) < self.R_samples_required:
-            self.r_samples.append(p_img.copy())
-
-            if len(self.r_samples) == self.R_samples_required:
-                samples = np.array(self.r_samples)
-
-                self.R = np.cov(
-                    samples,
-                    rowvar=False,
-                    ddof=1
-                )
-
-                self.get_logger().info(
-                    f"\n----- IMAGE MEASUREMENT COVARIANCE R -----\n"
-                    f"{self.R}\n"
-                    f"--------------------------------------------"
-                )
 
         # Image → LOS
         
@@ -1020,19 +1225,62 @@ class Attitude(Node):
             nt_body
         )
 
+
         # INITIALIZE DKF
 
         if not self.dkf_initialized:
 
-            self.x[self.PR_SLICE] = (
-                -INITIAL_TARGET_RANGE * nt
+            # Wait until attitude and both ground-truth measurements are available
+            if (
+                self.gt_relative_position is None
+                or self.gt_relative_velocity is None
+            ):
+                return
+
+            # Ground-truth node publishes target - interceptor in Gazebo ENU.
+            # Convert the relative position and velocity into PX4 NED.
+            p_gt_ned = self.C_NED_ENU @ self.gt_relative_position
+            v_gt_ned = self.C_NED_ENU @ self.gt_relative_velocity
+
+            # The DKF relative state follows interceptor - target.
+            self.x[self.PR_SLICE] = -p_gt_ned
+            self.x[self.VR_SLICE] = -v_gt_ned
+
+            self.get_logger().info(
+                f"GT FRAME CONVERSION | "
+                f"p_gt_enu={self.gt_relative_position} | "
+                f"p_gt_ned={p_gt_ned} | "
+                f"pr_init={self.x[self.PR_SLICE]} | "
+                f"v_gt_ned={v_gt_ned} | "
+                f"vr_init={self.x[self.VR_SLICE]}",
+                throttle_duration_sec=1.0
             )
 
-            self.x[self.IMG_SLICE] = p_img
+            self.get_logger().info(
+                f"GT RELATIVE POSITION RAW | "
+                f"{self.gt_relative_position}",
+                throttle_duration_sec=1.0
+            )
 
+            # Initialize image state and attitude as before
+            self.x[self.IMG_SLICE] = p_img
             self.x[self.Q_SLICE] = np.array(self.q)
 
             self.dkf_initialized = True
+
+            if (
+                self.gt_relative_position is None
+                or self.gt_relative_velocity is None
+            ):
+                self.get_logger().warning(
+                    "CENTROID CALLBACK STOPPED: waiting for ground-truth "
+                    f"position/velocity | "
+                    f"position_available={self.gt_relative_position is not None} | "
+                    f"velocity_available={self.gt_relative_velocity is not None}",
+                    throttle_duration_sec=1.0
+                )
+                return
+
 
         # DELAYED IMAGE CORRECTION
         if self.dkf_initialized:
@@ -1040,11 +1288,70 @@ class Attitude(Node):
 
         # Current estimated state
 
+        # Estimated relative state is expressed in the NED world frame.
         pr = self.x[self.PR_SLICE]
 
+        # PX4 attitude: body FRD -> world NED.
         R_eb = UnitQuaternion(
             self.x[self.Q_SLICE]
         ).R
+
+        # State convention: pr = interceptor - target.
+        # Therefore, target relative to interceptor is -pr.
+        p_target_ned = -pr
+
+        # NED -> body FRD.
+        p_target_body = R_eb.T @ p_target_ned
+
+        # Body FRD -> camera optical frame.
+        p_target_camera = self.R_BC.T @ p_target_body
+
+        pzc = p_target_camera[2]
+
+        self.get_logger().info(
+            f"CAMERA FRAME CHECK | "
+            f"target_ned={p_target_ned} | "
+            f"target_body={p_target_body} | "
+            f"target_camera={p_target_camera} | "
+            f"depth={pzc:.3f} m",
+            throttle_duration_sec=1.0
+        )
+
+        # Candidate A: current world-to-body transformation
+        p_body_A = R_eb.T @ p_target_ned
+        p_camera_A = self.R_BC.T @ p_body_A
+
+        # Candidate B: opposite attitude transformation
+        p_body_B = R_eb @ p_target_ned
+        p_camera_B = self.R_BC.T @ p_body_B
+
+        self.get_logger().info(
+            f"TRANSFORM COMPARISON | "
+            f"A_camera={p_camera_A} | "
+            f"A_depth={p_camera_A[2]:.3f} | "
+            f"B_camera={p_camera_B} | "
+            f"B_depth={p_camera_B[2]:.3f}",
+            throttle_duration_sec=1.0
+        )
+
+        self.get_logger().info(
+            f"FRAME CHECK | "
+            f"target_earth={p_target_ned} | "
+            f"target_body={p_target_body} | "
+            f"target_camera={p_target_camera} | "
+            f"centroid=({u:.1f}, {v:.1f})",
+            throttle_duration_sec=1.0
+        )
+
+        self.get_logger().info(
+            f"DEPTH DIAGNOSTIC | "
+            f"pr={pr} | "
+            f"q_filter={self.x[self.Q_SLICE]} | "
+            f"q_px4={np.array(self.q)} | "
+            f"R_eb=\n{R_eb} | "
+            f"R_BC=\n{self.R_BC}",
+            throttle_duration_sec=1.0
+        )
 
         p_target_camera = (
             -self.R_BC.T
@@ -1054,11 +1361,45 @@ class Attitude(Node):
 
         pzc = p_target_camera[2]
 
+        # IMAGE PROJECTION CHECK
+        if pzc > 0.01:
+            Xc, Yc, Zc = p_target_camera
+
+            predicted_x = Xc / Zc
+            predicted_y = Yc / Zc
+
+            measured_x = (u - self.cx) / self.fx
+            measured_y = (v - self.cy) / self.fy
+
+            self.get_logger().info(
+                f"IMAGE PROJECTION CHECK | "
+                f"predicted=({predicted_x:.4f}, {predicted_y:.4f}) | "
+                f"measured=({measured_x:.4f}, {measured_y:.4f})",
+                throttle_duration_sec=1.0
+            )
+
+        # EXISTING DEPTH CHECK — KEEP THIS
         if pzc <= 0.01:
+            self.get_logger().warning(
+                f"CENTROID CALLBACK STOPPED: invalid target depth "
+                f"pzc={pzc:.4f} m | "
+                f"pr={pr} | "
+                f"p_target_camera={p_target_camera}",
+                throttle_duration_sec=1.0
+            )
             return
 
         self.latest_p_img = p_img
         self.latest_pzc = pzc
+
+        self.get_logger().info(
+            f"CONTROLLER INPUTS VALID | "
+            f"p_img={p_img} | "
+            f"pzc={pzc:.3f} m | "
+            f"pr={self.x[self.PR_SLICE]} | "
+            f"vr={self.x[self.VR_SLICE]}",
+            throttle_duration_sec=1.0
+        )
 
         # Current interceptor LOS
 
@@ -1081,6 +1422,58 @@ class Attitude(Node):
             ntd,
             z1
         )
+
+        # Calculate desired thrust direction
+        n_fd = self.desired_thrust_direction(
+            self.a_d
+        )
+
+        if n_fd is not None:
+            self.n_fd = n_fd
+
+        # Current body-to-earth/NED rotation.
+        R_be = self.q.R
+
+        # Current thrust direction in NED.
+        n_f = R_be @ np.array([
+            0.0,
+            0.0,
+            -1.0
+        ])
+
+        # Calculate desired attitude and attitude correction.
+        R_d = self.desired_attitude(
+            n_f,
+            self.n_fd,
+            R_be
+        )
+
+        if R_d is not None:
+
+            omega_2 = self.attitude_correction(
+                R_d,
+                R_be
+            )
+
+            self.get_logger().info(
+                f"omega_1 = {self.omega_1} | "
+                f"omega_2 = {omega_2}",
+                throttle_duration_sec=0.5
+            )
+
+        # Calculate desired thrust magnitude
+        f_d = self.desired_thrust_magnitude(
+            self.a_d
+        )
+
+        if f_d is not None:
+            self.f_d = f_d
+
+            self.get_logger().info(
+                f"a_d = {self.a_d}, "
+                f"n_fd = {self.n_fd}, "
+                f"f_d = {self.f_d:.3f} N"
+            )
 
         self.get_logger().info(
             f"AD | "

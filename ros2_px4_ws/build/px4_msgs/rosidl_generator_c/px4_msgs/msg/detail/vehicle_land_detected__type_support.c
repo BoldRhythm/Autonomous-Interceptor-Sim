@@ -4,10 +4,10 @@
 
 #include <string.h>
 
-#include "px4_msgs/msg/detail/vehicle_land_detected__type_support.h"
+#include "px4_msgs/msg/detail/vehicle_land_detected__functions.h"
 #include "px4_msgs/msg/detail/vehicle_land_detected__struct.h"
 #include "rosidl_typesupport_interface/macros.h"
-#include "px4_msgs/msg/detail/vehicle_land_detected__functions.h"
+#include "px4_msgs/msg/detail/vehicle_land_detected__type_support.h"
 
 #ifdef __cplusplus
 extern "C"

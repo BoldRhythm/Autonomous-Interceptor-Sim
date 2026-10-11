@@ -4,10 +4,10 @@
 
 #include <string.h>
 
-#include "px4_msgs/msg/detail/velocity_limits__functions.h"
 #include "px4_msgs/msg/detail/velocity_limits__type_support.h"
 #include "rosidl_typesupport_interface/macros.h"
 #include "px4_msgs/msg/detail/velocity_limits__struct.h"
+#include "px4_msgs/msg/detail/velocity_limits__functions.h"
 
 #ifdef __cplusplus
 extern "C"

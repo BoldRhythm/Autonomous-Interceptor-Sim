@@ -4,10 +4,10 @@
 
 #include <string.h>
 
-#include "px4_msgs/msg/detail/fixed_wing_runway_control__functions.h"
-#include "px4_msgs/msg/detail/fixed_wing_runway_control__type_support.h"
 #include "px4_msgs/msg/detail/fixed_wing_runway_control__struct.h"
+#include "px4_msgs/msg/detail/fixed_wing_runway_control__type_support.h"
 #include "rosidl_typesupport_interface/macros.h"
+#include "px4_msgs/msg/detail/fixed_wing_runway_control__functions.h"
 
 #ifdef __cplusplus
 extern "C"

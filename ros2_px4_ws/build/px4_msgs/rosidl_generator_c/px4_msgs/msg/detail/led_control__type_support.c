@@ -6,8 +6,8 @@
 
 #include "px4_msgs/msg/detail/led_control__struct.h"
 #include "px4_msgs/msg/detail/led_control__type_support.h"
-#include "px4_msgs/msg/detail/led_control__functions.h"
 #include "rosidl_typesupport_interface/macros.h"
+#include "px4_msgs/msg/detail/led_control__functions.h"
 
 #ifdef __cplusplus
 extern "C"
