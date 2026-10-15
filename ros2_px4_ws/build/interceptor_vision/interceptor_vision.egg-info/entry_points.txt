@@ -1,3 +1,0 @@
-[console_scripts]
-YOLO_node = interceptor_vision.cv_first:main
-vision_node = interceptor_vision.basic_cv:main

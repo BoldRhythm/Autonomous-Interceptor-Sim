@@ -1,3 +1,0 @@
-[console_scripts]
-interceptSuccess = ground_truth.intercept_success:main
-relativePosition = ground_truth.relative_position_node:main

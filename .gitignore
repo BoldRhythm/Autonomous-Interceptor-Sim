@@ -18,3 +18,13 @@ venv/
 
 # Simulation outputs
 results/
+
+# ROS 2 / colcon generated artifacts
+/build/
+/install/
+/log/
+
+# Nested ROS 2 workspace artifacts
+/ros2_px4_ws/build/
+/ros2_px4_ws/install/
+/ros2_px4_ws/log/
