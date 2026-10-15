@@ -21,17 +21,14 @@ For the Image-Based Visual Servoing, the angular velocity commands work to handl
 
 ## Installation
 
-### Prerequisites
+## Tested Environment
 
-The project currently requires:
-
-* Ubuntu Linux - 22.04
-* ROS 2 Jazzy
-* Gazebo Harmonic
-* PX4 Autopilot
-* Tmux
-* Python 3
-* Git
+- Ubuntu 24.04.4 LTS
+- ROS 2 Jazzy
+- Gazebo Harmonic (Gazebo Sim 8.15.0)
+- PX4 Autopilot — exact revision to be recorded
+- Python 3
+- Git
 
 The project is currently being developed on :
 * GPU : RTX 3060Ti
