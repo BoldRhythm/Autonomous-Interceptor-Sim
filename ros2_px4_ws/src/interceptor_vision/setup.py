@@ -24,8 +24,8 @@ setup(
     },
     entry_points={
         'console_scripts': [
-            'YOLO_node = interceptor_vision.cv_first:main',
-            'vision_node = interceptor_vision.basic_cv:main',
+            'YOLO_node = interceptor_vision.YOLOv4Tiny:main',
+            'vision_node = interceptor_vision.opencv_imshow_test:main',
         ],
     },
 )

@@ -2,14 +2,12 @@
 set -euo pipefail
 
 SESSION="interceptor-8pane"
-PROJECT_ROOT="$HOME/Projects/interceptor-sim"
+PROJECT_ROOT="$HOME/Projects/Autonomous-Interceptor-Sim"
 PX4_ROOT="$HOME/PX4-Autopilot"
 ROS_SETUP="/opt/ros/jazzy/setup.bash"
 WORKSPACE_SETUP="$PROJECT_ROOT/ros2_px4_ws/install/setup.bash"
 
-# -------------------------------------------------
 # Prerequisites
-# -------------------------------------------------
 
 for cmd in tmux; do
     if ! command -v "$cmd" >/dev/null 2>&1; then
@@ -25,18 +23,14 @@ for path in "$ROS_SETUP" "$WORKSPACE_SETUP"; do
     fi
 done
 
-# -------------------------------------------------
 # Reattach to an existing session
-# -------------------------------------------------
 
 if tmux has-session -t "$SESSION" 2>/dev/null; then
     exec tmux attach-session -t "$SESSION"
 fi
 
-# -------------------------------------------------
 # Create the eight-pane layout
 # Two columns, four rows per column
-# -------------------------------------------------
 
 tmux new-session \
     -d \
@@ -73,11 +67,11 @@ split_into_four() {
 split_into_four "$LEFT_PANE"
 split_into_four "$RIGHT_PANE"
 
-# -------------------------------------------------
-# Locate panes by their screen positions
+
+# locate panes by their screen positions
 # col: 0 = left, 1 = right
 # row: 0 = top, 1 = second, 2 = third, 3 = bottom
-# -------------------------------------------------
+
 
 get_pane() {
     local col="$1"
@@ -108,9 +102,7 @@ get_pane() {
     printf '%s\n' "${PANES[$row]}"
 }
 
-# -------------------------------------------------
 # Start a command in a pane
-# -------------------------------------------------
 
 start_in_pane() {
     local pane="$1"
@@ -123,9 +115,7 @@ start_in_pane() {
 
 ROS_ENV="source \"$ROS_SETUP\" && source \"$WORKSPACE_SETUP\""
 
-# -------------------------------------------------
-# LEFT COLUMN
-# -------------------------------------------------
+# --- LEFT COLUMN ---
 
 # Row 1: Micro XRCE-DDS Agent
 start_in_pane \
@@ -137,13 +127,13 @@ start_in_pane \
 start_in_pane \
     "$(get_pane 0 1)" \
     "Ground truthing and parameter bridge" \
-    "ros2 launch interceptor_bringup simulation.launch.py"
+    "source $PROJECT_ROOT/ros2_px4_ws/install/setup.bash && ros2 launch interceptor_bringup simulation.launch.py"
 
 # Row 3: ROS 2 node diagnostics
 start_in_pane \
     "$(get_pane 0 2)" \
     "ROS 2 YOLO Node" \
-    "source ~/Projects/interceptor-sim/ros2_px4_ws/install/setup.bash && ros2 run interceptor_vision YOLO_node"
+    "source $PROJECT_ROOT/ros2_px4_ws/install/setup.bash && ros2 run interceptor_vision YOLO_node"
 
 # Row 4: ROS 2 topic diagnostics
 start_in_pane \
@@ -151,27 +141,25 @@ start_in_pane \
     "ROS 2 Topics" \
     "$ROS_ENV && ros2 topic list; exec bash"
 
-# -------------------------------------------------
-# RIGHT COLUMN
-# -------------------------------------------------
+# --- RIGHT COLUMN ---
 
 # Row 1: One standard PX4 SITL vehicle with Gazebo
 start_in_pane \
     "$(get_pane 1 0)" \
     "PX4 SITL / Gazebo" \
-    "cd \"$PX4_ROOT\" && PX4_SYS_AUTOSTART=4001 PX4_SIM_MODEL=gz_x500 ./build/px4_sitl_default/bin/px4 -i 1"
+    "cd \"$PX4_ROOT\" && PX4_SYS_AUTOSTART=4001 PX4_SIM_MODEL=gz_interceptor_x500 ./build/px4_sitl_default/bin/px4 -i 1"
 
 # Row 2: Second standard PX4 SITL vehicle
 start_in_pane \
     "$(get_pane 1 1)" \
     "PX4 SITL - Vehicle 2" \
-    "cd \"$PX4_ROOT\" && PX4_GZ_STANDALONE=1 PX4_SYS_AUTOSTART=4001 PX4_GZ_MODEL_POSE='0,1' PX4_SIM_MODEL=gz_x500 ./build/px4_sitl_default/bin/px4 -i 2"
+    "cd \"$PX4_ROOT\" && PX4_GZ_STANDALONE=1 PX4_SYS_AUTOSTART=4001 PX4_GZ_MODEL_POSE='7.5,0' PX4_SIM_MODEL=gz_interceptor_x500 ./build/px4_sitl_default/bin/px4 -i 2"
 
 # Row 3: Gazebo topic monitor
 start_in_pane \
     "$(get_pane 1 2)" \
-    "Gazebo Topics" \
-    "watch -n 2 'gz topic -l 2>/dev/null | head -25'"
+    "ROS 2 interception Intercept" \
+    "source $PROJECT_ROOT/ros2_px4_ws/install/setup.bash"
 
 # Row 4: QGroundControl
 start_in_pane \
@@ -179,9 +167,7 @@ start_in_pane \
     "QGroundControl" \
     "cd \"$HOME/Downloads\" && ./QGroundControl-x86_64.AppImage"
 
-# -------------------------------------------------
 # Attach to the session
-# -------------------------------------------------
 
 tmux select-window -t "$SESSION:0"
 exec tmux attach-session -t "$SESSION"
