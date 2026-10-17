@@ -82,7 +82,7 @@ STABILITY_LOG_INTERVAL_S = 0.50
 # Search behaviour while at takeoff altitude and waiting for a fresh target.
 # In PX4 velocity mode, a small yaw-rate setpoint rotates in place while
 # zero linear-velocity setpoints let PX4 maintain the vehicle position/altitude.
-SEARCH_YAW_RATE = 0.3  # rad/s (~8.6 deg/s; about 42 s per full turn)
+SEARCH_YAW_RATE = 0.5  # rad/s 
 
 # Gazebo-specific frame conversion: ENU -> NED.
 C_NED_ENU = np.array([

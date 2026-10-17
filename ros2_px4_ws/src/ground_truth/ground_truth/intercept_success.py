@@ -17,9 +17,9 @@ import time
 from typing import Optional
 
 import rclpy
-from geometry_msgs.msg import Point
+from geometry_msgs.msg import Point, Vector3
 from rclpy.executors import SingleThreadedExecutor
-from rclpy.node import Node
+from rclpy.node import Node 
 
 try:
     import tkinter as tk
@@ -60,9 +60,33 @@ class InterceptSuccessPopup(Node):
         self._success_latched = False
         self._popup_pending = threading.Event()
 
+        # Latest individual speeds and receipt timestamps
+        self._interceptor_speed = None
+        self._target_speed = None
+        self._interceptor_speed_rx = None
+        self._target_speed_rx = None
+
+        # SUBSCRIBERS
+
         self._subscription = self.create_subscription(
             Point, self.topic, self._relative_position_callback, 10
         )
+
+
+        self._interceptor_velocity_sub = self.create_subscription(
+            Vector3,
+            "/ground_truth/interceptor_velocity",
+            self._interceptor_velocity_callback,
+            10,
+        )
+
+        self._target_velocity_sub = self.create_subscription(
+            Vector3,
+            "/ground_truth/target_velocity",
+            self._target_velocity_callback,
+            10,
+        )
+
         self.get_logger().info(
             "Simulation-only proximity monitor started: "
             f"topic={self.topic}, threshold={self.threshold_m:.2f} m, "
@@ -85,10 +109,35 @@ class InterceptSuccessPopup(Node):
         with self._lock:
             self._distance_m = distance
             self._last_rx_monotonic = now
+
             if distance < self.threshold_m and not self._success_latched:
                 self._success_latched = True
                 self._success_distance_m = distance
                 self._popup_pending.set()
+
+    def _interceptor_velocity_callback(self, msg: Vector3) -> None:
+        velocity = (float(msg.x), float(msg.y), float(msg.z))
+
+        if not all(math.isfinite(v) for v in velocity):
+            return
+
+        speed = math.sqrt(sum(v * v for v in velocity))
+
+        with self._lock:
+            self._interceptor_speed = speed
+            self._interceptor_speed_rx = time.monotonic()
+
+    def _target_velocity_callback(self, msg: Vector3) -> None:
+        velocity = (float(msg.x), float(msg.y), float(msg.z))
+
+        if not all(math.isfinite(v) for v in velocity):
+            return
+
+        speed = math.sqrt(sum(v * v for v in velocity))
+
+        with self._lock:
+            self._target_speed = speed
+            self._target_speed_rx = time.monotonic()
 
     def _build_gui(self) -> None:
         if tk is None or messagebox is None:
@@ -122,6 +171,20 @@ class InterceptSuccessPopup(Node):
         )
         status_label.pack(pady=4)
 
+        interceptor_speed_label = tk.Label(
+            root,
+            text="Interceptor speed: waiting for data...",
+            font=("Sans", 10),
+        )
+        interceptor_speed_label.pack(pady=4)
+
+        target_speed_label = tk.Label(
+            root,
+            text="Target speed: waiting for data...",
+            font=("Sans", 10),
+        )
+        target_speed_label.pack(pady=4)
+
         popup_displayed = False
 
         def refresh() -> None:
@@ -132,9 +195,15 @@ class InterceptSuccessPopup(Node):
                 success_distance = self._success_distance_m
                 success_latched = self._success_latched
 
+                interceptor_speed = self._interceptor_speed
+                target_speed = self._target_speed
+                interceptor_rx = self._interceptor_speed_rx
+                target_rx = self._target_speed_rx
+
             if distance is None or last_rx is None:
                 range_label.config(text="Waiting for ground-truth data…")
                 status_label.config(text="No sample received yet")
+
             elif time.monotonic() - last_rx > self.timeout_s:
                 range_label.config(text=f"Last separation: {distance:.3f} m")
                 status_label.config(text="STALE INPUT — last sample is not current")
@@ -147,6 +216,36 @@ class InterceptSuccessPopup(Node):
                         else "Ground-truth input fresh"
                     )
                 )
+
+            now = time.monotonic()
+
+            def format_speed(name, speed, last_rx):
+                if speed is None or last_rx is None:
+                    return f"{name}: waiting for data..."
+
+                age = now - last_rx
+
+                if age > self.timeout_s:
+                    return f"{name}: STALE DATA ({age:.1f} s old)"
+
+                return f"{name}: {speed:.2f} m/s"
+
+
+            interceptor_speed_label.config(
+                text=format_speed(
+                    "Interceptor speed",
+                    interceptor_speed,
+                    interceptor_rx,
+                )
+            )
+
+            target_speed_label.config(
+                text=format_speed(
+                    "Target speed",
+                    target_speed,
+                    target_rx,
+                )
+            )
 
             if self._popup_pending.is_set() and not popup_displayed:
                 self._popup_pending.clear()
